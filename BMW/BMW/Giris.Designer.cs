@@ -96,7 +96,7 @@
             this.btn_Kapat.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btn_Kapat.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btn_Kapat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Kapat.Location = new System.Drawing.Point(311, 340);
+            this.btn_Kapat.Location = new System.Drawing.Point(300, 129);
             this.btn_Kapat.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btn_Kapat.Name = "btn_Kapat";
             this.btn_Kapat.Size = new System.Drawing.Size(60, 60);

@@ -12,8 +12,8 @@ namespace BMW
 {
     class SQL
     {
-      
-        SqlConnection bag_cumle = new SqlConnection( "Data Source=OZEN; Initial Catalog=BMW;Integrated Security=true");
+
+        SqlConnection bag_cumle = new SqlConnection("Data Source=PC-BILGISAYAR; Initial Catalog=BMW;Integrated Security=true;User Id=sa;Password=123456;");
         SqlDataAdapter adapter;
         public DataTable tablo=new DataTable();
         private void baglan(int secim)

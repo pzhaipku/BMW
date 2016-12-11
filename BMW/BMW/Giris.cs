@@ -34,5 +34,11 @@ namespace BMW
             }
             else { MessageBox.Show("Hatalı Giriş"); }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Servis sv_form = new Servis();
+            sv_form.Show();
+        }
     }
 }

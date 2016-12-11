@@ -60,6 +60,7 @@ namespace BMW
 
         private void button4_Click(object sender, EventArgs e)
         {
+            textPAid.Clear();
             textPAK.Clear();
             textPAad.Clear();
             textPAstok.Clear();
@@ -70,7 +71,16 @@ namespace BMW
         private void button3_Click(object sender, EventArgs e)
         {
             string sv_sorgu = "UPDATE Parca_Stok Set Parca_kodu='"+textPAK.Text+"',"+"Parca_adi='"+textPAad.Text+"',"+"Stok_adet="+Convert.ToInt32(textPAstok.Text)+","+"Birim_Fiyat="+Convert.ToInt32(textPAfiyat.Text)+","+"Aciklama='"+textPAaciklama.Text+"' Where PStok_id="+Convert.ToInt32(textPAid.Text);
-            MessageBox.Show(sv_sorgu);
+            SqlCommand komut = new SqlCommand(sv_sorgu,sv_baglanti);
+            sv_baglanti.Open();
+            komut.ExecuteNonQuery();
+            sv_baglanti.Close();
+            parca_stok_goster();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            string sv_sorgu = "Delete From Parca_Stok Where PStok_id="+Convert.ToInt32(textPAid.Text);
             SqlCommand komut = new SqlCommand(sv_sorgu,sv_baglanti);
             sv_baglanti.Open();
             komut.ExecuteNonQuery();

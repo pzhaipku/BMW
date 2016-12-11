@@ -37,8 +37,8 @@ namespace BMW
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Servis sv_form = new Servis();
-            sv_form.Show();
+            Servis srv_form = new Servis();
+            srv_form.Show();
         }
     }
 }

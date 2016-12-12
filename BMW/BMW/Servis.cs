@@ -103,11 +103,16 @@ namespace BMW
             textSVmus.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
             textSVmod.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
             comboSVprc.Text = peradi;
+            textSVgkm.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
+            textSVckm.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
+            dateTimeSVgir.Text = dataGridView1.CurrentRow.Cells[7].Value.ToString();
+            dateTimeSVcik.Text = dataGridView1.CurrentRow.Cells[8].Value.ToString();
+            textSVplk.Text = dataGridView1.CurrentRow.Cells[9].Value.ToString();
+            textSVfyt.Text = Convert.ToInt32(dataGridView1.CurrentRow.Cells[10].Value).ToString();
+            checkSVtm.Text = dataGridView1.CurrentRow.Cells[11].Value.ToString();
+
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            
-        }
+
     }
 }

@@ -156,10 +156,10 @@ namespace BMW
         {
             cumle.IDU("EXECUTE Musteri_kayitekle '"+M_kodu.Text.ToString()+"', '"+Convert.ToString(M_tcno.Text)+"', '"+M_adi.Text.ToString()+"', '"+M_soyadi.Text.ToString()+"', '"+M_tel.Text.ToString()+"', '"+M_email.Text.ToString()+"', '"+Convert.ToInt16(Il_kodu.Text)+"', '"+Ilce_kodu.Text.ToString()+"', '"+Adress.Text.ToString()+"', '"+M_turu_kodu.Text.ToString()+"'");
            // cumle.IDU("INSERT INTO Musteri VALUES('" + M_kodu.Text.ToString() + "' '" + Convert.ToString(M_tcno.Text) + "' '" + M_adi.Text.ToString() + "' '" + M_soyadi.Text.ToString() + "' '" + M_tel.Text.ToString() + "' '" + M_email.Text.ToString() + "' '" + Convert.ToInt16(Il_kodu.Text) + "' '" + Ilce_kodu.Text.ToString() + "' '" + Adress.Text.ToString() + "' '" + M_turu_kodu.Text.ToString() + "')");
-            
-            cumle.Select("Select * From Musteri","yenimusteri");
-            Musterigrid.DataSource=cumle.ds.Tables["yenimusteri"];
-            cumle.ds.Tables["yenimusteri"].Clear();
+            cumle.ds.Tables["Musteri"].Clear();
+            cumle.Select("Select * From Musteri", "Musteri");
+            Musterigrid.DataSource = cumle.ds.Tables["Musteri"];
+          
 
 
         }

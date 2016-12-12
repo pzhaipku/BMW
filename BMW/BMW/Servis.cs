@@ -137,8 +137,14 @@ namespace BMW
             textSVmod.Clear();
             textSVmus.Clear();
             textSVplk.Clear();
-            comboSVprc.Items.Remove(0);
-            dateTimeSVcik.Refresh();
+            comboSVprc.Items.Clear();
+            comboSVprc.Text = "";
+            personel_goster();
+            dateTimeSVcik.Text=System.DateTime.Today.ToShortDateString();
+            dateTimeSVgir.Text = System.DateTime.Today.ToShortDateString();
+            checkSVtm.Checked = false;
+            dateTimeSVcik.Visible = false;
+            label8.Visible = false;
         }
 
 

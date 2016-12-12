@@ -233,6 +233,7 @@
             this.kayitekle.TabIndex = 6;
             this.kayitekle.Text = "Kayıt Ekle";
             this.kayitekle.UseVisualStyleBackColor = true;
+            this.kayitekle.Click += new System.EventHandler(this.kayitekle_Click);
             // 
             // M_kodu
             // 

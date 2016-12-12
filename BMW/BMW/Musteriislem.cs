@@ -39,7 +39,7 @@ namespace BMW
         private void Musteriislem_Load(object sender, EventArgs e)
         {
             cumle.Select("Select * from Musteri", "Musteri");
-            mkodu.Text=cumle.ds.Tables["Musteri"].Columns["M_adi"].ToString();
+            mkodu.Text=cumle.ds.Tables["Musteri"].Columns["M_kodu"].ToString();
             mtcno.Text=cumle.ds.Tables["Musteri"].Columns["M_TCno"].ToString();
             madi.Text=cumle.ds.Tables["Musteri"].Columns["M_adi"].ToString();
             msoyadi.Text=cumle.ds.Tables["Musteri"].Columns["M_soyadi"].ToString();
@@ -51,7 +51,7 @@ namespace BMW
             mturukodu.Text=cumle.ds.Tables["Musteri"].Columns["Musteri_turu_kodu"].ToString();
             Musterigrid.DataSource = cumle.ds.Tables["Musteri"];
 
-            M_kodu.Text = cumle.ds.Tables["Musteri"].Rows[i]["M_adi"].ToString();
+            M_kodu.Text = cumle.ds.Tables["Musteri"].Rows[i]["M_kodu"].ToString();
             M_tcno.Text = cumle.ds.Tables["Musteri"].Rows[i]["M_TCno"].ToString();
             M_adi.Text = cumle.ds.Tables["Musteri"].Rows[i]["M_adi"].ToString();
             M_soyadi.Text = cumle.ds.Tables["Musteri"].Rows[i]["M_soyadi"].ToString();
@@ -84,7 +84,7 @@ namespace BMW
         private void ılkkayit_Click(object sender, EventArgs e)
         {
             i = 0;
-            M_kodu.Text = cumle.ds.Tables["Musteri"].Rows[i]["M_adi"].ToString();
+            M_kodu.Text = cumle.ds.Tables["Musteri"].Rows[i]["M_kodu"].ToString();
             M_tcno.Text = cumle.ds.Tables["Musteri"].Rows[i]["M_TCno"].ToString();
             M_adi.Text = cumle.ds.Tables["Musteri"].Rows[i]["M_adi"].ToString();
             M_soyadi.Text = cumle.ds.Tables["Musteri"].Rows[i]["M_soyadi"].ToString();
@@ -101,7 +101,7 @@ namespace BMW
         {
             i = cumle.ds.Tables["Musteri"].Rows.Count - 1;
 
-            M_kodu.Text = cumle.ds.Tables["Musteri"].Rows[i]["M_adi"].ToString();
+            M_kodu.Text = cumle.ds.Tables["Musteri"].Rows[i]["M_kodu"].ToString();
             M_tcno.Text = cumle.ds.Tables["Musteri"].Rows[i]["M_TCno"].ToString();
             M_adi.Text = cumle.ds.Tables["Musteri"].Rows[i]["M_adi"].ToString();
             M_soyadi.Text = cumle.ds.Tables["Musteri"].Rows[i]["M_soyadi"].ToString();
@@ -119,7 +119,7 @@ namespace BMW
             if (i< cumle.ds.Tables["Musteri"].Rows.Count-1)
             {
                 i++;
-                M_kodu.Text = cumle.ds.Tables["Musteri"].Rows[i]["M_adi"].ToString();
+                M_kodu.Text = cumle.ds.Tables["Musteri"].Rows[i]["M_kodu"].ToString();
                 M_tcno.Text = cumle.ds.Tables["Musteri"].Rows[i]["M_TCno"].ToString();
                 M_adi.Text = cumle.ds.Tables["Musteri"].Rows[i]["M_adi"].ToString();
                 M_soyadi.Text = cumle.ds.Tables["Musteri"].Rows[i]["M_soyadi"].ToString();
@@ -138,7 +138,7 @@ namespace BMW
             if (i == cumle.ds.Tables["Musteri"].Rows.Count - 1 || i != 0)
             {
                 i--;
-                M_kodu.Text = cumle.ds.Tables["Musteri"].Rows[i]["M_adi"].ToString();
+                M_kodu.Text = cumle.ds.Tables["Musteri"].Rows[i]["M_kodu"].ToString();
                 M_tcno.Text = cumle.ds.Tables["Musteri"].Rows[i]["M_TCno"].ToString();
                 M_adi.Text = cumle.ds.Tables["Musteri"].Rows[i]["M_adi"].ToString();
                 M_soyadi.Text = cumle.ds.Tables["Musteri"].Rows[i]["M_soyadi"].ToString();
@@ -150,6 +150,18 @@ namespace BMW
                 Adress.Text = cumle.ds.Tables["Musteri"].Rows[i]["Adres"].ToString();
                 M_turu_kodu.Text = cumle.ds.Tables["Musteri"].Rows[i]["Musteri_turu_kodu"].ToString();
             }
+        }
+
+        private void kayitekle_Click(object sender, EventArgs e)
+        {
+            cumle.IDU("EXECUTE Musteri_kayitekle '"+M_kodu.Text.ToString()+"', '"+Convert.ToString(M_tcno.Text)+"', '"+M_adi.Text.ToString()+"', '"+M_soyadi.Text.ToString()+"', '"+M_tel.Text.ToString()+"', '"+M_email.Text.ToString()+"', '"+Convert.ToInt16(Il_kodu.Text)+"', '"+Ilce_kodu.Text.ToString()+"', '"+Adress.Text.ToString()+"', '"+M_turu_kodu.Text.ToString()+"'");
+           // cumle.IDU("INSERT INTO Musteri VALUES('" + M_kodu.Text.ToString() + "' '" + Convert.ToString(M_tcno.Text) + "' '" + M_adi.Text.ToString() + "' '" + M_soyadi.Text.ToString() + "' '" + M_tel.Text.ToString() + "' '" + M_email.Text.ToString() + "' '" + Convert.ToInt16(Il_kodu.Text) + "' '" + Ilce_kodu.Text.ToString() + "' '" + Adress.Text.ToString() + "' '" + M_turu_kodu.Text.ToString() + "')");
+            
+            cumle.Select("Select * From Musteri","yenimusteri");
+            Musterigrid.DataSource=cumle.ds.Tables["yenimusteri"];
+            cumle.ds.Tables["yenimusteri"].Clear();
+
+
         }
     }
 }

@@ -54,6 +54,8 @@
             this.label10 = new System.Windows.Forms.Label();
             this.checkSVtm = new System.Windows.Forms.CheckBox();
             this.button3 = new System.Windows.Forms.Button();
+            this.textSVid = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -77,6 +79,7 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(720, 175);
             this.dataGridView1.TabIndex = 1;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // button2
             // 
@@ -143,6 +146,7 @@
             this.comboSVprc.Name = "comboSVprc";
             this.comboSVprc.Size = new System.Drawing.Size(121, 21);
             this.comboSVprc.TabIndex = 7;
+            this.comboSVprc.SelectedValueChanged += new System.EventHandler(this.comboSVprc_SelectedValueChanged);
             // 
             // label4
             // 
@@ -216,7 +220,7 @@
             this.dateTimeSVcik.Name = "dateTimeSVcik";
             this.dateTimeSVcik.Size = new System.Drawing.Size(200, 20);
             this.dateTimeSVcik.TabIndex = 15;
-            this.dateTimeSVcik.Value = new System.DateTime(2016, 12, 11, 20, 21, 57, 0);
+            this.dateTimeSVcik.Value = new System.DateTime(2016, 12, 12, 0, 0, 0, 0);
             // 
             // checkSVctb
             // 
@@ -282,11 +286,30 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
+            // textSVid
+            // 
+            this.textSVid.Enabled = false;
+            this.textSVid.Location = new System.Drawing.Point(317, 210);
+            this.textSVid.Name = "textSVid";
+            this.textSVid.Size = new System.Drawing.Size(100, 20);
+            this.textSVid.TabIndex = 24;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(253, 216);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(48, 13);
+            this.label11.TabIndex = 25;
+            this.label11.Text = "Servis İd";
+            // 
             // Servis
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(744, 396);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.textSVid);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.checkSVtm);
             this.Controls.Add(this.label10);
@@ -350,5 +373,7 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.CheckBox checkSVtm;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.TextBox textSVid;
+        private System.Windows.Forms.Label label11;
     }
 }

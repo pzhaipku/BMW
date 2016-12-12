@@ -26,8 +26,10 @@ namespace BMW
 
         private void btn_Giris_Click(object sender, EventArgs e)
         {
-            cumle.Select("Select*from Kullanici where Kullanici_adi='"+txt_Kulad.Text.ToString()+"' AND Kullanici_sifre='"+txt_Sifre.Text.ToString()+"'");
-            if (cumle.tablo.Rows.Count > 0)
+            cumle.Select("Select*from Kullanici where Kullanici_adi='"+txt_Kulad.Text.ToString()+"' AND Kullanici_sifre='"+txt_Sifre.Text.ToString()+"'","giris");
+            
+
+            if (cumle.ds.Tables["giris"].Rows.Count > 0)
             {
                 admin.Show();
                 this.Hide();

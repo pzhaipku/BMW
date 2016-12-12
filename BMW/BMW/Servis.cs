@@ -25,7 +25,7 @@ namespace BMW
             Parca prc_form = new Parca();
             prc_form.Show();
         }
-        public void servis_goster()
+        private void servis_goster()
         {
             SqlDataAdapter sv_DA = new SqlDataAdapter("Select * From Servis", sv_baglanti);
             DataSet sv_DS = new DataSet();
@@ -67,14 +67,16 @@ namespace BMW
         }
 
         private void button3_Click(object sender, EventArgs e)
-        {
+        {/*
+            MessageBox.Show(Convert.ToDateTime(dateTimeSVcik.Text).ToShortDateString());
             SqlCommand komut = new SqlCommand();
-            komut.CommandText = "Update Servis Set S_kodu=" + "'" + textSVkod.Text + "',M_kodu=" + "'" + textSVmus.Text + "',Model_kodu='" + textSVmod.Text + "',P_kodu='" + perkod.ToString() + "',Arac_giriskm=" + textSVgkm.Text + ",Arac_cikiskm=" + textSVckm.Text + ",S_giris_tarih='" + Convert.ToDateTime(dateTimeSVgir.Text) + "',S_cikis_tarih='"+Convert.ToDateTime(dateTimeSVcik.Text)+"',Plaka='" + textSVplk.Text + "',Servis_ucret=" + Convert.ToInt32(textSVfyt.Text) + ",Durum='" + Convert.ToInt32(checkSVtm.Checked) + "' Where S_id='"+textSVid.Text+"'";
-            sv_baglanti.Open();
+            //komut.CommandText = "Update Servis Set S_kodu=" + "'" + textSVkod.Text + "',M_kodu=" + "'" + textSVmus.Text + "',Model_kodu='" + textSVmod.Text + "',P_kodu='" + perkod.ToString() + "',Arac_giriskm=" + textSVgkm.Text + ",Arac_cikiskm=" + textSVckm.Text + ",S_giris_tarih='"+dateTimeSVgir.Value.Date+"',S_cikis_tarih='"+dateTimeSVcik.Value.Date+"',Plaka='" + textSVplk.Text + "',Servis_ucret=" + Convert.ToInt32(textSVfyt.Text) + ",Durum='" + Convert.ToInt32(checkSVtm.Checked) + "' Where S_id='" + textSVid.Text + "'";
+            MessageBox.Show(komut.CommandText);
+           /* sv_baglanti.Open();
             komut.Connection = sv_baglanti;
             komut.ExecuteNonQuery();
             sv_baglanti.Close();
-            servis_goster();
+            servis_goster();*/
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)

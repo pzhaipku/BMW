@@ -193,6 +193,7 @@
             // 
             // dateTimeSVgir
             // 
+            this.dateTimeSVgir.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimeSVgir.Location = new System.Drawing.Point(344, 324);
             this.dateTimeSVgir.Name = "dateTimeSVgir";
             this.dateTimeSVgir.Size = new System.Drawing.Size(200, 20);
@@ -218,11 +219,12 @@
             // 
             // dateTimeSVcik
             // 
+            this.dateTimeSVcik.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimeSVcik.Location = new System.Drawing.Point(344, 359);
             this.dateTimeSVcik.Name = "dateTimeSVcik";
             this.dateTimeSVcik.Size = new System.Drawing.Size(200, 20);
             this.dateTimeSVcik.TabIndex = 15;
-            this.dateTimeSVcik.Value = new System.DateTime(2016, 12, 12, 0, 0, 0, 0);
+            this.dateTimeSVcik.Value = new System.DateTime(2016, 12, 16, 0, 0, 0, 0);
             // 
             // textSVplk
             // 

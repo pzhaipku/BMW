@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
             this.textPAK = new System.Windows.Forms.TextBox();
             this.textPAad = new System.Windows.Forms.TextBox();
             this.textPAstok = new System.Windows.Forms.TextBox();
@@ -63,16 +62,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(631, 184);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(21, 316);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(139, 23);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Parçaları Göster";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // textPAK
             // 
@@ -112,7 +101,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(209, 316);
+            this.button2.Location = new System.Drawing.Point(39, 316);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(139, 23);
             this.button2.TabIndex = 9;
@@ -122,7 +111,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(387, 316);
+            this.button3.Location = new System.Drawing.Point(232, 316);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(142, 23);
             this.button3.TabIndex = 10;
@@ -142,7 +131,7 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(556, 316);
+            this.button5.Location = new System.Drawing.Point(427, 316);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(96, 23);
             this.button5.TabIndex = 11;
@@ -218,7 +207,6 @@
             this.groupBox1.Controls.Add(this.dataGridView1);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.textPAK);
             this.groupBox1.Controls.Add(this.label4);
@@ -262,7 +250,6 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox textPAK;
         private System.Windows.Forms.TextBox textPAad;
         private System.Windows.Forms.TextBox textPAstok;

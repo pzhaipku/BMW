@@ -30,13 +30,6 @@ namespace BMW
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-            parca_stok_goster();
-
-        }
-
         private void button2_Click(object sender, EventArgs e)
         {
             SqlCommand komut = new SqlCommand();

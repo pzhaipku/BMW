@@ -36,6 +36,7 @@ namespace BMW
         }
         public void personel_goster()
         {
+            
             SqlCommand komut = new SqlCommand("Select P_adi From Personel",sv_baglanti);
             sv_baglanti.Open();
             SqlDataReader sv_DR;
@@ -50,19 +51,15 @@ namespace BMW
         {
             servis_goster();
             personel_goster();
+            dateTimeSVcik.Visible=false;
+            label8.Visible = false;
         }
         private void button2_Click(object sender, EventArgs e)
         {
             SqlCommand komut = new SqlCommand();
-            if (checkSVctb.Checked == true) 
-            { 
-                komut.CommandText = "INSERT INTO Servis Values(" + "'" + textSVkod.Text + "'," + "'" + textSVmus.Text + "','" + textSVmod.Text + "','" + perkod.ToString() + "'," + textSVgkm.Text + "," + textSVckm.Text + ",'" + Convert.ToDateTime(dateTimeSVgir.Text) + "',Null,'"+textSVplk.Text+"',"+Convert.ToInt32(textSVfyt.Text)+",'"+Convert.ToInt32(checkSVtm.Checked)+"')";
-                MessageBox.Show(komut.CommandText);
-            } 
-            else { }
+            komut.CommandText = "INSERT INTO Servis Values(" + "'" + textSVkod.Text + "'," + "'" + textSVmus.Text + "','" + textSVmod.Text + "','" + perkod.ToString() + "'," + textSVgkm.Text + "," + textSVckm.Text + ",'" + Convert.ToDateTime(dateTimeSVgir.Text).ToShortDateString() + "',Null,'"+textSVplk.Text+"',"+Convert.ToInt32(textSVfyt.Text)+",'"+Convert.ToInt32(checkSVtm.Checked)+"')";
             sv_baglanti.Open();
             komut.Connection = sv_baglanti;
-            //komut.CommandText = "INSERT INTO Servis Values(" + "'" + textSVkod.Text + "'," + "'" + textSVmus.Text + "','" + textSVmod.Text + "','" + comboSVprc.SelectedItem + "','" + textSVgkm.Text + "','" + textSVckm.Text + "','" + Convert.ToDateTime(dateTimeSVgir.Text)+"','";
             komut.ExecuteNonQuery();
             sv_baglanti.Close();
             servis_goster();
@@ -71,25 +68,17 @@ namespace BMW
 
         private void button3_Click(object sender, EventArgs e)
         {
-           
-        }
-
-        private void comboSVprc_SelectedValueChanged(object sender, EventArgs e)
-        {
-            SqlCommand komut = new SqlCommand("Select P_kodu,P_adi From Personel", sv_baglanti);
+            SqlCommand komut = new SqlCommand();
+            komut.CommandText = "Update Servis Set S_kodu=" + "'" + textSVkod.Text + "',M_kodu=" + "'" + textSVmus.Text + "',Model_kodu='" + textSVmod.Text + "',P_kodu='" + perkod.ToString() + "',Arac_giriskm=" + textSVgkm.Text + ",Arac_cikiskm=" + textSVckm.Text + ",S_giris_tarih='" + Convert.ToDateTime(dateTimeSVgir.Text) + "',S_cikis_tarih='"+Convert.ToDateTime(dateTimeSVcik.Text)+"',Plaka='" + textSVplk.Text + "',Servis_ucret=" + Convert.ToInt32(textSVfyt.Text) + ",Durum='" + Convert.ToInt32(checkSVtm.Checked) + "' Where S_id='"+textSVid.Text+"'";
             sv_baglanti.Open();
-            SqlDataReader sv_DR;
-            sv_DR = komut.ExecuteReader();
-            sv_DR.Read();
-            perkod = (sv_DR["P_kodu"]).ToString();
-            peradi = (sv_DR["P_adi"]).ToString();
+            komut.Connection = sv_baglanti;
+            komut.ExecuteNonQuery();
             sv_baglanti.Close();
-
+            servis_goster();
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            MessageBox.Show(dataGridView1.CurrentRow.Cells[4].Value.ToString());
             SqlCommand komut = new SqlCommand("Select P_adi From Personel Where P_kodu='" + dataGridView1.CurrentRow.Cells[4].Value.ToString()+"'", sv_baglanti);
             sv_baglanti.Open();
             SqlDataReader sv_DR;
@@ -109,8 +98,47 @@ namespace BMW
             dateTimeSVcik.Text = dataGridView1.CurrentRow.Cells[8].Value.ToString();
             textSVplk.Text = dataGridView1.CurrentRow.Cells[9].Value.ToString();
             textSVfyt.Text = Convert.ToInt32(dataGridView1.CurrentRow.Cells[10].Value).ToString();
-            checkSVtm.Text = dataGridView1.CurrentRow.Cells[11].Value.ToString();
+            checkSVtm.Checked = Convert.ToBoolean(dataGridView1.CurrentRow.Cells[11].Value);
+            dateTimeSVcik.Visible = true;
+            label8.Visible = true;
+        }
 
+        private void button4_Click(object sender, EventArgs e)
+        {
+            SqlCommand komut = new SqlCommand();
+            komut.CommandText = "Delete From Servis Where S_id='"+dataGridView1.CurrentRow.Cells[0].Value.ToString()+"'";
+            sv_baglanti.Open();
+            komut.Connection = sv_baglanti;
+            komut.ExecuteNonQuery();
+            sv_baglanti.Close();
+            servis_goster();
+        }
+
+        private void comboSVprc_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            SqlCommand komut = new SqlCommand("Select P_kodu From Personel Where P_adi='"+comboSVprc.SelectedItem.ToString()+"'", sv_baglanti);
+            sv_baglanti.Open();
+            SqlDataReader sv_DR;
+            sv_DR = komut.ExecuteReader();
+            while (sv_DR.Read())
+            {
+                perkod = (sv_DR["P_kodu"]).ToString();
+            }
+            sv_baglanti.Close();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            textSVid.Clear();
+            textSVkod.Clear();
+            textSVckm.Clear();
+            textSVfyt.Clear();
+            textSVgkm.Clear();
+            textSVmod.Clear();
+            textSVmus.Clear();
+            textSVplk.Clear();
+            comboSVprc.Items.Remove(0);
+            dateTimeSVcik.Refresh();
         }
 
 

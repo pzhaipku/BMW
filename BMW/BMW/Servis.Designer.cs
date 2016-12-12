@@ -47,7 +47,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.dateTimeSVcik = new System.Windows.Forms.DateTimePicker();
-            this.checkSVctb = new System.Windows.Forms.CheckBox();
             this.textSVplk = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.textSVfyt = new System.Windows.Forms.TextBox();
@@ -56,6 +55,8 @@
             this.button3 = new System.Windows.Forms.Button();
             this.textSVid = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -77,6 +78,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(12, 12);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(720, 175);
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
@@ -87,7 +89,7 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 2;
-            this.button2.Text = "button2";
+            this.button2.Text = "Ekle";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -146,7 +148,7 @@
             this.comboSVprc.Name = "comboSVprc";
             this.comboSVprc.Size = new System.Drawing.Size(121, 21);
             this.comboSVprc.TabIndex = 7;
-            this.comboSVprc.SelectedValueChanged += new System.EventHandler(this.comboSVprc_SelectedValueChanged);
+            this.comboSVprc.SelectedIndexChanged += new System.EventHandler(this.comboSVprc_SelectedIndexChanged);
             // 
             // label4
             // 
@@ -222,18 +224,6 @@
             this.dateTimeSVcik.TabIndex = 15;
             this.dateTimeSVcik.Value = new System.DateTime(2016, 12, 12, 0, 0, 0, 0);
             // 
-            // checkSVctb
-            // 
-            this.checkSVctb.AutoSize = true;
-            this.checkSVctb.Checked = true;
-            this.checkSVctb.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkSVctb.Location = new System.Drawing.Point(560, 364);
-            this.checkSVctb.Name = "checkSVctb";
-            this.checkSVctb.Size = new System.Drawing.Size(61, 17);
-            this.checkSVctb.TabIndex = 17;
-            this.checkSVctb.Text = "ÇT Boş";
-            this.checkSVctb.UseVisualStyleBackColor = true;
-            // 
             // textSVplk
             // 
             this.textSVplk.Location = new System.Drawing.Point(101, 327);
@@ -282,7 +272,7 @@
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 23;
-            this.button3.Text = "button3";
+            this.button3.Text = "Güncelle";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
@@ -303,11 +293,33 @@
             this.label11.TabIndex = 25;
             this.label11.Text = "Servis İd";
             // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(550, 207);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.TabIndex = 26;
+            this.button4.Text = "Sil";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(451, 206);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(75, 23);
+            this.button5.TabIndex = 27;
+            this.button5.Text = "Temizle";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
             // Servis
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(744, 396);
+            this.Controls.Add(this.button5);
+            this.Controls.Add(this.button4);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.textSVid);
             this.Controls.Add(this.button3);
@@ -316,7 +328,6 @@
             this.Controls.Add(this.textSVfyt);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.textSVplk);
-            this.Controls.Add(this.checkSVctb);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.dateTimeSVcik);
             this.Controls.Add(this.label7);
@@ -366,7 +377,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DateTimePicker dateTimeSVcik;
-        private System.Windows.Forms.CheckBox checkSVctb;
         private System.Windows.Forms.TextBox textSVplk;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox textSVfyt;
@@ -375,5 +385,7 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.TextBox textSVid;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button5;
     }
 }

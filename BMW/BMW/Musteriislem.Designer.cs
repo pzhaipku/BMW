@@ -1,6 +1,6 @@
 ﻿namespace BMW
 {
-    partial class MusteriHizmetleriPanel
+    partial class Musteriislem
     {
         /// <summary>
         /// Required designer variable.
@@ -30,11 +30,6 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.Kapat = new System.Windows.Forms.Button();
-            this.Musteriara = new System.Windows.Forms.Button();
-            this.Musteriguncelle = new System.Windows.Forms.Button();
-            this.Musterisil = new System.Windows.Forms.Button();
-            this.Musteriekle = new System.Windows.Forms.Button();
             this.Musterigrid = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
@@ -43,6 +38,10 @@
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.Servisgrid = new DevExpress.XtraGrid.GridControl();
             this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.geridon = new System.Windows.Forms.Button();
+            this.kayitguncelle = new System.Windows.Forms.Button();
+            this.yenikayit = new System.Windows.Forms.Button();
+            this.kayitekle = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Musterigrid)).BeginInit();
@@ -60,79 +59,31 @@
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Location = new System.Drawing.Point(12, 12);
+            this.tabControl1.Location = new System.Drawing.Point(13, 35);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1266, 553);
+            this.tabControl1.Size = new System.Drawing.Size(1266, 699);
             this.tabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
-            this.tabControl1.TabIndex = 0;
+            this.tabControl1.TabIndex = 1;
             // 
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.SystemColors.Control;
-            this.tabPage1.Controls.Add(this.Kapat);
-            this.tabPage1.Controls.Add(this.Musteriara);
-            this.tabPage1.Controls.Add(this.Musteriguncelle);
-            this.tabPage1.Controls.Add(this.Musterisil);
-            this.tabPage1.Controls.Add(this.Musteriekle);
+            this.tabPage1.Controls.Add(this.geridon);
+            this.tabPage1.Controls.Add(this.kayitguncelle);
+            this.tabPage1.Controls.Add(this.yenikayit);
+            this.tabPage1.Controls.Add(this.kayitekle);
             this.tabPage1.Controls.Add(this.Musterigrid);
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1258, 524);
+            this.tabPage1.Size = new System.Drawing.Size(1258, 670);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Müşteriler";
             // 
-            // Kapat
-            // 
-            this.Kapat.Location = new System.Drawing.Point(1159, 6);
-            this.Kapat.Name = "Kapat";
-            this.Kapat.Size = new System.Drawing.Size(93, 78);
-            this.Kapat.TabIndex = 5;
-            this.Kapat.Text = "Programı Kapat";
-            this.Kapat.UseVisualStyleBackColor = true;
-            this.Kapat.Click += new System.EventHandler(this.Kapat_Click);
-            // 
-            // Musteriara
-            // 
-            this.Musteriara.Location = new System.Drawing.Point(303, 6);
-            this.Musteriara.Name = "Musteriara";
-            this.Musteriara.Size = new System.Drawing.Size(93, 78);
-            this.Musteriara.TabIndex = 4;
-            this.Musteriara.Text = "Müşteri Ara";
-            this.Musteriara.UseVisualStyleBackColor = true;
-            // 
-            // Musteriguncelle
-            // 
-            this.Musteriguncelle.Location = new System.Drawing.Point(204, 6);
-            this.Musteriguncelle.Name = "Musteriguncelle";
-            this.Musteriguncelle.Size = new System.Drawing.Size(93, 78);
-            this.Musteriguncelle.TabIndex = 3;
-            this.Musteriguncelle.Text = "Müşteri Güncelle";
-            this.Musteriguncelle.UseVisualStyleBackColor = true;
-            // 
-            // Musterisil
-            // 
-            this.Musterisil.Location = new System.Drawing.Point(105, 6);
-            this.Musterisil.Name = "Musterisil";
-            this.Musterisil.Size = new System.Drawing.Size(93, 78);
-            this.Musterisil.TabIndex = 2;
-            this.Musterisil.Text = "Müşteri Sil";
-            this.Musterisil.UseVisualStyleBackColor = true;
-            // 
-            // Musteriekle
-            // 
-            this.Musteriekle.Location = new System.Drawing.Point(6, 6);
-            this.Musteriekle.Name = "Musteriekle";
-            this.Musteriekle.Size = new System.Drawing.Size(93, 78);
-            this.Musteriekle.TabIndex = 1;
-            this.Musteriekle.Text = "Müşteri Ekle";
-            this.Musteriekle.UseVisualStyleBackColor = true;
-            this.Musteriekle.Click += new System.EventHandler(this.Musteriekle_Click);
-            // 
             // Musterigrid
             // 
-            this.Musterigrid.Location = new System.Drawing.Point(6, 90);
+            this.Musterigrid.Location = new System.Drawing.Point(3, 6);
             this.Musterigrid.MainView = this.gridView1;
             this.Musterigrid.Name = "Musterigrid";
             this.Musterigrid.Size = new System.Drawing.Size(1246, 400);
@@ -197,16 +148,52 @@
             this.gridView3.GridControl = this.Servisgrid;
             this.gridView3.Name = "gridView3";
             // 
-            // MusteriHizmetleriPanel
+            // geridon
+            // 
+            this.geridon.Location = new System.Drawing.Point(1154, 586);
+            this.geridon.Name = "geridon";
+            this.geridon.Size = new System.Drawing.Size(93, 78);
+            this.geridon.TabIndex = 10;
+            this.geridon.Text = "Geri Dön";
+            this.geridon.UseVisualStyleBackColor = true;
+            this.geridon.Click += new System.EventHandler(this.geridon_Click_1);
+            // 
+            // kayitguncelle
+            // 
+            this.kayitguncelle.Location = new System.Drawing.Point(1154, 412);
+            this.kayitguncelle.Name = "kayitguncelle";
+            this.kayitguncelle.Size = new System.Drawing.Size(93, 78);
+            this.kayitguncelle.TabIndex = 8;
+            this.kayitguncelle.Text = "Kayit Güncelle";
+            this.kayitguncelle.UseVisualStyleBackColor = true;
+            // 
+            // yenikayit
+            // 
+            this.yenikayit.Location = new System.Drawing.Point(956, 412);
+            this.yenikayit.Name = "yenikayit";
+            this.yenikayit.Size = new System.Drawing.Size(93, 78);
+            this.yenikayit.TabIndex = 7;
+            this.yenikayit.Text = "Yeni Kayıt";
+            this.yenikayit.UseVisualStyleBackColor = true;
+            // 
+            // kayitekle
+            // 
+            this.kayitekle.Location = new System.Drawing.Point(1055, 412);
+            this.kayitekle.Name = "kayitekle";
+            this.kayitekle.Size = new System.Drawing.Size(93, 78);
+            this.kayitekle.TabIndex = 6;
+            this.kayitekle.Text = "Kayıt Ekle";
+            this.kayitekle.UseVisualStyleBackColor = true;
+            // 
+            // Musteriislem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1292, 623);
+            this.ClientSize = new System.Drawing.Size(1292, 746);
             this.Controls.Add(this.tabControl1);
-            this.Name = "MusteriHizmetleriPanel";
+            this.Name = "Musteriislem";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "MusteriHizmetleriPanel";
-            this.Load += new System.EventHandler(this.MusteriHizmetleriPanel_Load);
+            this.Text = "Musteriislem";
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Musterigrid)).EndInit();
@@ -225,18 +212,17 @@
 
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
         private DevExpress.XtraGrid.GridControl Musterigrid;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.TabPage tabPage2;
         private DevExpress.XtraGrid.GridControl Firmagrid;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
+        private System.Windows.Forms.TabPage tabPage3;
         private DevExpress.XtraGrid.GridControl Servisgrid;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView3;
-        private System.Windows.Forms.Button Kapat;
-        private System.Windows.Forms.Button Musteriara;
-        private System.Windows.Forms.Button Musteriguncelle;
-        private System.Windows.Forms.Button Musterisil;
-        private System.Windows.Forms.Button Musteriekle;
+        private System.Windows.Forms.Button geridon;
+        private System.Windows.Forms.Button kayitguncelle;
+        private System.Windows.Forms.Button yenikayit;
+        private System.Windows.Forms.Button kayitekle;
     }
 }

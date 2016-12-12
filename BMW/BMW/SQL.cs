@@ -26,7 +26,7 @@ namespace BMW
                 if (bag_cumle.State == ConnectionState.Closed)
                 {
                     bag_cumle.Open();
-                    MessageBox.Show("baglandi");
+                    
                 }
             }
             else if (secim == 0)

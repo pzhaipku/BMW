@@ -29,5 +29,19 @@ namespace BMW
             Servisgrid.DataSource = cumle.ds.Tables["Servis"];
 
         }
+
+        private void Kapat_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+
+        }
+
+        private void Musteriekle_Click(object sender, EventArgs e)
+        {
+            Musteriislem m = new Musteriislem();
+            this.Hide();
+            m.Show();
+
+        }
     }
 }

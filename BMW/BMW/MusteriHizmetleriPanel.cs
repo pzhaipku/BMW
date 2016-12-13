@@ -53,5 +53,12 @@ namespace BMW
             this.Hide();
             m.Show();
         }
+
+        private void Musterisil_Click(object sender, EventArgs e)
+        {
+            Musteriislem_kayitsilara m = new Musteriislem_kayitsilara();
+            this.Hide();
+            m.Show();
+        }
     }
 }

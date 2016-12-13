@@ -121,6 +121,7 @@
             this.Musterisil.TabIndex = 2;
             this.Musterisil.Text = "Müşteri Sil";
             this.Musterisil.UseVisualStyleBackColor = true;
+            this.Musterisil.Click += new System.EventHandler(this.Musterisil_Click);
             // 
             // Musteriekle
             // 
@@ -205,7 +206,7 @@
             this.aktifkisi.Font = new System.Drawing.Font("Monotype Corsiva", 19.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.aktifkisi.Location = new System.Drawing.Point(20, 573);
             this.aktifkisi.Name = "aktifkisi";
-            this.aktifkisi.Size = new System.Drawing.Size(95, 41);
+            this.aktifkisi.Size = new System.Drawing.Size(93, 40);
             this.aktifkisi.TabIndex = 1;
             this.aktifkisi.Text = "label1";
             // 

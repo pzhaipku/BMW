@@ -96,6 +96,9 @@
     <EmbeddedResource Include="Musteriislem.resx">
       <DependentUpon>Musteriislem.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Musteriislem_kayitsilara.resx">
+      <DependentUpon>Musteriislem_kayitsilara.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

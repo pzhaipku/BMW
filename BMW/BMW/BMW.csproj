@@ -71,6 +71,12 @@
       <DependentUpon>Servis.cs</DependentUpon>
     </Compile>
     <Compile Include="SQL.cs" />
+    <Compile Include="SV_musform.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SV_musform.Designer.cs">
+      <DependentUpon>SV_musform.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AdminPanel.resx">
       <DependentUpon>AdminPanel.cs</DependentUpon>
     </EmbeddedResource>
@@ -91,6 +97,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Servis.resx">
       <DependentUpon>Servis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SV_musform.resx">
+      <DependentUpon>SV_musform.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

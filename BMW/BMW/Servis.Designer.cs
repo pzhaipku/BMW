@@ -26,6 +26,11 @@
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
+        /// 
+        public void InitializeComponent2() 
+        {
+            
+           }
         private void InitializeComponent()
         {
             this.button1 = new System.Windows.Forms.Button();
@@ -56,6 +61,7 @@
             this.label11 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -287,7 +293,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(550, 207);
+            this.button4.Location = new System.Drawing.Point(548, 211);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 23);
             this.button4.TabIndex = 26;
@@ -297,7 +303,7 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(451, 206);
+            this.button5.Location = new System.Drawing.Point(451, 210);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(75, 23);
             this.button5.TabIndex = 27;
@@ -305,15 +311,25 @@
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(115, 210);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(75, 23);
+            this.button6.TabIndex = 30;
+            this.button6.Text = "Güncelle";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(126, 211);
+            this.button3.Location = new System.Drawing.Point(657, 226);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 28;
-            this.button3.Text = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 60);
+            this.button3.TabIndex = 31;
+            this.button3.Text = "Müşteri Bilgilerini Göster";
             this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click_1);
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // Servis
             // 
@@ -321,6 +337,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(744, 396);
             this.Controls.Add(this.button3);
+            this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.label11);
@@ -388,6 +405,7 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button3;
     }
 }

@@ -14,12 +14,35 @@ namespace BMW
     public partial class Servis : Form
     {
         SqlConnection sv_baglanti = new SqlConnection("Data Source=PC-BILGISAYAR; Initial Catalog=BMW;Integrated Security=true;");
-        public string perkod,peradi;
+        public string perkod,peradi,muskod,mustc;
+
         public Servis()
         {
             InitializeComponent();
+            InitializeComponent2();
+
         }
-        
+        private void musteri_tckontrol()
+        {
+            SqlCommand komut = new SqlCommand("Execute Musteri_sorgu_mtcno "+textSVmus.Text, sv_baglanti);
+            sv_baglanti.Open();
+            SqlDataReader sv_DR;
+            sv_DR = komut.ExecuteReader();
+            sv_DR.Read();
+            muskod=(sv_DR["Müşteri Kodu"]).ToString();
+            sv_baglanti.Close();
+        }
+        private void musteri_kodkontrol()
+        {
+            SqlCommand komut = new SqlCommand("Execute Musteri_sorgu_mkodu " + muskod, sv_baglanti);
+            sv_baglanti.Open();
+            SqlDataReader sv_DR;
+            sv_DR = komut.ExecuteReader();
+            sv_DR.Read();
+            mustc = (sv_DR["TC Numarası"]).ToString();
+            sv_baglanti.Close();
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             Parca prc_form = new Parca();
@@ -34,7 +57,7 @@ namespace BMW
             dataGridView1.DataSource = sv_DS.Tables["Servis"];
             sv_baglanti.Close();
         }
-        public void personel_goster()
+        private void personel_goster()
         {
             
             SqlCommand komut = new SqlCommand("Select P_adi From Personel",sv_baglanti);
@@ -56,18 +79,25 @@ namespace BMW
         }
         private void button2_Click(object sender, EventArgs e)
         {
-            SqlCommand komut = new SqlCommand();
-            komut.CommandText = "INSERT INTO Servis Values(" + "'" + textSVkod.Text + "'," + "'" + textSVmus.Text + "','" + textSVmod.Text + "','" + perkod.ToString() + "'," + textSVgkm.Text + "," + textSVckm.Text + ",'" + Convert.ToDateTime(dateTimeSVgir.Text).ToShortDateString() + "',Null,'"+textSVplk.Text+"',"+Convert.ToInt32(textSVfyt.Text)+",'"+Convert.ToInt32(checkSVtm.Checked)+"')";
-            sv_baglanti.Open();
-            komut.Connection = sv_baglanti;
-            komut.ExecuteNonQuery();
-            sv_baglanti.Close();
-            servis_goster();
-           
+            try
+            {
+                musteri_tckontrol();
+                SqlCommand komut = new SqlCommand();
+                komut.CommandText = "INSERT INTO Servis Values(" + "'" + textSVkod.Text + "'," + "'" + muskod + "','" + textSVmod.Text + "','" + perkod.ToString() + "'," + textSVgkm.Text + "," + textSVckm.Text + ",'" + Convert.ToDateTime(dateTimeSVgir.Text).ToShortDateString() + "',Null,'" + textSVplk.Text + "'," + Convert.ToInt32(textSVfyt.Text) + ",'" + Convert.ToInt32(checkSVtm.Checked) + "')";
+                sv_baglanti.Open();
+                komut.Connection = sv_baglanti;
+                komut.ExecuteNonQuery();
+                sv_baglanti.Close();
+                servis_goster();
+            }
+            catch (Exception ) { 
+            }
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
+            SV_musform sermus = new SV_musform();
+            sermus.Show();
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -82,7 +112,9 @@ namespace BMW
 
             textSVid.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
             textSVkod.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
-            textSVmus.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+            muskod = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+            musteri_kodkontrol();
+            textSVmus.Text =  mustc;
             textSVmod.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
             comboSVprc.Text = peradi;
             textSVgkm.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
@@ -140,10 +172,11 @@ namespace BMW
             label8.Visible = false;
         }
 
-        private void button3_Click_1(object sender, EventArgs e)
+        private void button6_Click(object sender, EventArgs e)
         {
+            musteri_tckontrol();
             SqlCommand komut = new SqlCommand();
-            komut.CommandText = "Update Servis Set S_kodu=" + "'" + textSVkod.Text + "',M_kodu=" + "'" + textSVmus.Text + "',Model_kodu='" + textSVmod.Text + "',P_kodu='" + perkod.ToString() + "',Arac_giriskm=" + textSVgkm.Text + ",Arac_cikiskm=" + textSVckm.Text + ",S_giris_tarih='" + dateTimeSVgir.Value.ToString("yyyy-MM-dd") + "',S_cikis_tarih='" + dateTimeSVcik.Value.ToString("yyyy-MM-dd") + "',Plaka='" + textSVplk.Text + "',Servis_ucret=" + Convert.ToInt32(textSVfyt.Text) + ",Durum='" + Convert.ToInt32(checkSVtm.Checked) + "' Where S_id='" + textSVid.Text + "'";
+            komut.CommandText = "Update Servis Set S_kodu=" + "'" + textSVkod.Text + "',M_kodu=" + "'" + muskod + "',Model_kodu='" + textSVmod.Text + "',P_kodu='" + perkod.ToString() + "',Arac_giriskm=" + textSVgkm.Text + ",Arac_cikiskm=" + textSVckm.Text + ",S_giris_tarih='" + dateTimeSVgir.Value.ToString("yyyy-MM-dd") + "',S_cikis_tarih='" + dateTimeSVcik.Value.ToString("yyyy-MM-dd") + "',Plaka='" + textSVplk.Text + "',Servis_ucret=" + Convert.ToInt32(textSVfyt.Text) + ",Durum='" + Convert.ToInt32(checkSVtm.Checked) + "' Where S_id='" + textSVid.Text + "'";
             MessageBox.Show(komut.CommandText);
             sv_baglanti.Open();
             komut.Connection = sv_baglanti;

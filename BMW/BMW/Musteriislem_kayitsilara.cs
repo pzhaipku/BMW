@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace BMW
 {
@@ -35,6 +36,26 @@ namespace BMW
             MusteriHizmetleriPanel m = new MusteriHizmetleriPanel();
             this.Close();
             m.Show();
+
+        }
+
+        private void kayitsil_Click(object sender, EventArgs e)
+        {
+         
+            if (sutunsec.SelectedItem.ToString()=="M_kodu")
+            {
+                cumle.IDU("DELETE FROM Musteri WHERE M_kodu='" + Silinecekdeger.Text.ToString() + "'");
+            
+            }
+            else if (sutunsec.SelectedItem.ToString() == "M_TCno")
+            {
+                cumle.IDU("DELETE FROM Musteri WHERE M_TCno='" + Silinecekdeger.Text.ToString() + "'");
+            
+            }
+         //   cumle.IDU("DELETE FROM Musteri WHERE M_kodu='" + Silinecekdeger.Text.ToString() + "'");
+            cumle.ds.Tables["Musterikayitsil"].Clear();
+            cumle.Select("SELECT * FROM Musteri", "Musterikayitsil");
+            Musterigrid.DataSource = cumle.ds.Tables["Musterikayitsil"];
 
         }
     }

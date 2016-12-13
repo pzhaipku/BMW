@@ -68,5 +68,32 @@ namespace BMW
             }
 
         }
+        public string Giris_Bilgisi(string TC_no)
+        {
+            string ad_soyad, yetki, yetki_kod;
+
+            try
+            {
+                //Giriş sırasında Tc_no alınıp bu fonksiyonda ad ve soyad bilgisi çekiliyor.
+                Select("Select P_TCno,P_adi,P_soyadi from Personel where P_TCno='" + TC_no + "'", "Personel");
+                ad_soyad = "Hoşgeldiniz" + " " + ds.Tables["Personel"].Rows[0][1].ToString() + " " + ds.Tables["Personel"].Rows[0][2];
+                //Tc np ile yetki kodu elde ediliyor
+                Select("Select Yetki_kodu,Kullanici_adi from Kullanici where Kullanici_adi='" + TC_no + "'", "Kullanici");
+                yetki_kod = ds.Tables["Kullanici"].Rows[0][0].ToString();
+                //yetki kodu ile yetki adı elde ediliyor
+                Select("Select Yetki_kodu,Yetki_adi from Kullanici_Yetki where Yetki_kodu='" + yetki_kod + "'", "Kullanici_Yetki");
+                yetki = ds.Tables["Kullanici_Yetki"].Rows[0][1].ToString();
+                //hepsi birleştirilip çağrıldığı yere gönderiliyor
+                ds.Clear();
+                return ad_soyad + "(" + yetki + ")";
+
+            }
+            catch (Exception hata)
+            {
+                MessageBox.Show("İşlem sırasında bir hata oluştu." + hata.Message);
+                return "";
+            }
+        }
+
     }
 }

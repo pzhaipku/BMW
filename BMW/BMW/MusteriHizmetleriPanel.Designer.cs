@@ -43,6 +43,7 @@
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.Servisgrid = new DevExpress.XtraGrid.GridControl();
             this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.aktifkisi = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Musterigrid)).BeginInit();
@@ -110,6 +111,7 @@
             this.Musteriguncelle.TabIndex = 3;
             this.Musteriguncelle.Text = "Müşteri Güncelle";
             this.Musteriguncelle.UseVisualStyleBackColor = true;
+            this.Musteriguncelle.Click += new System.EventHandler(this.Musteriguncelle_Click);
             // 
             // Musterisil
             // 
@@ -197,11 +199,22 @@
             this.gridView3.GridControl = this.Servisgrid;
             this.gridView3.Name = "gridView3";
             // 
+            // aktifkisi
+            // 
+            this.aktifkisi.AutoSize = true;
+            this.aktifkisi.Font = new System.Drawing.Font("Monotype Corsiva", 19.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.aktifkisi.Location = new System.Drawing.Point(20, 573);
+            this.aktifkisi.Name = "aktifkisi";
+            this.aktifkisi.Size = new System.Drawing.Size(95, 41);
+            this.aktifkisi.TabIndex = 1;
+            this.aktifkisi.Text = "label1";
+            // 
             // MusteriHizmetleriPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1292, 623);
+            this.Controls.Add(this.aktifkisi);
             this.Controls.Add(this.tabControl1);
             this.Name = "MusteriHizmetleriPanel";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -218,6 +231,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.Servisgrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -238,5 +252,6 @@
         private System.Windows.Forms.Button Musteriguncelle;
         private System.Windows.Forms.Button Musterisil;
         private System.Windows.Forms.Button Musteriekle;
+        private System.Windows.Forms.Label aktifkisi;
     }
 }

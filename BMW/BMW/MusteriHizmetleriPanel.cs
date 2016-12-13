@@ -21,6 +21,9 @@ namespace BMW
 
         private void MusteriHizmetleriPanel_Load(object sender, EventArgs e)
         {
+            string tcno = "12345678901";
+
+            aktifkisi.Text = cumle.Giris_Bilgisi(tcno);
             cumle.Select("SELECT * FROM Musteri", "Musteri");
             Musterigrid.DataSource = cumle.ds.Tables["Musteri"];
             cumle.Select("SELECT * FROM Firma_Musteri", "Firma");
@@ -42,6 +45,13 @@ namespace BMW
             this.Hide();
             m.Show();
 
+        }
+
+        private void Musteriguncelle_Click(object sender, EventArgs e)
+        {
+            Musteriislem m = new Musteriislem();
+            this.Hide();
+            m.Show();
         }
     }
 }

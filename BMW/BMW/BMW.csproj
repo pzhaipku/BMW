@@ -128,12 +128,6 @@
     <Compile Include="Servis_kayitbul.Designer.cs">
       <DependentUpon>Servis_kayitbul.cs</DependentUpon>
     </Compile>
-    <Compile Include="Servis_Musterileri.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Servis_Musterileri.Designer.cs">
-      <DependentUpon>Servis_Musterileri.cs</DependentUpon>
-    </Compile>
     <Compile Include="SQL.cs" />
     <EmbeddedResource Include="AdminPanel.resx">
       <DependentUpon>AdminPanel.cs</DependentUpon>
@@ -173,6 +167,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Servis_detayli_arama.resx">
+      <DependentUpon>Servis_detayli_arama.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Servis_durum_kontrol.resx">
       <DependentUpon>Servis_durum_kontrol.cs</DependentUpon>
     </EmbeddedResource>

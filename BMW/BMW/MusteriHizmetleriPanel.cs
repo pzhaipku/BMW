@@ -144,13 +144,7 @@ namespace BMW
 
         }
 
-        private void servismusterileri_Click(object sender, EventArgs e)
-        {
-            Servis_Musterileri m = new Servis_Musterileri();
-            this.Hide();
-            m.Show();
-
-        }
+      
 
  
 

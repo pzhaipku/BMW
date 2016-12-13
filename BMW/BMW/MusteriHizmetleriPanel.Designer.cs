@@ -46,15 +46,14 @@
             this.Firmagrid = new DevExpress.XtraGrid.GridControl();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.Servisgrid = new DevExpress.XtraGrid.GridControl();
-            this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.aktifkisi = new System.Windows.Forms.Label();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.servisdurumkontrol = new System.Windows.Forms.Button();
             this.serviskayitara = new System.Windows.Forms.Button();
             this.progkapat = new System.Windows.Forms.Button();
-            this.servismusterileri = new System.Windows.Forms.Button();
             this.servisdetaylikayitara = new System.Windows.Forms.Button();
-            this.servisdurumkontrol = new System.Windows.Forms.Button();
+            this.Servisgrid = new DevExpress.XtraGrid.GridControl();
+            this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.aktifkisi = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Musterigrid)).BeginInit();
@@ -248,7 +247,6 @@
             this.tabPage3.Controls.Add(this.servisdurumkontrol);
             this.tabPage3.Controls.Add(this.serviskayitara);
             this.tabPage3.Controls.Add(this.progkapat);
-            this.tabPage3.Controls.Add(this.servismusterileri);
             this.tabPage3.Controls.Add(this.servisdetaylikayitara);
             this.tabPage3.Controls.Add(this.Servisgrid);
             this.tabPage3.Location = new System.Drawing.Point(4, 25);
@@ -258,39 +256,15 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Servis";
             // 
-            // Servisgrid
+            // servisdurumkontrol
             // 
-            this.Servisgrid.Location = new System.Drawing.Point(6, 90);
-            this.Servisgrid.MainView = this.gridView3;
-            this.Servisgrid.Name = "Servisgrid";
-            this.Servisgrid.Size = new System.Drawing.Size(1246, 400);
-            this.Servisgrid.TabIndex = 1;
-            this.Servisgrid.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView3});
-            // 
-            // gridView3
-            // 
-            this.gridView3.GridControl = this.Servisgrid;
-            this.gridView3.Name = "gridView3";
-            // 
-            // aktifkisi
-            // 
-            this.aktifkisi.AutoSize = true;
-            this.aktifkisi.Font = new System.Drawing.Font("Monotype Corsiva", 19.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.aktifkisi.Location = new System.Drawing.Point(20, 573);
-            this.aktifkisi.Name = "aktifkisi";
-            this.aktifkisi.Size = new System.Drawing.Size(93, 40);
-            this.aktifkisi.TabIndex = 1;
-            this.aktifkisi.Text = "label1";
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 25);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Size = new System.Drawing.Size(1258, 524);
-            this.tabPage2.TabIndex = 3;
-            this.tabPage2.Text = "Araç Satış";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.servisdurumkontrol.Location = new System.Drawing.Point(6, 6);
+            this.servisdurumkontrol.Name = "servisdurumkontrol";
+            this.servisdurumkontrol.Size = new System.Drawing.Size(93, 78);
+            this.servisdurumkontrol.TabIndex = 17;
+            this.servisdurumkontrol.Text = "Servis Durum Kontrol";
+            this.servisdurumkontrol.UseVisualStyleBackColor = true;
+            this.servisdurumkontrol.Click += new System.EventHandler(this.servisdurumkontrol_Click);
             // 
             // serviskayitara
             // 
@@ -312,16 +286,6 @@
             this.progkapat.UseVisualStyleBackColor = true;
             this.progkapat.Click += new System.EventHandler(this.progkapat_Click);
             // 
-            // servismusterileri
-            // 
-            this.servismusterileri.Location = new System.Drawing.Point(303, 6);
-            this.servismusterileri.Name = "servismusterileri";
-            this.servismusterileri.Size = new System.Drawing.Size(93, 78);
-            this.servismusterileri.TabIndex = 14;
-            this.servismusterileri.Text = "Servis Müşterileri";
-            this.servismusterileri.UseVisualStyleBackColor = true;
-            this.servismusterileri.Click += new System.EventHandler(this.servismusterileri_Click);
-            // 
             // servisdetaylikayitara
             // 
             this.servisdetaylikayitara.Location = new System.Drawing.Point(204, 6);
@@ -332,15 +296,39 @@
             this.servisdetaylikayitara.UseVisualStyleBackColor = true;
             this.servisdetaylikayitara.Click += new System.EventHandler(this.servisdetaylikayitara_Click);
             // 
-            // servisdurumkontrol
+            // Servisgrid
             // 
-            this.servisdurumkontrol.Location = new System.Drawing.Point(6, 6);
-            this.servisdurumkontrol.Name = "servisdurumkontrol";
-            this.servisdurumkontrol.Size = new System.Drawing.Size(93, 78);
-            this.servisdurumkontrol.TabIndex = 17;
-            this.servisdurumkontrol.Text = "Servis Durum Kontrol";
-            this.servisdurumkontrol.UseVisualStyleBackColor = true;
-            this.servisdurumkontrol.Click += new System.EventHandler(this.servisdurumkontrol_Click);
+            this.Servisgrid.Location = new System.Drawing.Point(6, 90);
+            this.Servisgrid.MainView = this.gridView3;
+            this.Servisgrid.Name = "Servisgrid";
+            this.Servisgrid.Size = new System.Drawing.Size(1246, 400);
+            this.Servisgrid.TabIndex = 1;
+            this.Servisgrid.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView3});
+            // 
+            // gridView3
+            // 
+            this.gridView3.GridControl = this.Servisgrid;
+            this.gridView3.Name = "gridView3";
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Location = new System.Drawing.Point(4, 25);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Size = new System.Drawing.Size(1258, 524);
+            this.tabPage2.TabIndex = 3;
+            this.tabPage2.Text = "Araç Satış";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // aktifkisi
+            // 
+            this.aktifkisi.AutoSize = true;
+            this.aktifkisi.Font = new System.Drawing.Font("Monotype Corsiva", 19.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.aktifkisi.Location = new System.Drawing.Point(20, 573);
+            this.aktifkisi.Name = "aktifkisi";
+            this.aktifkisi.Size = new System.Drawing.Size(93, 40);
+            this.aktifkisi.TabIndex = 1;
+            this.aktifkisi.Text = "label1";
             // 
             // MusteriHizmetleriPanel
             // 
@@ -393,7 +381,6 @@
         private System.Windows.Forms.Button firmasil;
         private System.Windows.Forms.Button serviskayitara;
         private System.Windows.Forms.Button progkapat;
-        private System.Windows.Forms.Button servismusterileri;
         private System.Windows.Forms.Button servisdetaylikayitara;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Button servisdurumkontrol;

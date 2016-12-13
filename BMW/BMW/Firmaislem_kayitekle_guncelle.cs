@@ -131,5 +131,13 @@ namespace BMW
             Firma_adres.Clear();
             M_kodu.Clear();
         }
+
+        private void kayitguncelle_Click(object sender, EventArgs e)
+        {
+            cumle.IDU("UPDATE Firma_Musteri SET Firma_kodu='" + Firma_kodu.Text.ToString() + "', Firma_adi='" + Convert.ToString(Firma_adi.Text) + "', Il_kodu='" + Il_koduu.Text.ToString() + "', Ilce_kodu='" + Ilce_koduu.Text.ToString() + "', Firma_adres='" + Firma_adres.Text.ToString() + "', M_kodu='" + M_kodu.Text.ToString() + "' WHERE Firma_id='"+fid.Text.ToString()+"'");
+            cumle.ds.Tables["firma"].Clear();
+            cumle.Select("Select * From Firma_Musteri", "firma");
+            Firmagrid.DataSource = cumle.ds.Tables["firma"];
+        }
     }
 }

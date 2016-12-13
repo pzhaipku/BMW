@@ -11,10 +11,12 @@ using System.Data.SqlClient;
 
 namespace BMW
 {
-    public partial class Musteriislem_kayitsilara : Form
+    public partial class Musteriislem_kayitsil : Form
     {
         SQL cumle = new SQL();
-        public Musteriislem_kayitsilara()
+        
+
+        public Musteriislem_kayitsil()
         {
             InitializeComponent();
         }
@@ -58,5 +60,10 @@ namespace BMW
             Musterigrid.DataSource = cumle.ds.Tables["Musterikayitsil"];
 
         }
+
+
+
+      
+       
     }
 }

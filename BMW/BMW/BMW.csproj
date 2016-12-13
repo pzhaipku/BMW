@@ -57,6 +57,24 @@
     <Compile Include="AdminPanel.Designer.cs">
       <DependentUpon>AdminPanel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Firmaislem_kayitbul.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Firmaislem_kayitbul.Designer.cs">
+      <DependentUpon>Firmaislem_kayitbul.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Firmaislem_kayitekle_guncelle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Firmaislem_kayitekle_guncelle.Designer.cs">
+      <DependentUpon>Firmaislem_kayitekle_guncelle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Firmaislem_kayitsil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Firmaislem_kayitsil.Designer.cs">
+      <DependentUpon>Firmaislem_kayitsil.cs</DependentUpon>
+    </Compile>
     <Compile Include="Giris.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -69,17 +87,23 @@
     <Compile Include="MusteriHizmetleriPanel.Designer.cs">
       <DependentUpon>MusteriHizmetleriPanel.cs</DependentUpon>
     </Compile>
-    <Compile Include="Musteriislem.cs">
+    <Compile Include="Musteriislem_kayitekle_guncelle.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Musteriislem.Designer.cs">
-      <DependentUpon>Musteriislem.cs</DependentUpon>
+    <Compile Include="Musteriislem_kayitekle_guncelle.Designer.cs">
+      <DependentUpon>Musteriislem_kayitekle_guncelle.cs</DependentUpon>
     </Compile>
-    <Compile Include="Musteriislem_kayitsilara.cs">
+    <Compile Include="Musteriislem_kayitbul.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Musteriislem_kayitsilara.Designer.cs">
-      <DependentUpon>Musteriislem_kayitsilara.cs</DependentUpon>
+    <Compile Include="Musteriislem_kayitbul.Designer.cs">
+      <DependentUpon>Musteriislem_kayitbul.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Musteriislem_kayitsil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Musteriislem_kayitsil.Designer.cs">
+      <DependentUpon>Musteriislem_kayitsil.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -93,11 +117,14 @@
     <EmbeddedResource Include="MusteriHizmetleriPanel.resx">
       <DependentUpon>MusteriHizmetleriPanel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Musteriislem.resx">
-      <DependentUpon>Musteriislem.cs</DependentUpon>
+    <EmbeddedResource Include="Musteriislem_kayitekle_guncelle.resx">
+      <DependentUpon>Musteriislem_kayitekle_guncelle.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Musteriislem_kayitsilara.resx">
-      <DependentUpon>Musteriislem_kayitsilara.cs</DependentUpon>
+    <EmbeddedResource Include="Musteriislem_kayitbul.resx">
+      <DependentUpon>Musteriislem_kayitbul.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Musteriislem_kayitsil.resx">
+      <DependentUpon>Musteriislem_kayitsil.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">

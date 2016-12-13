@@ -10,12 +10,12 @@ using System.Windows.Forms;
 
 namespace BMW
 {
-    public partial class Musteriislem : Form
+    public partial class Musteriislem_kayitekle_guncelle : Form
     {
         SQL cumle = new SQL();
         private int i = 0;
 
-        public Musteriislem()
+        public Musteriislem_kayitekle_guncelle()
         {
             InitializeComponent();
         }

@@ -37,18 +37,23 @@
             this.Musteriekle = new System.Windows.Forms.Button();
             this.Musterigrid = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.firmaguncelle = new System.Windows.Forms.TabPage();
             this.Firmagrid = new DevExpress.XtraGrid.GridControl();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.Servisgrid = new DevExpress.XtraGrid.GridControl();
             this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.aktifkisi = new System.Windows.Forms.Label();
+            this.programkapat = new System.Windows.Forms.Button();
+            this.firmaara = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.firmasil = new System.Windows.Forms.Button();
+            this.firmaekle = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Musterigrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            this.tabPage2.SuspendLayout();
+            this.firmaguncelle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Firmagrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             this.tabPage3.SuspendLayout();
@@ -59,7 +64,7 @@
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.firmaguncelle);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Name = "tabControl1";
@@ -102,6 +107,7 @@
             this.Musteriara.TabIndex = 4;
             this.Musteriara.Text = "Müşteri Ara";
             this.Musteriara.UseVisualStyleBackColor = true;
+            this.Musteriara.Click += new System.EventHandler(this.Musteriara_Click);
             // 
             // Musteriguncelle
             // 
@@ -148,20 +154,25 @@
             this.gridView1.GridControl = this.Musterigrid;
             this.gridView1.Name = "gridView1";
             // 
-            // tabPage2
+            // firmaguncelle
             // 
-            this.tabPage2.BackColor = System.Drawing.SystemColors.Control;
-            this.tabPage2.Controls.Add(this.Firmagrid);
-            this.tabPage2.Location = new System.Drawing.Point(4, 25);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1258, 524);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Firmalar";
+            this.firmaguncelle.BackColor = System.Drawing.SystemColors.Control;
+            this.firmaguncelle.Controls.Add(this.firmaekle);
+            this.firmaguncelle.Controls.Add(this.firmasil);
+            this.firmaguncelle.Controls.Add(this.programkapat);
+            this.firmaguncelle.Controls.Add(this.firmaara);
+            this.firmaguncelle.Controls.Add(this.button3);
+            this.firmaguncelle.Controls.Add(this.Firmagrid);
+            this.firmaguncelle.Location = new System.Drawing.Point(4, 25);
+            this.firmaguncelle.Name = "firmaguncelle";
+            this.firmaguncelle.Padding = new System.Windows.Forms.Padding(3);
+            this.firmaguncelle.Size = new System.Drawing.Size(1258, 524);
+            this.firmaguncelle.TabIndex = 1;
+            this.firmaguncelle.Text = "Firmalar";
             // 
             // Firmagrid
             // 
-            this.Firmagrid.Location = new System.Drawing.Point(6, 110);
+            this.Firmagrid.Location = new System.Drawing.Point(6, 90);
             this.Firmagrid.MainView = this.gridView2;
             this.Firmagrid.Name = "Firmagrid";
             this.Firmagrid.Size = new System.Drawing.Size(1246, 400);
@@ -210,6 +221,56 @@
             this.aktifkisi.TabIndex = 1;
             this.aktifkisi.Text = "label1";
             // 
+            // programkapat
+            // 
+            this.programkapat.Location = new System.Drawing.Point(1159, 6);
+            this.programkapat.Name = "programkapat";
+            this.programkapat.Size = new System.Drawing.Size(93, 78);
+            this.programkapat.TabIndex = 10;
+            this.programkapat.Text = "Programı Kapat";
+            this.programkapat.UseVisualStyleBackColor = true;
+            this.programkapat.Click += new System.EventHandler(this.programkapat_Click);
+            // 
+            // firmaara
+            // 
+            this.firmaara.Location = new System.Drawing.Point(303, 6);
+            this.firmaara.Name = "firmaara";
+            this.firmaara.Size = new System.Drawing.Size(93, 78);
+            this.firmaara.TabIndex = 9;
+            this.firmaara.Text = "Firma Ara";
+            this.firmaara.UseVisualStyleBackColor = true;
+            this.firmaara.Click += new System.EventHandler(this.firmaara_Click);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(204, 6);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(93, 78);
+            this.button3.TabIndex = 8;
+            this.button3.Text = "Firma Güncelle";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // firmasil
+            // 
+            this.firmasil.Location = new System.Drawing.Point(105, 6);
+            this.firmasil.Name = "firmasil";
+            this.firmasil.Size = new System.Drawing.Size(93, 78);
+            this.firmasil.TabIndex = 11;
+            this.firmasil.Text = "Firma Sil";
+            this.firmasil.UseVisualStyleBackColor = true;
+            this.firmasil.Click += new System.EventHandler(this.firmasil_Click);
+            // 
+            // firmaekle
+            // 
+            this.firmaekle.Location = new System.Drawing.Point(6, 6);
+            this.firmaekle.Name = "firmaekle";
+            this.firmaekle.Size = new System.Drawing.Size(93, 78);
+            this.firmaekle.TabIndex = 12;
+            this.firmaekle.Text = "Firma Ekle";
+            this.firmaekle.UseVisualStyleBackColor = true;
+            this.firmaekle.Click += new System.EventHandler(this.firmaekle_Click);
+            // 
             // MusteriHizmetleriPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -225,7 +286,7 @@
             this.tabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Musterigrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            this.tabPage2.ResumeLayout(false);
+            this.firmaguncelle.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Firmagrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             this.tabPage3.ResumeLayout(false);
@@ -240,7 +301,7 @@
 
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabPage firmaguncelle;
         private DevExpress.XtraGrid.GridControl Musterigrid;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private System.Windows.Forms.TabPage tabPage3;
@@ -254,5 +315,10 @@
         private System.Windows.Forms.Button Musterisil;
         private System.Windows.Forms.Button Musteriekle;
         private System.Windows.Forms.Label aktifkisi;
+        private System.Windows.Forms.Button programkapat;
+        private System.Windows.Forms.Button firmaara;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button firmaekle;
+        private System.Windows.Forms.Button firmasil;
     }
 }

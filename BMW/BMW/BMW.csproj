@@ -50,6 +50,12 @@
     <Compile Include="AdminPanel.Designer.cs">
       <DependentUpon>AdminPanel.cs</DependentUpon>
     </Compile>
+    <Compile Include="A_Kullanici.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="A_Kullanici.Designer.cs">
+      <DependentUpon>A_Kullanici.cs</DependentUpon>
+    </Compile>
     <Compile Include="Giris.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -59,8 +65,17 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SQL.cs" />
+    <Compile Include="YetkiTanimlama.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="YetkiTanimlama.Designer.cs">
+      <DependentUpon>YetkiTanimlama.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AdminPanel.resx">
       <DependentUpon>AdminPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="A_Kullanici.resx">
+      <DependentUpon>A_Kullanici.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Giris.resx">
       <DependentUpon>Giris.cs</DependentUpon>
@@ -74,6 +89,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="YetkiTanimlama.resx">
+      <DependentUpon>YetkiTanimlama.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

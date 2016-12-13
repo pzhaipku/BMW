@@ -60,6 +60,7 @@
             this.txt_Kulad.Name = "txt_Kulad";
             this.txt_Kulad.Size = new System.Drawing.Size(173, 21);
             this.txt_Kulad.TabIndex = 1;
+            this.txt_Kulad.Text = "12345678901";
             // 
             // txt_Sifre
             // 
@@ -69,6 +70,7 @@
             this.txt_Sifre.PasswordChar = '*';
             this.txt_Sifre.Size = new System.Drawing.Size(173, 21);
             this.txt_Sifre.TabIndex = 2;
+            this.txt_Sifre.Text = "Admin0";
             // 
             // btn_Giris
             // 
@@ -96,7 +98,7 @@
             this.btn_Kapat.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btn_Kapat.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btn_Kapat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Kapat.Location = new System.Drawing.Point(300, 129);
+            this.btn_Kapat.Location = new System.Drawing.Point(311, 340);
             this.btn_Kapat.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btn_Kapat.Name = "btn_Kapat";
             this.btn_Kapat.Size = new System.Drawing.Size(60, 60);
@@ -141,6 +143,7 @@
             this.Controls.Add(this.txt_Kulad);
             this.Controls.Add(this.pictureBox1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "Giris";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

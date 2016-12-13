@@ -50,11 +50,11 @@
             this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.aktifkisi = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.serviskayitara = new System.Windows.Forms.Button();
             this.progkapat = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.servismusterileri = new System.Windows.Forms.Button();
+            this.servisdetaylikayitara = new System.Windows.Forms.Button();
+            this.servisdurumkontrol = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Musterigrid)).BeginInit();
@@ -245,11 +245,11 @@
             // tabPage3
             // 
             this.tabPage3.BackColor = System.Drawing.SystemColors.Control;
-            this.tabPage3.Controls.Add(this.button1);
-            this.tabPage3.Controls.Add(this.button2);
+            this.tabPage3.Controls.Add(this.servisdurumkontrol);
+            this.tabPage3.Controls.Add(this.serviskayitara);
             this.tabPage3.Controls.Add(this.progkapat);
-            this.tabPage3.Controls.Add(this.button5);
-            this.tabPage3.Controls.Add(this.button6);
+            this.tabPage3.Controls.Add(this.servismusterileri);
+            this.tabPage3.Controls.Add(this.servisdetaylikayitara);
             this.tabPage3.Controls.Add(this.Servisgrid);
             this.tabPage3.Location = new System.Drawing.Point(4, 25);
             this.tabPage3.Name = "tabPage3";
@@ -292,23 +292,15 @@
             this.tabPage2.Text = "Araç Satış";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // serviskayitara
             // 
-            this.button1.Location = new System.Drawing.Point(6, 6);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(93, 78);
-            this.button1.TabIndex = 17;
-            this.button1.Text = "Servis Durum Kontrol";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(105, 6);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(93, 78);
-            this.button2.TabIndex = 16;
-            this.button2.Text = "Servis Kayıt Ara";
-            this.button2.UseVisualStyleBackColor = true;
+            this.serviskayitara.Location = new System.Drawing.Point(105, 6);
+            this.serviskayitara.Name = "serviskayitara";
+            this.serviskayitara.Size = new System.Drawing.Size(93, 78);
+            this.serviskayitara.TabIndex = 16;
+            this.serviskayitara.Text = "Servis Kayıt Ara";
+            this.serviskayitara.UseVisualStyleBackColor = true;
+            this.serviskayitara.Click += new System.EventHandler(this.serviskayitara_Click);
             // 
             // progkapat
             // 
@@ -320,23 +312,35 @@
             this.progkapat.UseVisualStyleBackColor = true;
             this.progkapat.Click += new System.EventHandler(this.progkapat_Click);
             // 
-            // button5
+            // servismusterileri
             // 
-            this.button5.Location = new System.Drawing.Point(303, 6);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(93, 78);
-            this.button5.TabIndex = 14;
-            this.button5.Text = "Servis Müşterileri";
-            this.button5.UseVisualStyleBackColor = true;
+            this.servismusterileri.Location = new System.Drawing.Point(303, 6);
+            this.servismusterileri.Name = "servismusterileri";
+            this.servismusterileri.Size = new System.Drawing.Size(93, 78);
+            this.servismusterileri.TabIndex = 14;
+            this.servismusterileri.Text = "Servis Müşterileri";
+            this.servismusterileri.UseVisualStyleBackColor = true;
+            this.servismusterileri.Click += new System.EventHandler(this.servismusterileri_Click);
             // 
-            // button6
+            // servisdetaylikayitara
             // 
-            this.button6.Location = new System.Drawing.Point(204, 6);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(93, 78);
-            this.button6.TabIndex = 13;
-            this.button6.Text = "Servis Detaylı Kayıt Arama";
-            this.button6.UseVisualStyleBackColor = true;
+            this.servisdetaylikayitara.Location = new System.Drawing.Point(204, 6);
+            this.servisdetaylikayitara.Name = "servisdetaylikayitara";
+            this.servisdetaylikayitara.Size = new System.Drawing.Size(93, 78);
+            this.servisdetaylikayitara.TabIndex = 13;
+            this.servisdetaylikayitara.Text = "Servis Detaylı Kayıt Arama";
+            this.servisdetaylikayitara.UseVisualStyleBackColor = true;
+            this.servisdetaylikayitara.Click += new System.EventHandler(this.servisdetaylikayitara_Click);
+            // 
+            // servisdurumkontrol
+            // 
+            this.servisdurumkontrol.Location = new System.Drawing.Point(6, 6);
+            this.servisdurumkontrol.Name = "servisdurumkontrol";
+            this.servisdurumkontrol.Size = new System.Drawing.Size(93, 78);
+            this.servisdurumkontrol.TabIndex = 17;
+            this.servisdurumkontrol.Text = "Servis Durum Kontrol";
+            this.servisdurumkontrol.UseVisualStyleBackColor = true;
+            this.servisdurumkontrol.Click += new System.EventHandler(this.servisdurumkontrol_Click);
             // 
             // MusteriHizmetleriPanel
             // 
@@ -387,11 +391,11 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button firmaekle;
         private System.Windows.Forms.Button firmasil;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button serviskayitara;
         private System.Windows.Forms.Button progkapat;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button servismusterileri;
+        private System.Windows.Forms.Button servisdetaylikayitara;
         private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.Button servisdurumkontrol;
     }
 }

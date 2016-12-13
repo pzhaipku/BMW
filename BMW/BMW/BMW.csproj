@@ -171,7 +171,11 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Servis_durum_kontrol.resx">
+      <DependentUpon>Servis_durum_kontrol.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -187,6 +191,7 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <None Include="Resimler\Durum_kirmizi.png" />
     <Content Include="Resimler\Giris_Buton.png" />
     <Content Include="Resimler\Giris_Plan.png" />
     <Content Include="Resimler\Kapat_Icon.png" />

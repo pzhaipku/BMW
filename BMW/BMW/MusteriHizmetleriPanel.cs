@@ -120,6 +120,40 @@ namespace BMW
 
         }
 
+        private void servisdurumkontrol_Click(object sender, EventArgs e)
+        {
+            Servis_durum_kontrol m = new Servis_durum_kontrol();
+            this.Hide();
+            m.Show();
+
+        }
+
+        private void serviskayitara_Click(object sender, EventArgs e)
+        {
+            Servis_kayitbul m = new Servis_kayitbul();
+            this.Hide();
+            m.Show();
+
+        }
+
+        private void servisdetaylikayitara_Click(object sender, EventArgs e)
+        {
+            Servis_detayli_arama m = new Servis_detayli_arama();
+            this.Hide();
+            m.Show();
+
+        }
+
+        private void servismusterileri_Click(object sender, EventArgs e)
+        {
+            Servis_Musterileri m = new Servis_Musterileri();
+            this.Hide();
+            m.Show();
+
+        }
+
+ 
+
      
     }
 }

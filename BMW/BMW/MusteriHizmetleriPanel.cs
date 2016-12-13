@@ -114,6 +114,12 @@ namespace BMW
 
         }
 
+        private void progkapat_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+
+        }
+
      
     }
 }

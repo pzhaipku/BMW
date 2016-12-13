@@ -38,17 +38,23 @@
             this.Musterigrid = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.firmaguncelle = new System.Windows.Forms.TabPage();
+            this.firmaekle = new System.Windows.Forms.Button();
+            this.firmasil = new System.Windows.Forms.Button();
+            this.programkapat = new System.Windows.Forms.Button();
+            this.firmaara = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.Firmagrid = new DevExpress.XtraGrid.GridControl();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.Servisgrid = new DevExpress.XtraGrid.GridControl();
             this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.aktifkisi = new System.Windows.Forms.Label();
-            this.programkapat = new System.Windows.Forms.Button();
-            this.firmaara = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.firmasil = new System.Windows.Forms.Button();
-            this.firmaekle = new System.Windows.Forms.Button();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.progkapat = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Musterigrid)).BeginInit();
@@ -66,6 +72,7 @@
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.firmaguncelle);
             this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -170,56 +177,25 @@
             this.firmaguncelle.TabIndex = 1;
             this.firmaguncelle.Text = "Firmalar";
             // 
-            // Firmagrid
+            // firmaekle
             // 
-            this.Firmagrid.Location = new System.Drawing.Point(6, 90);
-            this.Firmagrid.MainView = this.gridView2;
-            this.Firmagrid.Name = "Firmagrid";
-            this.Firmagrid.Size = new System.Drawing.Size(1246, 400);
-            this.Firmagrid.TabIndex = 1;
-            this.Firmagrid.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView2});
+            this.firmaekle.Location = new System.Drawing.Point(6, 6);
+            this.firmaekle.Name = "firmaekle";
+            this.firmaekle.Size = new System.Drawing.Size(93, 78);
+            this.firmaekle.TabIndex = 12;
+            this.firmaekle.Text = "Firma Ekle";
+            this.firmaekle.UseVisualStyleBackColor = true;
+            this.firmaekle.Click += new System.EventHandler(this.firmaekle_Click);
             // 
-            // gridView2
+            // firmasil
             // 
-            this.gridView2.GridControl = this.Firmagrid;
-            this.gridView2.Name = "gridView2";
-            // 
-            // tabPage3
-            // 
-            this.tabPage3.BackColor = System.Drawing.SystemColors.Control;
-            this.tabPage3.Controls.Add(this.Servisgrid);
-            this.tabPage3.Location = new System.Drawing.Point(4, 25);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1258, 524);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Servis";
-            // 
-            // Servisgrid
-            // 
-            this.Servisgrid.Location = new System.Drawing.Point(6, 110);
-            this.Servisgrid.MainView = this.gridView3;
-            this.Servisgrid.Name = "Servisgrid";
-            this.Servisgrid.Size = new System.Drawing.Size(1246, 400);
-            this.Servisgrid.TabIndex = 1;
-            this.Servisgrid.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView3});
-            // 
-            // gridView3
-            // 
-            this.gridView3.GridControl = this.Servisgrid;
-            this.gridView3.Name = "gridView3";
-            // 
-            // aktifkisi
-            // 
-            this.aktifkisi.AutoSize = true;
-            this.aktifkisi.Font = new System.Drawing.Font("Monotype Corsiva", 19.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.aktifkisi.Location = new System.Drawing.Point(20, 573);
-            this.aktifkisi.Name = "aktifkisi";
-            this.aktifkisi.Size = new System.Drawing.Size(93, 40);
-            this.aktifkisi.TabIndex = 1;
-            this.aktifkisi.Text = "label1";
+            this.firmasil.Location = new System.Drawing.Point(105, 6);
+            this.firmasil.Name = "firmasil";
+            this.firmasil.Size = new System.Drawing.Size(93, 78);
+            this.firmasil.TabIndex = 11;
+            this.firmasil.Text = "Firma Sil";
+            this.firmasil.UseVisualStyleBackColor = true;
+            this.firmasil.Click += new System.EventHandler(this.firmasil_Click);
             // 
             // programkapat
             // 
@@ -251,25 +227,116 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // firmasil
+            // Firmagrid
             // 
-            this.firmasil.Location = new System.Drawing.Point(105, 6);
-            this.firmasil.Name = "firmasil";
-            this.firmasil.Size = new System.Drawing.Size(93, 78);
-            this.firmasil.TabIndex = 11;
-            this.firmasil.Text = "Firma Sil";
-            this.firmasil.UseVisualStyleBackColor = true;
-            this.firmasil.Click += new System.EventHandler(this.firmasil_Click);
+            this.Firmagrid.Location = new System.Drawing.Point(6, 90);
+            this.Firmagrid.MainView = this.gridView2;
+            this.Firmagrid.Name = "Firmagrid";
+            this.Firmagrid.Size = new System.Drawing.Size(1246, 400);
+            this.Firmagrid.TabIndex = 1;
+            this.Firmagrid.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView2});
             // 
-            // firmaekle
+            // gridView2
             // 
-            this.firmaekle.Location = new System.Drawing.Point(6, 6);
-            this.firmaekle.Name = "firmaekle";
-            this.firmaekle.Size = new System.Drawing.Size(93, 78);
-            this.firmaekle.TabIndex = 12;
-            this.firmaekle.Text = "Firma Ekle";
-            this.firmaekle.UseVisualStyleBackColor = true;
-            this.firmaekle.Click += new System.EventHandler(this.firmaekle_Click);
+            this.gridView2.GridControl = this.Firmagrid;
+            this.gridView2.Name = "gridView2";
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPage3.Controls.Add(this.button1);
+            this.tabPage3.Controls.Add(this.button2);
+            this.tabPage3.Controls.Add(this.progkapat);
+            this.tabPage3.Controls.Add(this.button5);
+            this.tabPage3.Controls.Add(this.button6);
+            this.tabPage3.Controls.Add(this.Servisgrid);
+            this.tabPage3.Location = new System.Drawing.Point(4, 25);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(1258, 524);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Servis";
+            // 
+            // Servisgrid
+            // 
+            this.Servisgrid.Location = new System.Drawing.Point(6, 90);
+            this.Servisgrid.MainView = this.gridView3;
+            this.Servisgrid.Name = "Servisgrid";
+            this.Servisgrid.Size = new System.Drawing.Size(1246, 400);
+            this.Servisgrid.TabIndex = 1;
+            this.Servisgrid.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView3});
+            // 
+            // gridView3
+            // 
+            this.gridView3.GridControl = this.Servisgrid;
+            this.gridView3.Name = "gridView3";
+            // 
+            // aktifkisi
+            // 
+            this.aktifkisi.AutoSize = true;
+            this.aktifkisi.Font = new System.Drawing.Font("Monotype Corsiva", 19.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.aktifkisi.Location = new System.Drawing.Point(20, 573);
+            this.aktifkisi.Name = "aktifkisi";
+            this.aktifkisi.Size = new System.Drawing.Size(93, 40);
+            this.aktifkisi.TabIndex = 1;
+            this.aktifkisi.Text = "label1";
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Location = new System.Drawing.Point(4, 25);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Size = new System.Drawing.Size(1258, 524);
+            this.tabPage2.TabIndex = 3;
+            this.tabPage2.Text = "Araç Satış";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(6, 6);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(93, 78);
+            this.button1.TabIndex = 17;
+            this.button1.Text = "Servis Durum Kontrol";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(105, 6);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(93, 78);
+            this.button2.TabIndex = 16;
+            this.button2.Text = "Servis Kayıt Ara";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // progkapat
+            // 
+            this.progkapat.Location = new System.Drawing.Point(1159, 6);
+            this.progkapat.Name = "progkapat";
+            this.progkapat.Size = new System.Drawing.Size(93, 78);
+            this.progkapat.TabIndex = 15;
+            this.progkapat.Text = "Programı Kapat";
+            this.progkapat.UseVisualStyleBackColor = true;
+            this.progkapat.Click += new System.EventHandler(this.progkapat_Click);
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(303, 6);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(93, 78);
+            this.button5.TabIndex = 14;
+            this.button5.Text = "Servis Müşterileri";
+            this.button5.UseVisualStyleBackColor = true;
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(204, 6);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(93, 78);
+            this.button6.TabIndex = 13;
+            this.button6.Text = "Servis Detaylı Kayıt Arama";
+            this.button6.UseVisualStyleBackColor = true;
             // 
             // MusteriHizmetleriPanel
             // 
@@ -320,5 +387,11 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button firmaekle;
         private System.Windows.Forms.Button firmasil;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button progkapat;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.TabPage tabPage2;
     }
 }

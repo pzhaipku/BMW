@@ -67,16 +67,7 @@ namespace BMW
         }
 
         private void button3_Click(object sender, EventArgs e)
-        {/*
-            MessageBox.Show(Convert.ToDateTime(dateTimeSVcik.Text).ToShortDateString());
-            SqlCommand komut = new SqlCommand();
-            //komut.CommandText = "Update Servis Set S_kodu=" + "'" + textSVkod.Text + "',M_kodu=" + "'" + textSVmus.Text + "',Model_kodu='" + textSVmod.Text + "',P_kodu='" + perkod.ToString() + "',Arac_giriskm=" + textSVgkm.Text + ",Arac_cikiskm=" + textSVckm.Text + ",S_giris_tarih='"+dateTimeSVgir.Value.Date+"',S_cikis_tarih='"+dateTimeSVcik.Value.Date+"',Plaka='" + textSVplk.Text + "',Servis_ucret=" + Convert.ToInt32(textSVfyt.Text) + ",Durum='" + Convert.ToInt32(checkSVtm.Checked) + "' Where S_id='" + textSVid.Text + "'";
-            MessageBox.Show(komut.CommandText);
-           /* sv_baglanti.Open();
-            komut.Connection = sv_baglanti;
-            komut.ExecuteNonQuery();
-            sv_baglanti.Close();
-            servis_goster();*/
+        {
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -147,6 +138,18 @@ namespace BMW
             checkSVtm.Checked = false;
             dateTimeSVcik.Visible = false;
             label8.Visible = false;
+        }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+            SqlCommand komut = new SqlCommand();
+            komut.CommandText = "Update Servis Set S_kodu=" + "'" + textSVkod.Text + "',M_kodu=" + "'" + textSVmus.Text + "',Model_kodu='" + textSVmod.Text + "',P_kodu='" + perkod.ToString() + "',Arac_giriskm=" + textSVgkm.Text + ",Arac_cikiskm=" + textSVckm.Text + ",S_giris_tarih='" + dateTimeSVgir.Value.ToString("yyyy-MM-dd") + "',S_cikis_tarih='" + dateTimeSVcik.Value.ToString("yyyy-MM-dd") + "',Plaka='" + textSVplk.Text + "',Servis_ucret=" + Convert.ToInt32(textSVfyt.Text) + ",Durum='" + Convert.ToInt32(checkSVtm.Checked) + "' Where S_id='" + textSVid.Text + "'";
+            MessageBox.Show(komut.CommandText);
+            sv_baglanti.Open();
+            komut.Connection = sv_baglanti;
+            komut.ExecuteNonQuery();
+            sv_baglanti.Close();
+            servis_goster();
         }
 
 

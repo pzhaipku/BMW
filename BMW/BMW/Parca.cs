@@ -48,7 +48,7 @@ namespace BMW
                 SqlCommand komut = new SqlCommand();
                 prc_baglanti.Open();
                 komut.Connection = prc_baglanti;
-                komut.CommandText = "INSERT INTO Parca_Stok Values(" + "'" + textPAK.Text + "'," + "'" + textPAad.Text + "'," + textPAstok.Text + "," + textPAfiyat.Text + ",'" + textPAaciklama.Text + "')";
+                komut.CommandText = "INSERT INTO Parca_Stok Values(" + "'" + textPAK.Text + "'," + "'" + textPAad.Text + "'," + textPAstok.Text + "," +Convert.ToDouble(textPAfiyat.Text)+ ",'" + textPAaciklama.Text + "')";
                 komut.ExecuteNonQuery();
                 prc_baglanti.Close();
                 parca_stok_goster();
@@ -72,7 +72,7 @@ namespace BMW
                 textPAK.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
                 textPAad.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
                 textPAstok.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
-                textPAfiyat.Text = Convert.ToInt32(dataGridView1.CurrentRow.Cells[4].Value).ToString();
+                textPAfiyat.Text = Convert.ToDouble(dataGridView1.CurrentRow.Cells[4].Value).ToString();
                 textPAaciklama.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
             }
             catch (Exception hata)
@@ -104,7 +104,7 @@ namespace BMW
         {
             try
             {
-                string sv_sorgu = "UPDATE Parca_Stok Set Parca_kodu='" + textPAK.Text + "'," + "Parca_adi='" + textPAad.Text + "'," + "Stok_adet=" + Convert.ToInt32(textPAstok.Text) + "," + "Birim_Fiyat=" + Convert.ToInt32(textPAfiyat.Text) + "," + "Aciklama='" + textPAaciklama.Text + "' Where PStok_id=" + Convert.ToInt32(textPAid.Text);
+                string sv_sorgu = "UPDATE Parca_Stok Set Parca_kodu='" + textPAK.Text + "'," + "Parca_adi='" + textPAad.Text + "'," + "Stok_adet=" + Convert.ToInt32(textPAstok.Text) + "," + "Birim_Fiyat=" + Convert.ToDouble(textPAfiyat.Text) + "," + "Aciklama='" + textPAaciklama.Text + "' Where PStok_id=" + Convert.ToInt32(textPAid.Text);
                 SqlCommand komut = new SqlCommand(sv_sorgu, prc_baglanti);
                 prc_baglanti.Open();
                 komut.ExecuteNonQuery();

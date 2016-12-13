@@ -40,5 +40,11 @@ namespace BMW
             Servis srv_form = new Servis();
             srv_form.Show();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            AracStok arac_stok_form = new AracStok();
+            arac_stok_form.Show();
+        }
     }
 }

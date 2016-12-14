@@ -53,6 +53,10 @@
             this.Servisgrid = new DevExpress.XtraGrid.GridControl();
             this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.arackayitara = new System.Windows.Forms.Button();
+            this.pkapat = new System.Windows.Forms.Button();
+            this.Aracsatisgrid = new DevExpress.XtraGrid.GridControl();
+            this.gridView4 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.aktifkisi = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -64,6 +68,9 @@
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Servisgrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
+            this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Aracsatisgrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView4)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -313,12 +320,50 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPage2.Controls.Add(this.arackayitara);
+            this.tabPage2.Controls.Add(this.pkapat);
+            this.tabPage2.Controls.Add(this.Aracsatisgrid);
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Size = new System.Drawing.Size(1258, 524);
             this.tabPage2.TabIndex = 3;
             this.tabPage2.Text = "Araç Satış";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // arackayitara
+            // 
+            this.arackayitara.Location = new System.Drawing.Point(6, 6);
+            this.arackayitara.Name = "arackayitara";
+            this.arackayitara.Size = new System.Drawing.Size(93, 78);
+            this.arackayitara.TabIndex = 21;
+            this.arackayitara.Text = "Kayıt Ara";
+            this.arackayitara.UseVisualStyleBackColor = true;
+            this.arackayitara.Click += new System.EventHandler(this.arackayitara_Click);
+            // 
+            // pkapat
+            // 
+            this.pkapat.Location = new System.Drawing.Point(1159, 6);
+            this.pkapat.Name = "pkapat";
+            this.pkapat.Size = new System.Drawing.Size(93, 78);
+            this.pkapat.TabIndex = 19;
+            this.pkapat.Text = "Programı Kapat";
+            this.pkapat.UseVisualStyleBackColor = true;
+            this.pkapat.Click += new System.EventHandler(this.pkapat_Click);
+            // 
+            // Aracsatisgrid
+            // 
+            this.Aracsatisgrid.Location = new System.Drawing.Point(6, 90);
+            this.Aracsatisgrid.MainView = this.gridView4;
+            this.Aracsatisgrid.Name = "Aracsatisgrid";
+            this.Aracsatisgrid.Size = new System.Drawing.Size(1246, 400);
+            this.Aracsatisgrid.TabIndex = 2;
+            this.Aracsatisgrid.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView4});
+            // 
+            // gridView4
+            // 
+            this.gridView4.GridControl = this.Aracsatisgrid;
+            this.gridView4.Name = "gridView4";
             // 
             // aktifkisi
             // 
@@ -351,6 +396,9 @@
             this.tabPage3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Servisgrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
+            this.tabPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.Aracsatisgrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -384,5 +432,9 @@
         private System.Windows.Forms.Button servisdetaylikayitara;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Button servisdurumkontrol;
+        private System.Windows.Forms.Button arackayitara;
+        private System.Windows.Forms.Button pkapat;
+        private DevExpress.XtraGrid.GridControl Aracsatisgrid;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView4;
     }
 }

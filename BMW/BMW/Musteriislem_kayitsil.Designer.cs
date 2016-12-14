@@ -96,6 +96,8 @@
             // sutunsec
             // 
             this.sutunsec.FormattingEnabled = true;
+            this.sutunsec.Items.AddRange(new object[] {
+            "Sütun Seçin.."});
             this.sutunsec.Location = new System.Drawing.Point(326, 50);
             this.sutunsec.Name = "sutunsec";
             this.sutunsec.Size = new System.Drawing.Size(263, 24);

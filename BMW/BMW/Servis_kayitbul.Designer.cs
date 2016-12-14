@@ -94,7 +94,7 @@
             this.groupBox2.Size = new System.Drawing.Size(849, 212);
             this.groupBox2.TabIndex = 23;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Müsteri Kayıt Sil";
+            this.groupBox2.Text = "Servis Kayıt Bul";
             // 
             // Tümtablogoster
             // 
@@ -118,6 +118,8 @@
             // sutunsecara
             // 
             this.sutunsecara.FormattingEnabled = true;
+            this.sutunsecara.Items.AddRange(new object[] {
+            "Sütun Seçin.."});
             this.sutunsecara.Location = new System.Drawing.Point(326, 50);
             this.sutunsecara.Name = "sutunsecara";
             this.sutunsecara.Size = new System.Drawing.Size(263, 24);

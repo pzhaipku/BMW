@@ -102,12 +102,12 @@
             this.groupBox2.Size = new System.Drawing.Size(1010, 212);
             this.groupBox2.TabIndex = 23;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Müsteri Kayıt Sil";
+            this.groupBox2.Text = "Müsteri Kayıt Bul";
             // 
             // soyad
             // 
             this.soyad.AutoSize = true;
-            this.soyad.Location = new System.Drawing.Point(73, 125);
+            this.soyad.Location = new System.Drawing.Point(66, 125);
             this.soyad.Name = "soyad";
             this.soyad.Size = new System.Drawing.Size(109, 17);
             this.soyad.TabIndex = 29;
@@ -117,7 +117,7 @@
             // ad
             // 
             this.ad.AutoSize = true;
-            this.ad.Location = new System.Drawing.Point(73, 97);
+            this.ad.Location = new System.Drawing.Point(66, 97);
             this.ad.Name = "ad";
             this.ad.Size = new System.Drawing.Size(86, 17);
             this.ad.TabIndex = 28;
@@ -153,15 +153,17 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(73, 55);
+            this.label2.Location = new System.Drawing.Point(66, 55);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(241, 17);
+            this.label2.Size = new System.Drawing.Size(255, 17);
             this.label2.TabIndex = 23;
-            this.label2.Text = "Hangi Parametreye Göre Sileceksin: ";
+            this.label2.Text = "Hangi Parametreye Göre Arayacaksın: ";
             // 
             // sutunsecara
             // 
             this.sutunsecara.FormattingEnabled = true;
+            this.sutunsecara.Items.AddRange(new object[] {
+            "Sütun Seçin.."});
             this.sutunsecara.Location = new System.Drawing.Point(326, 50);
             this.sutunsecara.Name = "sutunsecara";
             this.sutunsecara.Size = new System.Drawing.Size(263, 24);
@@ -181,7 +183,7 @@
             // deger
             // 
             this.deger.AutoSize = true;
-            this.deger.Location = new System.Drawing.Point(74, 151);
+            this.deger.Location = new System.Drawing.Point(67, 151);
             this.deger.Name = "deger";
             this.deger.Size = new System.Drawing.Size(85, 17);
             this.deger.TabIndex = 21;

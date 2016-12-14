@@ -82,20 +82,22 @@
             this.groupBox1.Size = new System.Drawing.Size(1010, 212);
             this.groupBox1.TabIndex = 22;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Müsteri Kayıt Sil";
+            this.groupBox1.Text = "Firma Kayıt Sil";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(73, 55);
+            this.label1.Location = new System.Drawing.Point(64, 55);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(241, 17);
+            this.label1.Size = new System.Drawing.Size(237, 17);
             this.label1.TabIndex = 23;
-            this.label1.Text = "Hangi Parametreye Göre Sileceksin: ";
+            this.label1.Text = "Hangi Parametreye Göre Sileceksin:";
             // 
             // sutunsec
             // 
             this.sutunsec.FormattingEnabled = true;
+            this.sutunsec.Items.AddRange(new object[] {
+            "Sütun Seçin.."});
             this.sutunsec.Location = new System.Drawing.Point(326, 50);
             this.sutunsec.Name = "sutunsec";
             this.sutunsec.Size = new System.Drawing.Size(263, 24);
@@ -114,7 +116,7 @@
             // mkodu
             // 
             this.mkodu.AutoSize = true;
-            this.mkodu.Location = new System.Drawing.Point(70, 151);
+            this.mkodu.Location = new System.Drawing.Point(61, 151);
             this.mkodu.Name = "mkodu";
             this.mkodu.Size = new System.Drawing.Size(85, 17);
             this.mkodu.TabIndex = 21;

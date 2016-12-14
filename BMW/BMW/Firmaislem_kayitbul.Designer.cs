@@ -94,7 +94,7 @@
             this.groupBox2.Size = new System.Drawing.Size(1010, 212);
             this.groupBox2.TabIndex = 23;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Müsteri Kayıt Sil";
+            this.groupBox2.Text = "Firma Kayıt Bul";
             // 
             // Tümtablogoster
             // 
@@ -111,13 +111,15 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(73, 55);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(241, 17);
+            this.label2.Size = new System.Drawing.Size(251, 17);
             this.label2.TabIndex = 23;
-            this.label2.Text = "Hangi Parametreye Göre Sileceksin: ";
+            this.label2.Text = "Hangi Parametreye Göre Arayacaksın:";
             // 
             // sutunsecara
             // 
             this.sutunsecara.FormattingEnabled = true;
+            this.sutunsecara.Items.AddRange(new object[] {
+            "Sütun Seçin..."});
             this.sutunsecara.Location = new System.Drawing.Point(326, 50);
             this.sutunsecara.Name = "sutunsecara";
             this.sutunsecara.Size = new System.Drawing.Size(263, 24);

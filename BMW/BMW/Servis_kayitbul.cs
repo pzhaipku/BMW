@@ -22,10 +22,20 @@ namespace BMW
 
         private void Servis_kayitbul_Load(object sender, EventArgs e)
         {
-            cumle.Select("Select * from Servis", "serviskayit");
-            Firmabulgrid.DataSource = cumle.ds.Tables["serviskayit"];
-            sutunsecara.Items.Add(cumle.ds.Tables["serviskayit"].Columns["S_kodu"].ToString());
-            sutunsecara.Items.Add(cumle.ds.Tables["serviskayit"].Columns["Plaka"].ToString());
+            try
+            {
+                cumle.Select("Select * from Servis", "serviskayit");
+                Firmabulgrid.DataSource = cumle.ds.Tables["serviskayit"];
+                sutunsecara.Items.Add(cumle.ds.Tables["serviskayit"].Columns["S_kodu"].ToString());
+                sutunsecara.Items.Add(cumle.ds.Tables["serviskayit"].Columns["Plaka"].ToString());
+                sutunsecara.SelectedIndex = 0;
+            }
+            catch (Exception hata)
+            {
+                MessageBox.Show("Üzgünüz Beklenmedik Bİr Hata Ooluştu Lütfen Sistem Yöneticisine Başvurunuz. Hata " + hata.Message.ToString());
+            }
+            
+
             
             
             
@@ -33,19 +43,27 @@ namespace BMW
 
         private void Tümtablogoster_Click(object sender, EventArgs e)
         {
-            cumle.ds.Tables["serviskayit"].Clear();
             try
             {
-                cumle.ds.Tables["serviskayitbul"].Clear();
+                cumle.ds.Tables["serviskayit"].Clear();
+                try
+                {
+                    cumle.ds.Tables["serviskayitbul"].Clear();
+                }
+                catch (Exception)
+                {
+
+                }
+
+                cumle.Select("Select * from Servis", "serviskayit");
+                Firmabulgrid.DataSource = cumle.ds.Tables["serviskayit"];
+                bul = 0;
             }
-            catch (Exception)
+            catch (Exception hata)
             {
-
+                MessageBox.Show("Üzgünüz Beklenmedik Bİr Hata Ooluştu Lütfen Sistem Yöneticisine Başvurunuz. Hata " + hata.Message.ToString());
             }
-
-            cumle.Select("Select * from Servis", "serviskayit");
-            Firmabulgrid.DataSource = cumle.ds.Tables["serviskayit"];
-            bul = 0;
+            
         }
 
         private void kayitara_Click(object sender, EventArgs e)
@@ -88,9 +106,9 @@ namespace BMW
                 }
 
             }
-            catch(Exception)
+            catch (Exception hata)
             {
-
+                MessageBox.Show("Üzgünüz Beklenmedik Bİr Hata Ooluştu Lütfen Sistem Yöneticisine Başvurunuz. Hata " + hata.Message.ToString());
             }
             
             
@@ -99,9 +117,17 @@ namespace BMW
 
         private void geridonara_Click(object sender, EventArgs e)
         {
-            MusteriHizmetleriPanel m = new MusteriHizmetleriPanel();
-            this.Close();
-            m.Show();
+            try
+            {
+                MusteriHizmetleriPanel m = new MusteriHizmetleriPanel();
+                this.Close();
+                m.Show();
+            }
+            catch (Exception hata)
+            {
+                MessageBox.Show("Üzgünüz Beklenmedik Bİr Hata Ooluştu Lütfen Sistem Yöneticisine Başvurunuz. Hata " + hata.Message.ToString());
+            }
+            
 
         }
     }

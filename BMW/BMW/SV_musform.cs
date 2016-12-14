@@ -24,11 +24,11 @@ namespace BMW
             try
             {
                 string mustc = ((Servis)Application.OpenForms.OfType<Servis>().SingleOrDefault()).mustc;
-                SqlDataAdapter sv_DA = new SqlDataAdapter("Execute Musteri_sorgu_mtcno " + mustc, sv_musbaglanti);
-                DataSet sv_DS = new DataSet();
+                SqlDataAdapter svmus_DA = new SqlDataAdapter("Execute Musteri_sorgu_mtcno " + mustc, sv_musbaglanti);
+                DataSet svmus_DS = new DataSet();
                 sv_musbaglanti.Open();
-                sv_DA.Fill(sv_DS, "Servis Musteri");
-                dataGridView1.DataSource = sv_DS.Tables["Servis Musteri"];
+                svmus_DA.Fill(svmus_DS, "Servis Musteri");
+                dataGridView1.DataSource = svmus_DS.Tables["Servis Musteri"];
             }
             catch (Exception hata)
             {

@@ -14,7 +14,9 @@ namespace BMW
     public partial class Servis : Form
     {
         SqlConnection sv_baglanti = new SqlConnection("Data Source=PC-BILGISAYAR; Initial Catalog=BMW;Integrated Security=true;");
-        public string perkod,peradi,muskod,mustc;
+        public string perkod,peradi,muskod,mustc,peradi1,persoyadi1,peradsoy;
+        private string personeladsoy;
+        string[] personel;
 
         public Servis()
         {
@@ -92,13 +94,16 @@ namespace BMW
         {
             try
             {
-                SqlCommand komut = new SqlCommand("Select P_adi From Personel", sv_baglanti);
+                SqlCommand komut = new SqlCommand("Select P_adi,P_soyadi From Personel", sv_baglanti);
                 sv_baglanti.Open();
                 SqlDataReader sv_DR;
                 sv_DR = komut.ExecuteReader();
                 while (sv_DR.Read())
                 {
-                    comboSVprc.Items.Add(sv_DR["P_adi"]);
+                    peradi1 = sv_DR["P_adi"].ToString();
+                    persoyadi1 = sv_DR["P_soyadi"].ToString();
+                    peradsoy = peradi1 + " " + persoyadi1;
+                    comboSVprc.Items.Add(peradsoy);
                 }
                 sv_baglanti.Close();
             }
@@ -151,12 +156,12 @@ namespace BMW
         {
             try
             {
-                SqlCommand komut = new SqlCommand("Select P_adi From Personel Where P_kodu='" + dataGridView1.CurrentRow.Cells[4].Value.ToString() + "'", sv_baglanti);
+                SqlCommand komut = new SqlCommand("Select P_adi,P_soyadi From Personel Where P_kodu='" + dataGridView1.CurrentRow.Cells[4].Value.ToString() + "'", sv_baglanti);
                 sv_baglanti.Open();
                 SqlDataReader sv_DR;
                 sv_DR = komut.ExecuteReader();
                 sv_DR.Read();
-                peradi = (sv_DR["P_adi"]).ToString();
+                peradi = (sv_DR["P_adi"]) +" "+ (sv_DR["P_soyadi"]).ToString();
                 sv_baglanti.Close();
                 textSVid.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
                 textSVkod.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
@@ -170,7 +175,7 @@ namespace BMW
                 dateTimeSVgir.Text = dataGridView1.CurrentRow.Cells[7].Value.ToString();
                 dateTimeSVcik.Text = dataGridView1.CurrentRow.Cells[8].Value.ToString();
                 textSVplk.Text = dataGridView1.CurrentRow.Cells[9].Value.ToString();
-                textSVfyt.Text = Convert.ToInt32(dataGridView1.CurrentRow.Cells[10].Value).ToString();
+                textSVfyt.Text = Convert.ToDouble(dataGridView1.CurrentRow.Cells[10].Value).ToString();
                 checkSVtm.Checked = Convert.ToBoolean(dataGridView1.CurrentRow.Cells[11].Value);
                 dateTimeSVcik.Visible = true;
                 label8.Visible = true;
@@ -210,13 +215,15 @@ namespace BMW
         {
             try
             {
-                SqlCommand komut = new SqlCommand("Select P_kodu From Personel Where P_adi='" + comboSVprc.SelectedItem.ToString() + "'", sv_baglanti);
+                personeladsoy = Convert.ToString(comboSVprc.SelectedItem);
+                personel = personeladsoy.Split(' ');
+                SqlCommand komut = new SqlCommand("Exec Personel_sorgu_padsoyad'" + personel[0] + "','" + personel[1] + "'", sv_baglanti);
                 sv_baglanti.Open();
                 SqlDataReader sv_DR;
                 sv_DR = komut.ExecuteReader();
                 while (sv_DR.Read())
                 {
-                    perkod = (sv_DR["P_kodu"]).ToString();
+                    perkod = (sv_DR["Personel Kodu"]).ToString();
                 }
             }
             catch (Exception hata)

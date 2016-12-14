@@ -56,6 +56,18 @@
     <Compile Include="AracStok.Designer.cs">
       <DependentUpon>AracStok.cs</DependentUpon>
     </Compile>
+    <Compile Include="Arac_Satis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Arac_Satis.Designer.cs">
+      <DependentUpon>Arac_Satis.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ASmodel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ASmodel.Designer.cs">
+      <DependentUpon>ASmodel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Giris.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,6 +100,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AracStok.resx">
       <DependentUpon>AracStok.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Arac_Satis.resx">
+      <DependentUpon>Arac_Satis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ASmodel.resx">
+      <DependentUpon>ASmodel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Giris.resx">
       <DependentUpon>Giris.cs</DependentUpon>

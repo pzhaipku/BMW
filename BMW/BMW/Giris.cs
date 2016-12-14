@@ -43,8 +43,8 @@ namespace BMW
 
         private void button2_Click(object sender, EventArgs e)
         {
-            AracStok arac_stok_form = new AracStok();
-            arac_stok_form.Show();
+            Arac_Satis asatisfrm = new Arac_Satis();
+            asatisfrm.Show();
         }
     }
 }

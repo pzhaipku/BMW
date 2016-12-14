@@ -13,6 +13,7 @@ namespace BMW
 {
     public partial class AracStok : Form
     {
+        public string modelkodu;
         SqlConnection astok_baglanti = new SqlConnection("Data Source=PC-BILGISAYAR; Initial Catalog=BMW;Integrated Security=true;");
         public AracStok()
         {
@@ -71,7 +72,8 @@ namespace BMW
             try
             {
                 textASid.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
-                textASmod.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+                modelkodu = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+                textASmod.Text = modelkodu;
                 textASadt.Text = Convert.ToInt32(dataGridView1.CurrentRow.Cells[2].Value).ToString();
                 textASalf.Text = Convert.ToInt32(dataGridView1.CurrentRow.Cells[3].Value).ToString();
                 textASotv.Text = Convert.ToInt32(dataGridView1.CurrentRow.Cells[4].Value).ToString();
@@ -89,6 +91,24 @@ namespace BMW
             {
                 astok_baglanti.Close();
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            ASmodel aracstokmodelform = new ASmodel();
+            aracstokmodelform.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            textASadt.Clear();
+            textASalf.Clear();
+            textASbtf.Clear();
+            textASid.Clear();
+            textASkar.Clear();
+            textASkdv.Clear();
+            textASmod.Clear();
+            textASotv.Clear();
         }
     }
 }

@@ -32,6 +32,7 @@
             this.lbl_GirisBilgisi = new System.Windows.Forms.Label();
             this.btn_ACikis = new System.Windows.Forms.Button();
             this.btn_YetkiTanimlama = new System.Windows.Forms.Button();
+            this.btn_Il_Ilce = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btn_Kullanicilar
@@ -74,12 +75,23 @@
             this.btn_YetkiTanimlama.UseVisualStyleBackColor = true;
             this.btn_YetkiTanimlama.Click += new System.EventHandler(this.btn_YetkiTanimlama_Click);
             // 
+            // btn_Il_Ilce
+            // 
+            this.btn_Il_Ilce.Location = new System.Drawing.Point(203, 44);
+            this.btn_Il_Ilce.Name = "btn_Il_Ilce";
+            this.btn_Il_Ilce.Size = new System.Drawing.Size(72, 47);
+            this.btn_Il_Ilce.TabIndex = 4;
+            this.btn_Il_Ilce.Text = "İl ve İlçeler";
+            this.btn_Il_Ilce.UseVisualStyleBackColor = true;
+            this.btn_Il_Ilce.Click += new System.EventHandler(this.btn_Il_Ilce_Click);
+            // 
             // AdminPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(468, 322);
             this.ControlBox = false;
+            this.Controls.Add(this.btn_Il_Ilce);
             this.Controls.Add(this.btn_YetkiTanimlama);
             this.Controls.Add(this.btn_ACikis);
             this.Controls.Add(this.lbl_GirisBilgisi);
@@ -99,5 +111,6 @@
         private System.Windows.Forms.Label lbl_GirisBilgisi;
         private System.Windows.Forms.Button btn_ACikis;
         private System.Windows.Forms.Button btn_YetkiTanimlama;
+        private System.Windows.Forms.Button btn_Il_Ilce;
     }
 }

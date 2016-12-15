@@ -16,6 +16,7 @@ namespace BMW
         A_Kullanici kullanici;
         YetkiTanimlama yetki;
         Giris giris;
+        Il_Ilce il_ilce;
         public string Tc_no;
         public AdminPanel()
         {
@@ -51,6 +52,14 @@ namespace BMW
             yetki = new YetkiTanimlama();
             yetki.Tc_no3 = Tc_no;
             yetki.Show();
+            this.Hide();
+        }
+
+        private void btn_Il_Ilce_Click(object sender, EventArgs e)
+        {
+            il_ilce = new Il_Ilce();
+            il_ilce.Tc_no4 = Tc_no;
+            il_ilce.Show();
             this.Hide();
         }
     }

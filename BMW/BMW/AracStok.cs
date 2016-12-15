@@ -14,10 +14,59 @@ namespace BMW
     public partial class AracStok : Form
     {
         public string modelkodu;
+        double model_fiyat;
         SqlConnection astok_baglanti = new SqlConnection("Data Source=PC-BILGISAYAR; Initial Catalog=BMW;Integrated Security=true;");
         public AracStok()
         {
             InitializeComponent();
+        }
+        private void model_goster()
+        {
+            try
+            {
+                SqlCommand komut = new SqlCommand("Select Distinct(Model_adi) From Arac_Model", astok_baglanti);
+                astok_baglanti.Open();
+                SqlDataReader as_DR;
+                as_DR = komut.ExecuteReader();
+                while (as_DR.Read())
+                {
+                    comboASmod.Items.Add(as_DR["Model_adi"]);
+                }
+                astok_baglanti.Close();
+            }
+            catch (Exception hata)
+            {
+                MessageBox.Show("Yanlış bir şeyler var hataları kontrol ediniz");
+                MessageBox.Show(hata.ToString());
+            }
+            finally
+            {
+                astok_baglanti.Close();
+            }
+        }
+        private void dpaketi_goster()
+        {
+            try
+            {
+                SqlCommand komut = new SqlCommand("Select Distinct(Dp_adi) From Donanim_Paket", astok_baglanti);
+                astok_baglanti.Open();
+                SqlDataReader as_DR;
+                as_DR = komut.ExecuteReader();
+                while (as_DR.Read())
+                {
+                    comboASdpk.Items.Add(as_DR["Dp_adi"]);
+                }
+                astok_baglanti.Close();
+            }
+            catch (Exception hata)
+            {
+                MessageBox.Show("Yanlış bir şeyler var hataları kontrol ediniz");
+                MessageBox.Show(hata.ToString());
+            }
+            finally
+            {
+                astok_baglanti.Close();
+            }
         }
         private void aracstok_goster()
         {
@@ -42,6 +91,8 @@ namespace BMW
         private void AracStok_Load(object sender, EventArgs e)
         {
             aracstok_goster();
+            model_goster();
+            dpaketi_goster();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -109,6 +160,54 @@ namespace BMW
             textASkdv.Clear();
             textASmod.Clear();
             textASotv.Clear();
+        }
+
+        private void comboASmod_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                SqlCommand komut = new SqlCommand("Exec Arac_model_sorgu_modeladi'" + comboASmod.SelectedItem.ToString()+"'" , astok_baglanti);
+                astok_baglanti.Open();
+                SqlDataReader as_DR;
+                as_DR = komut.ExecuteReader();
+                while (as_DR.Read())
+                {
+                    model_fiyat = Convert.ToDouble((as_DR["Aracın Fiyatı"]));
+                }
+            }
+            catch (Exception hata)
+            {
+                MessageBox.Show("Yanlış bir şeyler var hataları kontrol ediniz");
+                MessageBox.Show(hata.ToString());
+            }
+            finally
+            {
+                astok_baglanti.Close();
+            }
+        }
+
+        private void comboASdpk_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                SqlCommand komut = new SqlCommand("Exec Arac_model_sorgu_modeladi'" + comboASmod.SelectedItem.ToString() + "'", astok_baglanti);
+                astok_baglanti.Open();
+                SqlDataReader as_DR;
+                as_DR = komut.ExecuteReader();
+                while (as_DR.Read())
+                {
+                    textASalf.Text = Convert.ToDouble((as_DR["Aracın Fiyatı"])).ToString();
+                }
+            }
+            catch (Exception hata)
+            {
+                MessageBox.Show("Yanlış bir şeyler var hataları kontrol ediniz");
+                MessageBox.Show(hata.ToString());
+            }
+            finally
+            {
+                astok_baglanti.Close();
+            }
         }
     }
 }

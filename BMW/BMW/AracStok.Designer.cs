@@ -48,6 +48,8 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.comboASmod = new System.Windows.Forms.ComboBox();
+            this.comboASdpk = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -223,11 +225,31 @@
             this.label8.TabIndex = 19;
             this.label8.Text = "Birim Toplam Fiyat";
             // 
+            // comboASmod
+            // 
+            this.comboASmod.FormattingEnabled = true;
+            this.comboASmod.Location = new System.Drawing.Point(434, 317);
+            this.comboASmod.Name = "comboASmod";
+            this.comboASmod.Size = new System.Drawing.Size(121, 21);
+            this.comboASmod.TabIndex = 20;
+            this.comboASmod.SelectedIndexChanged += new System.EventHandler(this.comboASmod_SelectedIndexChanged);
+            // 
+            // comboASdpk
+            // 
+            this.comboASdpk.FormattingEnabled = true;
+            this.comboASdpk.Location = new System.Drawing.Point(588, 317);
+            this.comboASdpk.Name = "comboASdpk";
+            this.comboASdpk.Size = new System.Drawing.Size(121, 21);
+            this.comboASdpk.TabIndex = 21;
+            this.comboASdpk.SelectedIndexChanged += new System.EventHandler(this.comboASdpk_SelectedIndexChanged);
+            // 
             // AracStok
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(721, 352);
+            this.ClientSize = new System.Drawing.Size(721, 355);
+            this.Controls.Add(this.comboASdpk);
+            this.Controls.Add(this.comboASmod);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -279,5 +301,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ComboBox comboASmod;
+        private System.Windows.Forms.ComboBox comboASdpk;
     }
 }

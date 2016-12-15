@@ -1,6 +1,6 @@
 ﻿namespace BMW
 {
-    partial class Firmaislem_kayitbul
+    partial class Arac_satis_kayitbul
     {
         /// <summary>
         /// Required designer variable.
@@ -32,18 +32,21 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.geridonara = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.sonuclist = new DevExpress.XtraEditors.ListBoxControl();
             this.Tümtablogoster = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.sutunsecara = new System.Windows.Forms.ComboBox();
             this.kayitara = new System.Windows.Forms.Button();
             this.deger = new System.Windows.Forms.Label();
             this.Aranacakdeger = new System.Windows.Forms.TextBox();
-            this.Firmabulgrid = new DevExpress.XtraGrid.GridControl();
+            this.Aracsatisbulgrid = new DevExpress.XtraGrid.GridControl();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Firmabulgrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sonuclist)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Aracsatisbulgrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,8 +57,8 @@
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1266, 699);
-            this.tabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
-            this.tabControl1.TabIndex = 4;
+            this.tabControl1.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight;
+            this.tabControl1.TabIndex = 5;
             this.tabControl1.Tag = "";
             // 
             // tabPage2
@@ -63,13 +66,13 @@
             this.tabPage2.BackColor = System.Drawing.SystemColors.Control;
             this.tabPage2.Controls.Add(this.geridonara);
             this.tabPage2.Controls.Add(this.groupBox2);
-            this.tabPage2.Controls.Add(this.Firmabulgrid);
+            this.tabPage2.Controls.Add(this.Aracsatisbulgrid);
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(1258, 670);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Firma Bul";
+            this.tabPage2.Text = "Araç Satış Kayıt Arama";
             // 
             // geridonara
             // 
@@ -83,6 +86,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.label1);
+            this.groupBox2.Controls.Add(this.sonuclist);
             this.groupBox2.Controls.Add(this.Tümtablogoster);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.sutunsecara);
@@ -91,14 +96,38 @@
             this.groupBox2.Controls.Add(this.Aranacakdeger);
             this.groupBox2.Location = new System.Drawing.Point(27, 438);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1010, 212);
+            this.groupBox2.Size = new System.Drawing.Size(1104, 226);
             this.groupBox2.TabIndex = 23;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Firma Kayıt Bul";
+            this.groupBox2.Text = "Araç Satış Kayıt Ara";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(63, 148);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(79, 17);
+            this.label1.TabIndex = 27;
+            this.label1.Text = "AÇIKLAMA:";
+            // 
+            // sonuclist
+            // 
+            this.sonuclist.Appearance.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.sonuclist.Appearance.Font = new System.Drawing.Font("Arial Unicode MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.sonuclist.Appearance.Options.UseBackColor = true;
+            this.sonuclist.Appearance.Options.UseFont = true;
+            this.sonuclist.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.sonuclist.HorizontalScrollbar = true;
+            this.sonuclist.HorzScrollStep = 1;
+            this.sonuclist.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.sonuclist.Location = new System.Drawing.Point(162, 101);
+            this.sonuclist.Name = "sonuclist";
+            this.sonuclist.Size = new System.Drawing.Size(815, 119);
+            this.sonuclist.TabIndex = 26;
             // 
             // Tümtablogoster
             // 
-            this.Tümtablogoster.Location = new System.Drawing.Point(691, 55);
+            this.Tümtablogoster.Location = new System.Drawing.Point(626, 38);
             this.Tümtablogoster.Name = "Tümtablogoster";
             this.Tümtablogoster.Size = new System.Drawing.Size(152, 50);
             this.Tümtablogoster.TabIndex = 25;
@@ -109,7 +138,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(73, 55);
+            this.label2.Location = new System.Drawing.Point(63, 38);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(251, 17);
             this.label2.TabIndex = 23;
@@ -119,15 +148,15 @@
             // 
             this.sutunsecara.FormattingEnabled = true;
             this.sutunsecara.Items.AddRange(new object[] {
-            "Sütun Seçin..."});
-            this.sutunsecara.Location = new System.Drawing.Point(326, 50);
+            "Sütun Seçin.."});
+            this.sutunsecara.Location = new System.Drawing.Point(326, 33);
             this.sutunsecara.Name = "sutunsecara";
             this.sutunsecara.Size = new System.Drawing.Size(263, 24);
             this.sutunsecara.TabIndex = 22;
             // 
             // kayitara
             // 
-            this.kayitara.Location = new System.Drawing.Point(691, 134);
+            this.kayitara.Location = new System.Drawing.Point(825, 38);
             this.kayitara.Name = "kayitara";
             this.kayitara.Size = new System.Drawing.Size(152, 50);
             this.kayitara.TabIndex = 7;
@@ -138,7 +167,7 @@
             // deger
             // 
             this.deger.AutoSize = true;
-            this.deger.Location = new System.Drawing.Point(74, 151);
+            this.deger.Location = new System.Drawing.Point(64, 71);
             this.deger.Name = "deger";
             this.deger.Size = new System.Drawing.Size(85, 17);
             this.deger.TabIndex = 21;
@@ -146,27 +175,27 @@
             // 
             // Aranacakdeger
             // 
-            this.Aranacakdeger.Location = new System.Drawing.Point(326, 148);
+            this.Aranacakdeger.Location = new System.Drawing.Point(326, 68);
             this.Aranacakdeger.Name = "Aranacakdeger";
             this.Aranacakdeger.Size = new System.Drawing.Size(263, 22);
             this.Aranacakdeger.TabIndex = 11;
             // 
-            // Firmabulgrid
+            // Aracsatisbulgrid
             // 
-            this.Firmabulgrid.Location = new System.Drawing.Point(3, 6);
-            this.Firmabulgrid.MainView = this.gridView2;
-            this.Firmabulgrid.Name = "Firmabulgrid";
-            this.Firmabulgrid.Size = new System.Drawing.Size(1246, 400);
-            this.Firmabulgrid.TabIndex = 1;
-            this.Firmabulgrid.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.Aracsatisbulgrid.Location = new System.Drawing.Point(3, 6);
+            this.Aracsatisbulgrid.MainView = this.gridView2;
+            this.Aracsatisbulgrid.Name = "Aracsatisbulgrid";
+            this.Aracsatisbulgrid.Size = new System.Drawing.Size(1246, 400);
+            this.Aracsatisbulgrid.TabIndex = 1;
+            this.Aracsatisbulgrid.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
             // 
             // gridView2
             // 
-            this.gridView2.GridControl = this.Firmabulgrid;
+            this.gridView2.GridControl = this.Aracsatisbulgrid;
             this.gridView2.Name = "gridView2";
             // 
-            // Firmaislem_kayitbul
+            // Arac_satis_kayitbul
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -174,15 +203,16 @@
             this.ClientSize = new System.Drawing.Size(1292, 746);
             this.Controls.Add(this.tabControl1);
             this.MaximizeBox = false;
-            this.Name = "Firmaislem_kayitbul";
+            this.Name = "Arac_satis_kayitbul";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Firmaislem_kayitbul";
-            this.Load += new System.EventHandler(this.Firmaislem_kayitbul_Load);
+            this.Text = "Arac_satis_kayitbul";
+            this.Load += new System.EventHandler(this.Arac_satis_kayitbul_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Firmabulgrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sonuclist)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Aracsatisbulgrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             this.ResumeLayout(false);
 
@@ -200,7 +230,9 @@
         private System.Windows.Forms.Button kayitara;
         private System.Windows.Forms.Label deger;
         private System.Windows.Forms.TextBox Aranacakdeger;
-        private DevExpress.XtraGrid.GridControl Firmabulgrid;
+        private DevExpress.XtraGrid.GridControl Aracsatisbulgrid;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
+        private System.Windows.Forms.Label label1;
+        private DevExpress.XtraEditors.ListBoxControl sonuclist;
     }
 }

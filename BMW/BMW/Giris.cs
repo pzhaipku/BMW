@@ -14,6 +14,7 @@ namespace BMW
     {
         SQL cumle = new SQL();
         AdminPanel admin = new AdminPanel();
+        MusteriHizmetleriPanel Musterihzmt = new MusteriHizmetleriPanel();
         public Giris()
         {
             InitializeComponent();
@@ -26,15 +27,45 @@ namespace BMW
 
         private void btn_Giris_Click(object sender, EventArgs e)
         {
-            cumle.Select("Select*from Kullanici where Kullanici_adi='"+txt_Kulad.Text.ToString()+"' AND Kullanici_sifre='"+txt_Sifre.Text.ToString()+"'","giris");
+            try
+            {
+                cumle.Select("Select*from Kullanici where Kullanici_adi='" + txt_Kulad.Text.ToString() + "' AND Kullanici_sifre='" + txt_Sifre.Text.ToString() + "'", "giris");
+
+
+                if (cumle.ds.Tables["giris"].Rows[0]["Yetki_kodu"].ToString() == "YK0")
+                {
+                    admin.Show();
+                    this.Hide();
+                }
+                else if (cumle.ds.Tables["giris"].Rows[0]["Yetki_kodu"].ToString() == "YK1")
+                {
+                    admin.Show();
+                    this.Hide();
+                }
+                else if (cumle.ds.Tables["giris"].Rows[0]["Yetki_kodu"].ToString() == "YK2")
+                {
+                    admin.Show();
+                    this.Hide();
+                }
+                else if (cumle.ds.Tables["giris"].Rows[0]["Yetki_kodu"].ToString() == "YK3")
+                {
+                    admin.Show();
+                    this.Hide();
+                }
+                else if (cumle.ds.Tables["giris"].Rows[0]["Yetki_kodu"].ToString() == "YK4")
+                {
+                    Musterihzmt.Show();
+                    this.Hide();
+                }
+                else { MessageBox.Show("Hatalı Giriş"); }
+            }
+            catch (Exception)
+            {
+                
+                throw;
+            }
             
 
-            if (cumle.ds.Tables["giris"].Rows.Count > 0)
-            {
-                admin.Show();
-                this.Hide();
-            }
-            else { MessageBox.Show("Hatalı Giriş"); }
         }
     }
 }

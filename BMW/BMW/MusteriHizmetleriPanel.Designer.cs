@@ -368,7 +368,7 @@
             // aktifkisi
             // 
             this.aktifkisi.AutoSize = true;
-            this.aktifkisi.Font = new System.Drawing.Font("Monotype Corsiva", 19.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.aktifkisi.Font = new System.Drawing.Font("Monotype Corsiva", 19.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.aktifkisi.Location = new System.Drawing.Point(20, 573);
             this.aktifkisi.Name = "aktifkisi";
             this.aktifkisi.Size = new System.Drawing.Size(93, 40);
@@ -379,9 +379,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(1292, 623);
             this.Controls.Add(this.aktifkisi);
             this.Controls.Add(this.tabControl1);
+            this.MaximizeBox = false;
             this.Name = "MusteriHizmetleriPanel";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MusteriHizmetleriPanel";

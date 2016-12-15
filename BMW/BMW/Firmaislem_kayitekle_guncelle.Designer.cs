@@ -30,6 +30,8 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.Firmagrid = new DevExpress.XtraGrid.GridControl();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.mkodu = new System.Windows.Forms.Label();
             this.fid = new System.Windows.Forms.Label();
             this.sonkayit = new System.Windows.Forms.Button();
@@ -51,8 +53,6 @@
             this.kayitguncelle = new System.Windows.Forms.Button();
             this.yenikayit = new System.Windows.Forms.Button();
             this.kayitekle = new System.Windows.Forms.Button();
-            this.Firmagrid = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Firmagrid)).BeginInit();
@@ -100,6 +100,22 @@
             this.tabPage1.Size = new System.Drawing.Size(1258, 670);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Firma Müşterileri";
+            // 
+            // Firmagrid
+            // 
+            this.Firmagrid.Location = new System.Drawing.Point(3, 6);
+            this.Firmagrid.MainView = this.gridView1;
+            this.Firmagrid.Name = "Firmagrid";
+            this.Firmagrid.Size = new System.Drawing.Size(1246, 400);
+            this.Firmagrid.TabIndex = 38;
+            this.Firmagrid.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView1});
+            // 
+            // gridView1
+            // 
+            this.gridView1.GridControl = this.Firmagrid;
+            this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsView.ShowFooter = true;
             // 
             // mkodu
             // 
@@ -286,28 +302,14 @@
             this.kayitekle.UseVisualStyleBackColor = true;
             this.kayitekle.Click += new System.EventHandler(this.kayitekle_Click);
             // 
-            // Firmagrid
-            // 
-            this.Firmagrid.Location = new System.Drawing.Point(3, 6);
-            this.Firmagrid.MainView = this.gridView1;
-            this.Firmagrid.Name = "Firmagrid";
-            this.Firmagrid.Size = new System.Drawing.Size(1246, 400);
-            this.Firmagrid.TabIndex = 38;
-            this.Firmagrid.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
-            // 
-            // gridView1
-            // 
-            this.gridView1.GridControl = this.Firmagrid;
-            this.gridView1.Name = "gridView1";
-            this.gridView1.OptionsView.ShowFooter = true;
-            // 
             // Firmaislem_kayitekle_guncelle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(1292, 746);
             this.Controls.Add(this.tabControl1);
+            this.MaximizeBox = false;
             this.Name = "Firmaislem_kayitekle_guncelle";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Firmaislem_kayitekle_guncelle";

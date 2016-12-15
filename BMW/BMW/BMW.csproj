@@ -88,6 +88,12 @@
     <Compile Include="Servis.Designer.cs">
       <DependentUpon>Servis.cs</DependentUpon>
     </Compile>
+    <Compile Include="Servis_Islem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Servis_Islem.Designer.cs">
+      <DependentUpon>Servis_Islem.cs</DependentUpon>
+    </Compile>
     <Compile Include="SQL.cs" />
     <Compile Include="SV_musform.cs">
       <SubType>Form</SubType>
@@ -124,6 +130,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Servis.resx">
       <DependentUpon>Servis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Servis_Islem.resx">
+      <DependentUpon>Servis_Islem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SV_musform.resx">
       <DependentUpon>SV_musform.cs</DependentUpon>

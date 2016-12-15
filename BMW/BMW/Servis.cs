@@ -65,11 +65,6 @@ namespace BMW
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Parca prc_form = new Parca();
-            prc_form.Show();
-        }
         private void servis_goster()
         {
             try
@@ -287,6 +282,12 @@ namespace BMW
             {
                 sv_baglanti.Close();
             }
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            Servis_Islem svisform = new Servis_Islem();
+            svisform.Show();
         }
 
 

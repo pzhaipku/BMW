@@ -17,6 +17,8 @@ namespace BMW
         YetkiTanimlama yetki;
         Giris giris;
         Il_Ilce il_ilce;
+        AracSerileri seriler;
+
         public string Tc_no;
         public AdminPanel()
         {
@@ -60,6 +62,14 @@ namespace BMW
             il_ilce = new Il_Ilce();
             il_ilce.Tc_no4 = Tc_no;
             il_ilce.Show();
+            this.Hide();
+        }
+
+        private void btn_AracSerileri_Click(object sender, EventArgs e)
+        {
+            seriler = new AracSerileri();
+            seriler.tc_no5 = Tc_no;
+            seriler.Show();
             this.Hide();
         }
     }

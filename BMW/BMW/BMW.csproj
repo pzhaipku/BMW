@@ -50,6 +50,12 @@
     <Compile Include="AdminPanel.Designer.cs">
       <DependentUpon>AdminPanel.cs</DependentUpon>
     </Compile>
+    <Compile Include="AracSerileri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AracSerileri.Designer.cs">
+      <DependentUpon>AracSerileri.cs</DependentUpon>
+    </Compile>
     <Compile Include="A_Kullanici.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -79,6 +85,9 @@
     </Compile>
     <EmbeddedResource Include="AdminPanel.resx">
       <DependentUpon>AdminPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AracSerileri.resx">
+      <DependentUpon>AracSerileri.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="A_Kullanici.resx">
       <DependentUpon>A_Kullanici.cs</DependentUpon>

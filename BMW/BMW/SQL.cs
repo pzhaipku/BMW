@@ -61,7 +61,6 @@ namespace BMW
                 komut = new SqlCommand(sorgu, bag_cumle);
                 komut.ExecuteNonQuery();
                 baglan(0);
-                MessageBox.Show("İşlem Başarılı");
             }
             catch (Exception hata)
             {

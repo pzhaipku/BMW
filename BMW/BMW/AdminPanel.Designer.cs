@@ -33,6 +33,7 @@
             this.btn_ACikis = new System.Windows.Forms.Button();
             this.btn_YetkiTanimlama = new System.Windows.Forms.Button();
             this.btn_Il_Ilce = new System.Windows.Forms.Button();
+            this.btn_AracSerileri = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btn_Kullanicilar
@@ -85,12 +86,23 @@
             this.btn_Il_Ilce.UseVisualStyleBackColor = true;
             this.btn_Il_Ilce.Click += new System.EventHandler(this.btn_Il_Ilce_Click);
             // 
+            // btn_AracSerileri
+            // 
+            this.btn_AracSerileri.Location = new System.Drawing.Point(15, 116);
+            this.btn_AracSerileri.Name = "btn_AracSerileri";
+            this.btn_AracSerileri.Size = new System.Drawing.Size(72, 47);
+            this.btn_AracSerileri.TabIndex = 5;
+            this.btn_AracSerileri.Text = "Araç Serileri";
+            this.btn_AracSerileri.UseVisualStyleBackColor = true;
+            this.btn_AracSerileri.Click += new System.EventHandler(this.btn_AracSerileri_Click);
+            // 
             // AdminPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(468, 322);
             this.ControlBox = false;
+            this.Controls.Add(this.btn_AracSerileri);
             this.Controls.Add(this.btn_Il_Ilce);
             this.Controls.Add(this.btn_YetkiTanimlama);
             this.Controls.Add(this.btn_ACikis);
@@ -112,5 +124,6 @@
         private System.Windows.Forms.Button btn_ACikis;
         private System.Windows.Forms.Button btn_YetkiTanimlama;
         private System.Windows.Forms.Button btn_Il_Ilce;
+        private System.Windows.Forms.Button btn_AracSerileri;
     }
 }

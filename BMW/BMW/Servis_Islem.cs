@@ -96,5 +96,52 @@ namespace BMW
                 si_baglanti.Close();
             }
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SqlCommand komut = new SqlCommand();
+                komut.CommandText = "Delete From Islem Where Islem_id='" + textSIid.Text + "'";
+                si_baglanti.Open();
+                komut.Connection = si_baglanti;
+                komut.ExecuteNonQuery();
+                si_baglanti.Close();
+                islem_goster();
+            }
+            catch (Exception hata)
+            {
+                MessageBox.Show("Yanlış bir şeyler var hataları kontrol ediniz");
+                MessageBox.Show(hata.ToString());
+            }
+            finally
+            {
+                si_baglanti.Close();
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SqlCommand komut = new SqlCommand();
+                komut.CommandText = "Update Islem Set Islem_kodu=" + "'" + textSIkod.Text + "',Islem=" + "'" + textSIisl.Text + "',Parca_kodu='" + comboSIprc.Text + "',Parca_adet=" + Convert.ToInt32(textSIadt.Text) + ",S_kodu='" + textSIsvk.Text+ "',Ucret=" + Convert.ToDouble(textSIfyt.Text) + " Where Islem_id='" + textSIid.Text + "'";
+                si_baglanti.Open();
+                MessageBox.Show(komut.CommandText);
+                komut.Connection = si_baglanti;
+                komut.ExecuteNonQuery();
+                si_baglanti.Close();
+                islem_goster();
+            }
+            catch (Exception hata)
+            {
+                MessageBox.Show("Yanlış bir şeyler var hataları kontrol ediniz");
+                MessageBox.Show(hata.ToString());
+            }
+            finally
+            {
+               si_baglanti.Close();
+            }
+        }
     }
 }

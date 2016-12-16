@@ -13,7 +13,7 @@ namespace BMW
 {
     public partial class Arac_Satis : Form
     {
-        string astmuskod,astmustc,astperadi, astpersoyadi, astperadsoy,astperadi1, astpersoyadi1,astperkod,astpersoneladsoy;
+        string astmuskod, astmustc, astperadi, astpersoyadi, astperadsoy, astperadi1, astpersoyadi1, astperkod, astpersoneladsoy, astmodelkod;
         string[] personel;
         SqlConnection asatis_baglanti = new SqlConnection("Data Source=PC-BILGISAYAR; Initial Catalog=BMW;Integrated Security=true;");
         public Arac_Satis()
@@ -89,6 +89,76 @@ namespace BMW
                 asatis_baglanti.Close();
             }
         }
+        private void astseri_goster()
+        {
+            try
+            {
+                SqlCommand komut = new SqlCommand("Select Seri_kodu From Arac_Serisi", asatis_baglanti);
+                asatis_baglanti.Open();
+                SqlDataReader ast_DR;
+                ast_DR = komut.ExecuteReader();
+                while (ast_DR.Read())
+                {
+                    comboASTsri.Items.Add(ast_DR["Seri_kodu"]);
+                }
+                asatis_baglanti.Close();
+            }
+            catch (Exception hata)
+            {
+                MessageBox.Show("Yanlış bir şeyler var hataları kontrol ediniz");
+                MessageBox.Show(hata.ToString());
+            }
+            finally
+            {
+                asatis_baglanti.Close();
+            }
+        }
+        private void astdp_goster()
+        {
+            try
+            {
+                SqlCommand komut = new SqlCommand("Select Dp_adi From Donanim_Paket", asatis_baglanti);
+                asatis_baglanti.Open();
+                SqlDataReader ast_DR;
+                ast_DR = komut.ExecuteReader();
+                while (ast_DR.Read())
+                {
+                    comboASTdpk.Items.Add(ast_DR["Dp_adi"]);
+                }
+                asatis_baglanti.Close();
+            }
+            catch (Exception hata)
+            {
+                MessageBox.Show("Yanlış bir şeyler var hataları kontrol ediniz");
+                MessageBox.Show(hata.ToString());
+            }
+            finally
+            {
+                asatis_baglanti.Close();
+            }
+        }
+        private void astmodel_kontrol()
+        {
+            try
+            {
+                SqlCommand komut = new SqlCommand("Exec Arac_Stok_model_kodu_bul2 '"+comboASTsri.SelectedItem.ToString()+"','"+comboASTmod.SelectedItem.ToString()+ "','"+comboASTdpk.SelectedItem.ToString()+"'",asatis_baglanti);
+                asatis_baglanti.Open();
+                SqlDataReader ast_DR;
+                ast_DR = komut.ExecuteReader();
+                ast_DR.Read();
+                astmodelkod = (ast_DR["Model_kodu"]).ToString();
+                textASTmod.Text = astmodelkod;
+            }
+            catch (Exception hata)
+            {
+                MessageBox.Show("Yanlış bir şeyler var hataları kontrol ediniz");
+                MessageBox.Show(hata.ToString());
+            }
+            finally
+            {
+                asatis_baglanti.Close();
+            }
+        }
         private void aracsatis_goster()
         {
             try
@@ -113,6 +183,8 @@ namespace BMW
         {
             aracsatis_goster();
             astpersonel_goster();
+            astseri_goster();
+
         }
 
 
@@ -120,13 +192,14 @@ namespace BMW
         {
             try
             {
+                astmodel_kontrol();
                 astmusteri_tckontrol();
                 string sorgu = "Exec Arac_Satis_kayitekle @satiskodu,@modelkodu,@personelkodu,@musterikodu,@satistarihi,@satisfiyati,@plaka";
                 SqlCommand komut = new SqlCommand(sorgu, asatis_baglanti);
                 komut.Parameters.AddWithValue("@satiskodu", textASTkod.Text);
-                komut.Parameters.AddWithValue("@modelkodu", textASTmod.Text);
-                komut.Parameters.AddWithValue("@personelkodu", astperkod);
-                komut.Parameters.AddWithValue("@musterikodu", astmuskod);
+                komut.Parameters.AddWithValue("@modelkodu", astmodelkod.ToString());
+                komut.Parameters.AddWithValue("@personelkodu", astperkod.ToString());
+                komut.Parameters.AddWithValue("@musterikodu", astmuskod.ToString());
                 komut.Parameters.AddWithValue("@satistarihi", Convert.ToDateTime(dateTimeASTsth.Text));
                 komut.Parameters.AddWithValue("@satisfiyati", Convert.ToDouble(textASTfyt.Text));
                 komut.Parameters.AddWithValue("@plaka", textASTplk.Text);
@@ -202,6 +275,12 @@ namespace BMW
                 textASTfyt.Clear();
                 comboASTper.Items.Clear();
                 comboASTper.Text = "";
+                comboASTsri.Items.Clear();
+                comboASTsri.Text = "";
+                comboASTmod.Items.Clear();
+                comboASTmod.Text = "";
+                comboASTdpk.Items.Clear();
+                comboASTdpk.Text = "";
                 dateTimeASTsth.Text = System.DateTime.Today.ToShortDateString();
             }
             catch (Exception hata)
@@ -237,10 +316,52 @@ namespace BMW
             }
         }
 
+        private void comboASTsri_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                comboASTmod.Items.Clear();
+                comboASTmod.Text = "";
+                comboASTdpk.Items.Clear();
+                comboASTdpk.Text = "";
+                SqlCommand komut = new SqlCommand("Select Model_adi From Arac_Model Where Seri_kodu='" + comboASTsri.SelectedItem.ToString() + "'", asatis_baglanti);
+                asatis_baglanti.Open();
+                SqlDataReader ast_DR;
+                ast_DR = komut.ExecuteReader();
+                while (ast_DR.Read())
+                {
+                    comboASTmod.Items.Add(ast_DR["Model_adi"]);
+                }
+                asatis_baglanti.Close();
+            }
+            catch (Exception hata)
+            {
+                MessageBox.Show("Yanlış bir şeyler var hataları kontrol ediniz");
+                MessageBox.Show(hata.ToString());
+            }
+            finally
+            {
+                asatis_baglanti.Close();
+            }
+        }
 
-        public SqlDataReader as_DR { get; set; }
+        private void comboASTmod_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            comboASTdpk.Items.Clear();
+            comboASTdpk.Text = "";
+            astdp_goster();
+        }
 
-        public SqlDataReader ast_DR { get; set; }
+        private void button4_Click(object sender, EventArgs e)
+        {
+            astmodel_kontrol();
+        }
+
+        private void comboASTdpk_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            astmodel_kontrol();
+        }
+
     }
 }
 

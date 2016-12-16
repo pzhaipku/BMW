@@ -48,6 +48,13 @@
             this.comboASTper = new System.Windows.Forms.ComboBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.comboASTsri = new System.Windows.Forms.ComboBox();
+            this.comboASTmod = new System.Windows.Forms.ComboBox();
+            this.comboASTdpk = new System.Windows.Forms.ComboBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.button4 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -60,7 +67,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(737, 229);
+            this.dataGridView1.Size = new System.Drawing.Size(787, 229);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
@@ -81,28 +88,28 @@
             // 
             // textASTmod
             // 
-            this.textASTmod.Location = new System.Drawing.Point(253, 257);
+            this.textASTmod.Location = new System.Drawing.Point(507, 261);
             this.textASTmod.Name = "textASTmod";
             this.textASTmod.Size = new System.Drawing.Size(100, 20);
             this.textASTmod.TabIndex = 3;
             // 
             // textASTmus
             // 
-            this.textASTmus.Location = new System.Drawing.Point(490, 256);
+            this.textASTmus.Location = new System.Drawing.Point(507, 315);
             this.textASTmus.Name = "textASTmus";
             this.textASTmus.Size = new System.Drawing.Size(100, 20);
             this.textASTmus.TabIndex = 5;
             // 
             // textASTfyt
             // 
-            this.textASTfyt.Location = new System.Drawing.Point(490, 301);
+            this.textASTfyt.Location = new System.Drawing.Point(692, 316);
             this.textASTfyt.Name = "textASTfyt";
             this.textASTfyt.Size = new System.Drawing.Size(100, 20);
             this.textASTfyt.TabIndex = 6;
             // 
             // textASTplk
             // 
-            this.textASTplk.Location = new System.Drawing.Point(490, 341);
+            this.textASTplk.Location = new System.Drawing.Point(692, 262);
             this.textASTplk.Name = "textASTplk";
             this.textASTplk.Size = new System.Drawing.Size(100, 20);
             this.textASTplk.TabIndex = 8;
@@ -128,7 +135,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(183, 264);
+            this.label3.Location = new System.Drawing.Point(399, 262);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(64, 13);
             this.label3.TabIndex = 11;
@@ -137,7 +144,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(186, 303);
+            this.label4.Location = new System.Drawing.Point(399, 289);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(48, 13);
             this.label4.TabIndex = 12;
@@ -146,7 +153,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(384, 264);
+            this.label5.Location = new System.Drawing.Point(399, 316);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(105, 13);
             this.label5.TabIndex = 13;
@@ -162,7 +169,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(384, 308);
+            this.label6.Location = new System.Drawing.Point(626, 323);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(57, 13);
             this.label6.TabIndex = 14;
@@ -171,7 +178,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(384, 348);
+            this.label7.Location = new System.Drawing.Point(649, 266);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(34, 13);
             this.label7.TabIndex = 15;
@@ -188,7 +195,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(76, 380);
+            this.button1.Location = new System.Drawing.Point(62, 380);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 17;
@@ -199,7 +206,7 @@
             // comboASTper
             // 
             this.comboASTper.FormattingEnabled = true;
-            this.comboASTper.Location = new System.Drawing.Point(253, 298);
+            this.comboASTper.Location = new System.Drawing.Point(507, 287);
             this.comboASTper.Name = "comboASTper";
             this.comboASTper.Size = new System.Drawing.Size(121, 21);
             this.comboASTper.TabIndex = 18;
@@ -207,7 +214,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(198, 380);
+            this.button2.Location = new System.Drawing.Point(177, 380);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 19;
@@ -217,7 +224,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(310, 379);
+            this.button3.Location = new System.Drawing.Point(288, 380);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 20;
@@ -225,11 +232,82 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
+            // comboASTsri
+            // 
+            this.comboASTsri.FormattingEnabled = true;
+            this.comboASTsri.Location = new System.Drawing.Point(272, 257);
+            this.comboASTsri.Name = "comboASTsri";
+            this.comboASTsri.Size = new System.Drawing.Size(121, 21);
+            this.comboASTsri.TabIndex = 21;
+            this.comboASTsri.SelectedIndexChanged += new System.EventHandler(this.comboASTsri_SelectedIndexChanged);
+            // 
+            // comboASTmod
+            // 
+            this.comboASTmod.FormattingEnabled = true;
+            this.comboASTmod.Location = new System.Drawing.Point(272, 284);
+            this.comboASTmod.Name = "comboASTmod";
+            this.comboASTmod.Size = new System.Drawing.Size(121, 21);
+            this.comboASTmod.TabIndex = 22;
+            this.comboASTmod.SelectedIndexChanged += new System.EventHandler(this.comboASTmod_SelectedIndexChanged);
+            // 
+            // comboASTdpk
+            // 
+            this.comboASTdpk.FormattingEnabled = true;
+            this.comboASTdpk.Location = new System.Drawing.Point(272, 311);
+            this.comboASTdpk.Name = "comboASTdpk";
+            this.comboASTdpk.Size = new System.Drawing.Size(121, 21);
+            this.comboASTdpk.TabIndex = 23;
+            this.comboASTdpk.SelectedIndexChanged += new System.EventHandler(this.comboASTdpk_SelectedIndexChanged);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(182, 263);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(25, 13);
+            this.label9.TabIndex = 24;
+            this.label9.Text = "Seri";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(182, 289);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(36, 13);
+            this.label10.TabIndex = 25;
+            this.label10.Text = "Model";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(182, 312);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(80, 13);
+            this.label11.TabIndex = 26;
+            this.label11.Text = "Donanım Paket";
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(402, 380);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.TabIndex = 27;
+            this.button4.Text = "button4";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
             // Arac_Satis
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(746, 414);
+            this.ClientSize = new System.Drawing.Size(801, 449);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.comboASTdpk);
+            this.Controls.Add(this.comboASTmod);
+            this.Controls.Add(this.comboASTsri);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.comboASTper);
@@ -281,5 +359,12 @@
         private System.Windows.Forms.ComboBox comboASTper;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.ComboBox comboASTsri;
+        private System.Windows.Forms.ComboBox comboASTmod;
+        private System.Windows.Forms.ComboBox comboASTdpk;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Button button4;
     }
 }

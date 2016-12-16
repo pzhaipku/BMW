@@ -13,7 +13,7 @@ namespace BMW
     public partial class Firmaislem_kayitsil : Form
     {
         SQL cumle = new SQL();
-
+        public string tcno;
         public Firmaislem_kayitsil()
         {
             InitializeComponent();
@@ -24,6 +24,7 @@ namespace BMW
             try
             {
                 MusteriHizmetleriPanel m = new MusteriHizmetleriPanel();
+                m.tcno = tcno;
                 m.Show();
                 this.Close();
             }

@@ -44,6 +44,7 @@
             this.Aranacakdeger = new System.Windows.Forms.TextBox();
             this.Musteribulgrid = new DevExpress.XtraGrid.GridControl();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.musterituru = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -65,6 +66,7 @@
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPage2.Controls.Add(this.musterituru);
             this.tabPage2.Controls.Add(this.geridonara);
             this.tabPage2.Controls.Add(this.groupBox2);
             this.tabPage2.Controls.Add(this.Musteribulgrid);
@@ -99,7 +101,7 @@
             this.groupBox2.Controls.Add(this.Aranacakdeger);
             this.groupBox2.Location = new System.Drawing.Point(27, 438);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1010, 212);
+            this.groupBox2.Size = new System.Drawing.Size(923, 212);
             this.groupBox2.TabIndex = 23;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Müsteri Kayıt Bul";
@@ -211,6 +213,16 @@
             this.gridView2.GridControl = this.Musteribulgrid;
             this.gridView2.Name = "gridView2";
             // 
+            // musterituru
+            // 
+            this.musterituru.AutoSize = true;
+            this.musterituru.Location = new System.Drawing.Point(968, 459);
+            this.musterituru.Name = "musterituru";
+            this.musterituru.Size = new System.Drawing.Size(46, 17);
+            this.musterituru.TabIndex = 25;
+            this.musterituru.Text = "label1";
+            this.musterituru.Visible = false;
+            // 
             // Musteriislem_kayitbul
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -225,6 +237,7 @@
             this.Load += new System.EventHandler(this.Musteriislem_kayitbul_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Musteribulgrid)).EndInit();
@@ -251,6 +264,7 @@
         private System.Windows.Forms.Label ad;
         private System.Windows.Forms.TextBox msoyad;
         private System.Windows.Forms.TextBox mad;
+        private System.Windows.Forms.Label musterituru;
 
     }
 }

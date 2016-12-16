@@ -14,6 +14,7 @@ namespace BMW
     {
         SQL cumle = new SQL();
         private int bul = 0;
+        public string tcno;
 
         public Musteriislem_kayitbul()
         {
@@ -26,6 +27,7 @@ namespace BMW
             {
                 MusteriHizmetleriPanel m = new MusteriHizmetleriPanel();
                 this.Close();
+                m.tcno = tcno;
                 m.Show();
             }
             catch (Exception hata)
@@ -69,13 +71,27 @@ namespace BMW
                     else if (bul > 0)
                     {
                         cumle.ds.Tables["kayitbul"].Clear();
-                        MessageBox.Show("PROGRAM BURDA");
+                        
 
                     }
                     bul++;
                     cumle.Select("SELECT * FROM Musteri WHERE M_kodu='" + Aranacakdeger.Text.ToString() + "'", "kayitbul");
                     Musteribulgrid.DataSource = cumle.ds.Tables["kayitbul"];
-
+                    if (cumle.ds.Tables["kayitbul"].Rows[0]["Musteri_turu_kodu"].ToString()=="MT0")
+                    {
+                        musterituru.Text = "Araç Satış Müşterimiz.";
+                        musterituru.Visible = true;
+                    }
+                    else if(cumle.ds.Tables["kayitbul"].Rows[0]["Musteri_turu_kodu"].ToString()=="MT1")
+                    {
+                        musterituru.Text = "Servis Müşterimiz.";
+                        musterituru.Visible = true;
+                    }
+                    else if (cumle.ds.Tables["kayitbul"].Rows[0]["Musteri_turu_kodu"].ToString()=="MT2")
+                    {
+                        musterituru.Text = "Araç Satış ve Servis Müşterimiz";
+                        musterituru.Visible = true;
+                    }
 
                 }
                 else if (sutunsecara.SelectedItem.ToString() == "M_TCno")
@@ -85,12 +101,27 @@ namespace BMW
                     else if (bul > 0)
                     {
                         cumle.ds.Tables["kayitbul"].Clear();
-                        MessageBox.Show("PROGRAM BURDA");
+                        
 
                     }
                     bul++;
                     cumle.Select("SELECT * FROM Musteri WHERE M_TCno='" + Aranacakdeger.Text.ToString() + "'", "kayitbul");
                     Musteribulgrid.DataSource = cumle.ds.Tables["kayitbul"];
+                    if (cumle.ds.Tables["kayitbul"].Rows[0]["Musteri_turu_kodu"].ToString() == "MT0")
+                    {
+                        musterituru.Text = "Araç Satış Müşterimiz.";
+                        musterituru.Visible = true;
+                    }
+                    else if (cumle.ds.Tables["kayitbul"].Rows[0]["Musteri_turu_kodu"].ToString() == "MT1")
+                    {
+                        musterituru.Text = "Servis Müşterimiz.";
+                        musterituru.Visible = true;
+                    }
+                    else if (cumle.ds.Tables["kayitbul"].Rows[0]["Musteri_turu_kodu"].ToString() == "MT2")
+                    {
+                        musterituru.Text = "Araç Satış ve Servis Müşterimiz";
+                        musterituru.Visible = true;
+                    }
 
 
                 }
@@ -101,12 +132,13 @@ namespace BMW
                     else if (bul > 0)
                     {
                         cumle.ds.Tables["kayitbul"].Clear();
-                        MessageBox.Show("PROGRAM BURDA");
+                        
 
                     }
                     bul++;
                     cumle.Select("SELECT * FROM Musteri WHERE M_adi='" + Aranacakdeger.Text.ToString() + "'", "kayitbul");
                     Musteribulgrid.DataSource = cumle.ds.Tables["kayitbul"];
+                    
 
 
                 }
@@ -117,12 +149,13 @@ namespace BMW
                     else if (bul > 0)
                     {
                         cumle.ds.Tables["kayitbul"].Clear();
-                        MessageBox.Show("PROGRAM BURDA");
+                        
 
                     }
                     bul++;
                     cumle.Select("SELECT * FROM Musteri WHERE M_soyadi='" + Aranacakdeger.Text.ToString() + "'", "kayitbul");
                     Musteribulgrid.DataSource = cumle.ds.Tables["kayitbul"];
+                    
 
 
                 }
@@ -133,13 +166,13 @@ namespace BMW
                     else if (bul > 0)
                     {
                         cumle.ds.Tables["kayitbul"].Clear();
-                        MessageBox.Show("PROGRAM BURDA");
+                        
 
                     }
                     bul++;
                     cumle.Select("SELECT * FROM Musteri WHERE M_adi='" + mad.Text.ToString() + "' AND M_soyadi='" + msoyad.Text.ToString() + "'", "kayitbul");
                     Musteribulgrid.DataSource = cumle.ds.Tables["kayitbul"];
-
+                   
 
                 }
 

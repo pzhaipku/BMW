@@ -13,6 +13,7 @@ namespace BMW
     public partial class Musteriislem_kayitekle_guncelle : Form
     {
         SQL cumle = new SQL();
+        public string tcno;
         private int i = 0;
 
         public Musteriislem_kayitekle_guncelle()
@@ -40,8 +41,10 @@ namespace BMW
         {
             try
             {
+
                 MusteriHizmetleriPanel m = new MusteriHizmetleriPanel();
                 this.Close();
+                m.tcno = tcno;
                 m.Show();
             }
             catch (Exception hata)

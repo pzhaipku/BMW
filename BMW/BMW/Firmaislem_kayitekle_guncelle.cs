@@ -14,6 +14,8 @@ namespace BMW
     {
         SQL cumle = new SQL();
         private int i = 0;
+        public string tcno;
+
 
 
         public Firmaislem_kayitekle_guncelle()
@@ -27,6 +29,8 @@ namespace BMW
             {
                 MusteriHizmetleriPanel m = new MusteriHizmetleriPanel();
                 this.Close();
+                m.tcno = tcno;
+
                 m.Show();
             }
             catch (Exception hata)

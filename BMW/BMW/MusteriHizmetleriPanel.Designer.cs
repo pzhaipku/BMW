@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.Kapat = new System.Windows.Forms.Button();
@@ -58,6 +59,11 @@
             this.Aracsatisgrid = new DevExpress.XtraGrid.GridControl();
             this.gridView4 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.aktifkisi = new System.Windows.Forms.Label();
+            this.trhgoster = new System.Windows.Forms.Label();
+            this.saatgstr = new System.Windows.Forms.Label();
+            this.trh = new System.Windows.Forms.Label();
+            this.saat = new System.Windows.Forms.Label();
+            this.saatsay = new System.Windows.Forms.Timer(this.components);
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Musterigrid)).BeginInit();
@@ -375,12 +381,56 @@
             this.aktifkisi.TabIndex = 1;
             this.aktifkisi.Text = "label1";
             // 
+            // trhgoster
+            // 
+            this.trhgoster.AutoSize = true;
+            this.trhgoster.Location = new System.Drawing.Point(1222, 573);
+            this.trhgoster.Name = "trhgoster";
+            this.trhgoster.Size = new System.Drawing.Size(49, 17);
+            this.trhgoster.TabIndex = 2;
+            this.trhgoster.Text = ": Tarih";
+            // 
+            // saatgstr
+            // 
+            this.saatgstr.AutoSize = true;
+            this.saatgstr.Location = new System.Drawing.Point(1222, 597);
+            this.saatgstr.Name = "saatgstr";
+            this.saatgstr.Size = new System.Drawing.Size(45, 17);
+            this.saatgstr.TabIndex = 3;
+            this.saatgstr.Text = ": Saat";
+            // 
+            // trh
+            // 
+            this.trh.AutoSize = true;
+            this.trh.Location = new System.Drawing.Point(1127, 572);
+            this.trh.Name = "trh";
+            this.trh.Size = new System.Drawing.Size(46, 17);
+            this.trh.TabIndex = 4;
+            this.trh.Text = "label1";
+            // 
+            // saat
+            // 
+            this.saat.AutoSize = true;
+            this.saat.Location = new System.Drawing.Point(1127, 597);
+            this.saat.Name = "saat";
+            this.saat.Size = new System.Drawing.Size(46, 17);
+            this.saat.TabIndex = 5;
+            this.saat.Text = "label2";
+            // 
+            // saatsay
+            // 
+            this.saatsay.Tick += new System.EventHandler(this.saatsay_Tick);
+            // 
             // MusteriHizmetleriPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(1292, 623);
+            this.Controls.Add(this.saat);
+            this.Controls.Add(this.trh);
+            this.Controls.Add(this.saatgstr);
+            this.Controls.Add(this.trhgoster);
             this.Controls.Add(this.aktifkisi);
             this.Controls.Add(this.tabControl1);
             this.MaximizeBox = false;
@@ -438,5 +488,10 @@
         private System.Windows.Forms.Button pkapat;
         private DevExpress.XtraGrid.GridControl Aracsatisgrid;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView4;
+        private System.Windows.Forms.Label trhgoster;
+        private System.Windows.Forms.Label saatgstr;
+        private System.Windows.Forms.Label trh;
+        private System.Windows.Forms.Label saat;
+        private System.Windows.Forms.Timer saatsay;
     }
 }

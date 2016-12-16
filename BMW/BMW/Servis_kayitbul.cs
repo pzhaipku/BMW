@@ -14,7 +14,7 @@ namespace BMW
     {
         SQL cumle = new SQL();
         private int bul = 0;
-
+        public string tcno;
         public Servis_kayitbul()
         {
             InitializeComponent();
@@ -121,6 +121,7 @@ namespace BMW
             {
                 MusteriHizmetleriPanel m = new MusteriHizmetleriPanel();
                 this.Close();
+                m.tcno = tcno;
                 m.Show();
             }
             catch (Exception hata)

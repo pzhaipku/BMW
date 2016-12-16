@@ -14,7 +14,8 @@ namespace BMW
     public partial class Musteriislem_kayitsil : Form
     {
         SQL cumle = new SQL();
-        
+        public string tcno;
+
 
         public Musteriislem_kayitsil()
         {
@@ -48,6 +49,7 @@ namespace BMW
             {
                 MusteriHizmetleriPanel m = new MusteriHizmetleriPanel();
                 this.Close();
+                m.tcno = tcno;
                 m.Show();
             }
             catch (Exception hata)

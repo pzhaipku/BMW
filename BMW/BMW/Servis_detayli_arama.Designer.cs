@@ -34,6 +34,7 @@
             this.sonuc1 = new System.Windows.Forms.Label();
             this.geridonara = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.servisislem = new System.Windows.Forms.Button();
             this.Tümtablogoster = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.sutunsecara = new System.Windows.Forms.ComboBox();
@@ -107,6 +108,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.servisislem);
             this.groupBox2.Controls.Add(this.Tümtablogoster);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.sutunsecara);
@@ -120,11 +122,22 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Servis Detaylı Kayıt Ara";
             // 
+            // servisislem
+            // 
+            this.servisislem.Location = new System.Drawing.Point(1029, 57);
+            this.servisislem.Name = "servisislem";
+            this.servisislem.Size = new System.Drawing.Size(164, 50);
+            this.servisislem.TabIndex = 26;
+            this.servisislem.Text = "Araca Yapılan İşlemleri görmek  Için Tıkla..";
+            this.servisislem.UseVisualStyleBackColor = true;
+            this.servisislem.Visible = false;
+            this.servisislem.Click += new System.EventHandler(this.servisislem_Click);
+            // 
             // Tümtablogoster
             // 
             this.Tümtablogoster.Location = new System.Drawing.Point(658, 57);
             this.Tümtablogoster.Name = "Tümtablogoster";
-            this.Tümtablogoster.Size = new System.Drawing.Size(152, 50);
+            this.Tümtablogoster.Size = new System.Drawing.Size(164, 50);
             this.Tümtablogoster.TabIndex = 25;
             this.Tümtablogoster.Text = "Bütün Tabloyu Göster";
             this.Tümtablogoster.UseVisualStyleBackColor = true;
@@ -151,9 +164,9 @@
             // 
             // kayitara
             // 
-            this.kayitara.Location = new System.Drawing.Point(875, 60);
+            this.kayitara.Location = new System.Drawing.Point(842, 57);
             this.kayitara.Name = "kayitara";
-            this.kayitara.Size = new System.Drawing.Size(152, 50);
+            this.kayitara.Size = new System.Drawing.Size(164, 50);
             this.kayitara.TabIndex = 7;
             this.kayitara.Text = "Kayıt Ara";
             this.kayitara.UseVisualStyleBackColor = true;
@@ -229,5 +242,6 @@
         private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
         private System.Windows.Forms.Label sonuc1;
         private System.Windows.Forms.Label sonuc2;
+        private System.Windows.Forms.Button servisislem;
     }
 }

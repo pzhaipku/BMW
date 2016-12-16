@@ -14,6 +14,7 @@ namespace BMW
     {
         SQL cumle = new SQL();
         private int bul=0;
+        public string tcno;
 
 
         public Firmaislem_kayitbul()
@@ -26,6 +27,7 @@ namespace BMW
             try
             {
                 MusteriHizmetleriPanel m = new MusteriHizmetleriPanel();
+                m.tcno = tcno;
                 m.Show();
                 this.Close();
 
@@ -65,7 +67,7 @@ namespace BMW
                 {
                     cumle.ds.Tables["firmakayitbul"].Clear();
                 }
-                catch (Exception hata)
+                catch (Exception )
                 {
                    
                 }

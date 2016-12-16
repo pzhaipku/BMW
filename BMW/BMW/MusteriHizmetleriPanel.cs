@@ -13,17 +13,27 @@ namespace BMW
     public partial class MusteriHizmetleriPanel : Form
     {
         SQL cumle = new SQL();
-
+        public string tcno ;
         public MusteriHizmetleriPanel()
         {
             InitializeComponent();
         }
+        private void saatsay_Tick(object sender, EventArgs e)
+        {
+            saat.Text = DateTime.Now.ToLongTimeString();
+        }
 
         private void MusteriHizmetleriPanel_Load(object sender, EventArgs e)
         {
+
+            saatsay.Enabled = true;
+            trh.Text = DateTime.Now.ToShortDateString();
+            saat.Text = DateTime.Now.ToLongTimeString();
+            
+            
+      
             try
             {
-                string tcno = "12345678901";
                 aktifkisi.Text = cumle.Giris_Bilgisi(tcno);
                 cumle.Select("SELECT * FROM Musteri", "Musteri");
                 Musterigrid.DataSource = cumle.ds.Tables["Musteri"];
@@ -61,6 +71,7 @@ namespace BMW
             {
                 Musteriislem_kayitekle_guncelle m = new Musteriislem_kayitekle_guncelle();
                 this.Hide();
+                m.tcno = tcno;
                 m.Show();
             }
             catch (Exception hata)
@@ -77,6 +88,7 @@ namespace BMW
             {
                 Musteriislem_kayitekle_guncelle m = new Musteriislem_kayitekle_guncelle();
                 this.Hide();
+                m.tcno = tcno;
                 m.Show();
             }
             catch (Exception hata)
@@ -92,6 +104,7 @@ namespace BMW
             {
                 Musteriislem_kayitsil m = new Musteriislem_kayitsil();
                 this.Hide();
+                m.tcno = tcno;
 
                 m.Show();
             }
@@ -106,8 +119,10 @@ namespace BMW
         {
             try
             {
+              
                 Musteriislem_kayitbul m = new Musteriislem_kayitbul();
                 this.Hide();
+                m.tcno = tcno;
 
                 m.Show();
             }
@@ -138,6 +153,7 @@ namespace BMW
             {
                 Firmaislem_kayitekle_guncelle m = new Firmaislem_kayitekle_guncelle();
                 this.Hide();
+                m.tcno = tcno;
                 m.Show();
             }
             catch (Exception hata)
@@ -154,6 +170,7 @@ namespace BMW
             {
                 Firmaislem_kayitsil m = new Firmaislem_kayitsil();
                 this.Hide();
+                m.tcno = tcno;
                 m.Show();
             }
             catch (Exception hata)
@@ -170,6 +187,7 @@ namespace BMW
             {
                 Firmaislem_kayitekle_guncelle m = new Firmaislem_kayitekle_guncelle();
                 this.Hide();
+                m.tcno = tcno;
                 m.Show();
             }
             catch (Exception hata)
@@ -186,6 +204,7 @@ namespace BMW
             {
                 Firmaislem_kayitbul m = new Firmaislem_kayitbul();
                 this.Hide();
+                m.tcno = tcno;
                 m.Show();
             }
             catch (Exception hata)
@@ -216,6 +235,7 @@ namespace BMW
             {
                 Servis_durum_kontrol m = new Servis_durum_kontrol();
                 this.Hide();
+                m.tcno = tcno;
                 m.Show();
             }
             catch (Exception hata)
@@ -232,6 +252,7 @@ namespace BMW
             {
                 Servis_kayitbul m = new Servis_kayitbul();
                 this.Hide();
+                m.tcno = tcno;
                 m.Show();
             }
             catch (Exception hata)
@@ -248,6 +269,7 @@ namespace BMW
             {
                 Servis_detayli_arama m = new Servis_detayli_arama();
                 this.Hide();
+                m.tcno = tcno;
                 m.Show();
             }
             catch (Exception hata)
@@ -278,15 +300,23 @@ namespace BMW
             {
                 Arac_satis_kayitbul m = new Arac_satis_kayitbul();
                 this.Hide();
+                m.tcno = tcno;
                 m.Show();
             }
             catch (Exception hata)
             {
                 MessageBox.Show("Üzgünüz Beklenmedik Bİr Hata Ooluştu Lütfen Sistem Yöneticisine Başvurunuz. Hata " + hata.Message.ToString());
+                
+                
             }
             
 
         }
+
+      
+    
+
+    
 
       
 

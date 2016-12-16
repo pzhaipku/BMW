@@ -13,8 +13,9 @@ namespace BMW
     public partial class Servis_detayli_arama : Form
     {
         SQL    cumle = new SQL();
+        Islem_goster islem = new Islem_goster();
         private int bul = 0;
-
+        public string tcno;
 
         public Servis_detayli_arama()
         {
@@ -81,6 +82,7 @@ namespace BMW
                     bul++;
                     cumle.Select("SELECT * FROM Servis WHERE S_kodu='" + Aranacakdeger.Text.ToString() + "'", "servisdetaylikayitbul");
                     Firmabulgrid.DataSource = cumle.ds.Tables["servisdetaylikayitbul"];
+                    islemleri_goster(Aranacakdeger.Text.ToString());
                     cumle.Select("SELECT M_adi,M_soyadi FROM Musteri WHERE M_kodu='" + cumle.ds.Tables["servisdetaylikayitbul"].Rows[0]["M_kodu"].ToString() + "'", "servismusteri");
                     cumle.Select("SELECT M_kodu,Count(*) AS 'adet' FROM Servis Group by M_kodu ", "serviskayitadeti");
 
@@ -90,6 +92,8 @@ namespace BMW
                     sonuc2.Text = cumle.ds.Tables["servisdetaylikayitbul"].Rows[0]["M_kodu"].ToString() + " Müşteri koduna Sahip " + cumle.ds.Tables["servismusteri"].Rows[0]["M_adi"].ToString() + " " + cumle.ds.Tables["servismusteri"].Rows[0]["M_soyadi"].ToString() + " Müşterimizin Serviste "+cumle.ds.Tables["serviskayitadeti"].Rows[0]["adet"].ToString()+ " Adet Kaydı Bulunmaktadır.";
                     sonuc1.Visible = true;
                     sonuc2.Visible = true;
+                    servisislem.Visible = true;
+
 
                     
                     
@@ -108,6 +112,8 @@ namespace BMW
                     bul++;
                     cumle.Select("SELECT * FROM Servis WHERE Plaka='" + Aranacakdeger.Text.ToString() + "'", "servisdetaylikayitbul");
                     Firmabulgrid.DataSource = cumle.ds.Tables["servisdetaylikayitbul"];
+                    cumle.Select("SELECT S_kodu FROM Servis WHERE Plaka='" + Aranacakdeger.Text.ToString() + "'", "serviskodu");
+                    islemleri_goster(cumle.ds.Tables["serviskodu"].Rows[0]["S_kodu"].ToString());
                     cumle.Select("SELECT M_adi,M_soyadi FROM Musteri WHERE M_kodu='" + cumle.ds.Tables["servisdetaylikayitbul"].Rows[0]["M_kodu"].ToString() + "'", "servismusteri");
                     cumle.Select("SELECT M_kodu,Count(*) AS 'adet' FROM Servis Group by M_kodu ", "serviskayitadeti");
 
@@ -115,6 +121,7 @@ namespace BMW
                     sonuc2.Text = cumle.ds.Tables["servisdetaylikayitbul"].Rows[0]["M_kodu"].ToString() + " Müşteri koduna Sahip " + cumle.ds.Tables["servismusteri"].Rows[0]["M_adi"].ToString() + " " + cumle.ds.Tables["servismusteri"].Rows[0]["M_soyadi"].ToString() + " Müşterimizin Serviste " + cumle.ds.Tables["serviskayitadeti"].Rows[0]["adet"].ToString() + " Adet Kaydı Bulunmaktadır.";
                     sonuc1.Visible = true;
                     sonuc2.Visible = true;
+                    servisislem.Visible = true;
 
                 }
 
@@ -131,6 +138,7 @@ namespace BMW
             {
                 MusteriHizmetleriPanel m = new MusteriHizmetleriPanel();
                 this.Close();
+                m.tcno = tcno;
                 m.Show();
             }
             catch (Exception hata)
@@ -139,6 +147,46 @@ namespace BMW
             }
            
 
+        }
+
+        private void islemleri_goster(string deger)
+        {
+            try
+            {
+                try
+                {
+                    cumle.ds.Tables["islemgoster"].Clear();
+                }
+                catch (Exception)
+                {
+                    
+                   
+                }
+                cumle.Select("SELECT * FROM Islem Where S_kodu='" + deger.ToString() + "'", "islemgoster");
+                islem.lb_arac.Text = deger + " Servis Kodlu Araç İçin Yapılan İşlemler";
+                islem.Islemgrid.DataSource = cumle.ds.Tables["islemgoster"];
+            }
+            catch (Exception)
+            {
+                
+            }
+            
+
+
+        }
+
+        private void servisislem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                islem.Show();
+            }
+            catch (Exception)
+            {
+                
+               
+            }
         }
     }
 }

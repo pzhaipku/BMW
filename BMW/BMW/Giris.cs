@@ -53,8 +53,10 @@ namespace BMW
                     this.Hide();
                 }
                 else if (cumle.ds.Tables["giris"].Rows[0]["Yetki_kodu"].ToString() == "YK4")
-                {
+                { 
+                    Musterihzmt.tcno = txt_Kulad.Text.ToString();
                     Musterihzmt.Show();
+                   
                     this.Hide();
                 }
                 else { MessageBox.Show("Hatalı Giriş"); }
@@ -62,7 +64,7 @@ namespace BMW
             catch (Exception)
             {
                 
-                throw;
+              
             }
             
 

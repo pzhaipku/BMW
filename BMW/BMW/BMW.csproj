@@ -57,6 +57,12 @@
     <Compile Include="AracSerileri.Designer.cs">
       <DependentUpon>AracSerileri.cs</DependentUpon>
     </Compile>
+    <Compile Include="Arac_Model.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Arac_Model.Designer.cs">
+      <DependentUpon>Arac_Model.cs</DependentUpon>
+    </Compile>
     <Compile Include="Arac_Motor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -101,6 +107,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AracSerileri.resx">
       <DependentUpon>AracSerileri.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Arac_Model.resx">
+      <DependentUpon>Arac_Model.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Arac_Motor.resx">
       <DependentUpon>Arac_Motor.cs</DependentUpon>

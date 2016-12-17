@@ -36,6 +36,7 @@
             this.btn_AracSerileri = new System.Windows.Forms.Button();
             this.btn_DonanimPaket = new System.Windows.Forms.Button();
             this.btn_AracMotor = new System.Windows.Forms.Button();
+            this.btn_Arac_Model = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btn_Kullanicilar
@@ -118,12 +119,23 @@
             this.btn_AracMotor.UseVisualStyleBackColor = true;
             this.btn_AracMotor.Click += new System.EventHandler(this.btn_AracMotor_Click);
             // 
+            // btn_Arac_Model
+            // 
+            this.btn_Arac_Model.Location = new System.Drawing.Point(15, 186);
+            this.btn_Arac_Model.Name = "btn_Arac_Model";
+            this.btn_Arac_Model.Size = new System.Drawing.Size(72, 47);
+            this.btn_Arac_Model.TabIndex = 7;
+            this.btn_Arac_Model.Text = "Araç Modelleri";
+            this.btn_Arac_Model.UseVisualStyleBackColor = true;
+            this.btn_Arac_Model.Click += new System.EventHandler(this.btn_Arac_Model_Click);
+            // 
             // AdminPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(468, 322);
             this.ControlBox = false;
+            this.Controls.Add(this.btn_Arac_Model);
             this.Controls.Add(this.btn_AracMotor);
             this.Controls.Add(this.btn_DonanimPaket);
             this.Controls.Add(this.btn_AracSerileri);
@@ -134,7 +146,7 @@
             this.Controls.Add(this.btn_Kullanicilar);
             this.Name = "AdminPanel";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "AdminPanel";
+            this.Text = "Admin Panel";
             this.Load += new System.EventHandler(this.AdminPanel_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -151,5 +163,6 @@
         private System.Windows.Forms.Button btn_AracSerileri;
         private System.Windows.Forms.Button btn_DonanimPaket;
         private System.Windows.Forms.Button btn_AracMotor;
+        private System.Windows.Forms.Button btn_Arac_Model;
     }
 }

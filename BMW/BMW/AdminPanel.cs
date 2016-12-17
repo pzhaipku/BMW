@@ -20,6 +20,7 @@ namespace BMW
         AracSerileri seriler;
         DonanimPaket donanim;
         Arac_Motor motor;
+        Arac_Model model;
         public string Tc_no;
         public AdminPanel()
         {
@@ -89,6 +90,14 @@ namespace BMW
             motor = new Arac_Motor();
             motor.tc_no7 = Tc_no;
             motor.Show();
+            this.Hide();
+        }
+
+        private void btn_Arac_Model_Click(object sender, EventArgs e)
+        {
+            model = new Arac_Model();
+            model.tc_no8 = Tc_no;
+            model.Show();
             this.Hide();
         }
     }

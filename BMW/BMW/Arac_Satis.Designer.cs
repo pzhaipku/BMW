@@ -50,11 +50,8 @@
             this.button3 = new System.Windows.Forms.Button();
             this.comboASTsri = new System.Windows.Forms.ComboBox();
             this.comboASTmod = new System.Windows.Forms.ComboBox();
-            this.comboASTdpk = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -195,7 +192,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(62, 380);
+            this.button1.Location = new System.Drawing.Point(248, 381);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 17;
@@ -214,7 +211,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(177, 380);
+            this.button2.Location = new System.Drawing.Point(363, 381);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 19;
@@ -224,7 +221,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(288, 380);
+            this.button3.Location = new System.Drawing.Point(474, 381);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 20;
@@ -244,20 +241,11 @@
             // comboASTmod
             // 
             this.comboASTmod.FormattingEnabled = true;
-            this.comboASTmod.Location = new System.Drawing.Point(272, 284);
+            this.comboASTmod.Location = new System.Drawing.Point(272, 297);
             this.comboASTmod.Name = "comboASTmod";
             this.comboASTmod.Size = new System.Drawing.Size(121, 21);
             this.comboASTmod.TabIndex = 22;
             this.comboASTmod.SelectedIndexChanged += new System.EventHandler(this.comboASTmod_SelectedIndexChanged);
-            // 
-            // comboASTdpk
-            // 
-            this.comboASTdpk.FormattingEnabled = true;
-            this.comboASTdpk.Location = new System.Drawing.Point(272, 311);
-            this.comboASTdpk.Name = "comboASTdpk";
-            this.comboASTdpk.Size = new System.Drawing.Size(121, 21);
-            this.comboASTdpk.TabIndex = 23;
-            this.comboASTdpk.SelectedIndexChanged += new System.EventHandler(this.comboASTdpk_SelectedIndexChanged);
             // 
             // label9
             // 
@@ -271,41 +259,19 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(182, 289);
+            this.label10.Location = new System.Drawing.Point(182, 302);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(36, 13);
             this.label10.TabIndex = 25;
             this.label10.Text = "Model";
             // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(182, 312);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(80, 13);
-            this.label11.TabIndex = 26;
-            this.label11.Text = "Donanım Paket";
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(402, 380);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 27;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
             // Arac_Satis
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(801, 449);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.label11);
+            this.ClientSize = new System.Drawing.Size(801, 416);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.comboASTdpk);
             this.Controls.Add(this.comboASTmod);
             this.Controls.Add(this.comboASTsri);
             this.Controls.Add(this.button3);
@@ -361,10 +327,7 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.ComboBox comboASTsri;
         private System.Windows.Forms.ComboBox comboASTmod;
-        private System.Windows.Forms.ComboBox comboASTdpk;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Button button4;
     }
 }

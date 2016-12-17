@@ -49,7 +49,10 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.comboASmod = new System.Windows.Forms.ComboBox();
-            this.comboASdpk = new System.Windows.Forms.ComboBox();
+            this.comboASsri = new System.Windows.Forms.ComboBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.button4 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -68,7 +71,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(32, 317);
+            this.button1.Location = new System.Drawing.Point(107, 355);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 9;
@@ -79,34 +82,36 @@
             // textASid
             // 
             this.textASid.Enabled = false;
-            this.textASid.Location = new System.Drawing.Point(82, 240);
+            this.textASid.Location = new System.Drawing.Point(61, 240);
             this.textASid.Name = "textASid";
             this.textASid.Size = new System.Drawing.Size(100, 20);
             this.textASid.TabIndex = 1;
             // 
             // textASmod
             // 
-            this.textASmod.Location = new System.Drawing.Point(82, 276);
+            this.textASmod.Location = new System.Drawing.Point(266, 312);
             this.textASmod.Name = "textASmod";
             this.textASmod.Size = new System.Drawing.Size(100, 20);
             this.textASmod.TabIndex = 2;
             // 
             // textASadt
             // 
-            this.textASadt.Location = new System.Drawing.Point(262, 241);
+            this.textASadt.Location = new System.Drawing.Point(266, 240);
             this.textASadt.Name = "textASadt";
             this.textASadt.Size = new System.Drawing.Size(100, 20);
             this.textASadt.TabIndex = 3;
             // 
             // textASalf
             // 
-            this.textASalf.Location = new System.Drawing.Point(262, 276);
+            this.textASalf.Enabled = false;
+            this.textASalf.Location = new System.Drawing.Point(266, 275);
             this.textASalf.Name = "textASalf";
             this.textASalf.Size = new System.Drawing.Size(100, 20);
             this.textASalf.TabIndex = 4;
             // 
             // textASotv
             // 
+            this.textASotv.Enabled = false;
             this.textASotv.Location = new System.Drawing.Point(404, 240);
             this.textASotv.Name = "textASotv";
             this.textASotv.Size = new System.Drawing.Size(100, 20);
@@ -114,20 +119,25 @@
             // 
             // textASkdv
             // 
+            this.textASkdv.Enabled = false;
             this.textASkdv.Location = new System.Drawing.Point(404, 276);
             this.textASkdv.Name = "textASkdv";
             this.textASkdv.Size = new System.Drawing.Size(100, 20);
             this.textASkdv.TabIndex = 6;
+            this.textASkdv.Text = "18";
             // 
             // textASkar
             // 
+            this.textASkar.Enabled = false;
             this.textASkar.Location = new System.Drawing.Point(609, 241);
             this.textASkar.Name = "textASkar";
             this.textASkar.Size = new System.Drawing.Size(100, 20);
             this.textASkar.TabIndex = 7;
+            this.textASkar.Text = "20";
             // 
             // textASbtf
             // 
+            this.textASbtf.Enabled = false;
             this.textASbtf.Location = new System.Drawing.Point(609, 276);
             this.textASbtf.Name = "textASbtf";
             this.textASbtf.Size = new System.Drawing.Size(100, 20);
@@ -135,7 +145,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(160, 317);
+            this.button2.Location = new System.Drawing.Point(329, 355);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(135, 23);
             this.button2.TabIndex = 10;
@@ -145,7 +155,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(337, 317);
+            this.button3.Location = new System.Drawing.Point(493, 355);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 11;
@@ -165,7 +175,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 283);
+            this.label2.Location = new System.Drawing.Point(188, 313);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(64, 13);
             this.label2.TabIndex = 13;
@@ -201,7 +211,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(372, 279);
+            this.label6.Location = new System.Drawing.Point(372, 283);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(29, 13);
             this.label6.TabIndex = 17;
@@ -210,7 +220,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(511, 247);
+            this.label7.Location = new System.Drawing.Point(514, 247);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(29, 13);
             this.label7.TabIndex = 18;
@@ -228,27 +238,58 @@
             // comboASmod
             // 
             this.comboASmod.FormattingEnabled = true;
-            this.comboASmod.Location = new System.Drawing.Point(434, 317);
+            this.comboASmod.Location = new System.Drawing.Point(61, 310);
             this.comboASmod.Name = "comboASmod";
             this.comboASmod.Size = new System.Drawing.Size(121, 21);
             this.comboASmod.TabIndex = 20;
             this.comboASmod.SelectedIndexChanged += new System.EventHandler(this.comboASmod_SelectedIndexChanged);
             // 
-            // comboASdpk
+            // comboASsri
             // 
-            this.comboASdpk.FormattingEnabled = true;
-            this.comboASdpk.Location = new System.Drawing.Point(588, 317);
-            this.comboASdpk.Name = "comboASdpk";
-            this.comboASdpk.Size = new System.Drawing.Size(121, 21);
-            this.comboASdpk.TabIndex = 21;
-            this.comboASdpk.SelectedIndexChanged += new System.EventHandler(this.comboASdpk_SelectedIndexChanged);
+            this.comboASsri.FormattingEnabled = true;
+            this.comboASsri.Location = new System.Drawing.Point(61, 276);
+            this.comboASsri.Name = "comboASsri";
+            this.comboASsri.Size = new System.Drawing.Size(121, 21);
+            this.comboASsri.TabIndex = 21;
+            this.comboASsri.SelectedIndexChanged += new System.EventHandler(this.comboASsri_SelectedIndexChanged);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(13, 283);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(25, 13);
+            this.label9.TabIndex = 22;
+            this.label9.Text = "Seri";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(13, 316);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(36, 13);
+            this.label10.TabIndex = 23;
+            this.label10.Text = "Model";
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(208, 355);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(96, 23);
+            this.button4.TabIndex = 24;
+            this.button4.Text = "Adet Güncelle";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // AracStok
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(721, 355);
-            this.Controls.Add(this.comboASdpk);
+            this.ClientSize = new System.Drawing.Size(721, 390);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.comboASsri);
             this.Controls.Add(this.comboASmod);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
@@ -302,6 +343,9 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox comboASmod;
-        private System.Windows.Forms.ComboBox comboASdpk;
+        private System.Windows.Forms.ComboBox comboASsri;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Button button4;
     }
 }

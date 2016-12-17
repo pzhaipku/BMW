@@ -15,7 +15,7 @@ namespace BMW
     {
         SqlConnection sv_baglanti = new SqlConnection("Data Source=PC-BILGISAYAR; Initial Catalog=BMW;Integrated Security=true;");
         public string perkod,peradi,muskod,mustc,peradi1,persoyadi1,peradsoy;
-        private string personeladsoy;
+        private string personeladsoy,tarih;
         string[] personel;
 
         public Servis()
@@ -65,7 +65,7 @@ namespace BMW
             }
         }
 
-        private void servis_goster()
+        public void servis_goster()
         {
             try
             {
@@ -124,8 +124,10 @@ namespace BMW
             try
             {
                 musteri_tckontrol();
+               // tarih=Convert.ToDateTime(dateTimeSVgir.Value.Date.Year.ToString())+"-"+Convert.ToDateTime(dateTimeSVgir.Value.Date.Month.ToString())+"-"+Convert.ToDateTime(dateTimeSVgir.Value.Date.Day.ToString());
+                tarih = dateTimeSVgir.Value.ToShortDateString();
                 SqlCommand komut = new SqlCommand();
-                komut.CommandText = "INSERT INTO Servis Values(" + "'" + textSVkod.Text + "'," + "'" + muskod + "','" + textSVmod.Text + "','" + perkod.ToString() + "'," + textSVgkm.Text + "," + textSVckm.Text + ",'" + Convert.ToDateTime(dateTimeSVgir.Text).ToShortDateString() + "',Null,'" + textSVplk.Text + "'," + Convert.ToInt32(textSVfyt.Text) + ",'" + Convert.ToInt32(checkSVtm.Checked) + "')";
+                komut.CommandText = "INSERT INTO Servis Values(" + "'" + textSVkod.Text + "'," + "'" + muskod + "','" + textSVmod.Text + "','" + perkod.ToString() + "'," + textSVgkm.Text + "," + textSVckm.Text + ",'" +tarih+ "',Null,'" + textSVplk.Text + "'," + Convert.ToInt32(textSVfyt.Text) + ",'" + Convert.ToInt32(checkSVtm.Checked) + "')";
                 sv_baglanti.Open();
                 komut.Connection = sv_baglanti;
                 komut.ExecuteNonQuery();
@@ -244,7 +246,6 @@ namespace BMW
                 textSVmod.Clear();
                 textSVmus.Clear();
                 textSVplk.Clear();
-                comboSVprc.Items.Clear();
                 comboSVprc.Text = "";
                 personel_goster();
                 dateTimeSVcik.Text = System.DateTime.Today.ToShortDateString();

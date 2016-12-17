@@ -13,8 +13,9 @@ namespace BMW
 {
     public partial class Arac_Satis : Form
     {
-        string astmuskod, astmustc, astperadi, astpersoyadi, astperadsoy, astperadi1, astpersoyadi1, astperkod, astpersoneladsoy, astmodelkod;
+        string astmuskod, astmustc, astperadsoy, astperadi1, astpersoyadi1, astperkod, astpersoneladsoy, astmodelkod;
         string[] personel;
+        int arac_adet;
         SqlConnection asatis_baglanti = new SqlConnection("Data Source=PC-BILGISAYAR; Initial Catalog=BMW;Integrated Security=true;");
         public Arac_Satis()
         {
@@ -113,19 +114,18 @@ namespace BMW
                 asatis_baglanti.Close();
             }
         }
-        private void astdp_goster()
+
+        private void astmodel_kontrol()
         {
             try
             {
-                SqlCommand komut = new SqlCommand("Select Dp_adi From Donanim_Paket", asatis_baglanti);
+                SqlCommand komut = new SqlCommand("Select * From Arac_Model Where Seri_kodu='" + comboASTsri.SelectedItem.ToString() + "' And Model_adi='" + comboASTmod.SelectedItem.ToString() + "'", asatis_baglanti);
                 asatis_baglanti.Open();
                 SqlDataReader ast_DR;
                 ast_DR = komut.ExecuteReader();
-                while (ast_DR.Read())
-                {
-                    comboASTdpk.Items.Add(ast_DR["Dp_adi"]);
-                }
-                asatis_baglanti.Close();
+                ast_DR.Read();
+                astmodelkod = (ast_DR["Model_kodu"]).ToString();
+                textASTmod.Text = astmodelkod;
             }
             catch (Exception hata)
             {
@@ -137,17 +137,38 @@ namespace BMW
                 asatis_baglanti.Close();
             }
         }
-        private void astmodel_kontrol()
+        private void stok_kontrol()
         {
             try
             {
-                SqlCommand komut = new SqlCommand("Exec Arac_Stok_model_kodu_bul2 '"+comboASTsri.SelectedItem.ToString()+"','"+comboASTmod.SelectedItem.ToString()+ "','"+comboASTdpk.SelectedItem.ToString()+"'",asatis_baglanti);
+                asatis_baglanti.Close();
+                SqlCommand komut = new SqlCommand("Select * From Arac_Stok Where Model_kodu='" + textASTmod.Text + "'", asatis_baglanti);
                 asatis_baglanti.Open();
-                SqlDataReader ast_DR;
-                ast_DR = komut.ExecuteReader();
-                ast_DR.Read();
-                astmodelkod = (ast_DR["Model_kodu"]).ToString();
-                textASTmod.Text = astmodelkod;
+                SqlDataReader as_DR;
+                as_DR = komut.ExecuteReader();
+                as_DR.Read();
+                arac_adet = Convert.ToInt32((as_DR["Adet"]));
+            }
+            catch (Exception hata)
+            {
+                MessageBox.Show("Yanlış bir şeyler var hataları kontrol ediniz");
+                MessageBox.Show(hata.ToString());
+            }
+            finally
+            {
+                asatis_baglanti.Close();
+            }
+        }
+        private void astsatisfiyat_kontrol()
+        {
+            try
+            {
+                SqlCommand komut = new SqlCommand("Select * From Arac_Stok Where Model_kodu='" + textASTmod.Text + "'", asatis_baglanti);
+                asatis_baglanti.Open();
+                SqlDataReader as_DR;
+                as_DR = komut.ExecuteReader();
+                as_DR.Read();
+                textASTfyt.Text = Convert.ToDouble((as_DR["Birim_toplam_Fiyat"])).ToString();
             }
             catch (Exception hata)
             {
@@ -190,8 +211,15 @@ namespace BMW
 
         private void button1_Click(object sender, EventArgs e)
         {
-            try
-            {
+            
+                stok_kontrol();
+                if (arac_adet <= 0)
+                {
+                    MessageBox.Show("Stokta Bu modelden araç yok");
+                }
+                else{
+                try
+                    {
                 astmodel_kontrol();
                 astmusteri_tckontrol();
                 string sorgu = "Exec Arac_Satis_kayitekle @satiskodu,@modelkodu,@personelkodu,@musterikodu,@satistarihi,@satisfiyati,@plaka";
@@ -218,13 +246,14 @@ namespace BMW
                 asatis_baglanti.Close();
             }
         }
+        }
         
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
-                
+                /*
                 SqlCommand komut = new SqlCommand("Select P_adi,P_soyadi From Personel Where P_kodu='" + dataGridView1.CurrentRow.Cells[3].Value.ToString() + "'", asatis_baglanti);
                 asatis_baglanti.Open();
                 SqlDataReader sv_DR;
@@ -242,7 +271,7 @@ namespace BMW
                 textASTmus.Text = astmustc;
                 dateTimeASTsth.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
                 textASTfyt.Text =Convert.ToDouble( dataGridView1.CurrentRow.Cells[6].Value).ToString();
-                textASTplk.Text = dataGridView1.CurrentRow.Cells[7].Value.ToString();
+                textASTplk.Text = dataGridView1.CurrentRow.Cells[7].Value.ToString();*/
             }
 
             catch (Exception hata)
@@ -273,14 +302,9 @@ namespace BMW
                 textASTmus.Clear();
                 textASTplk.Clear();
                 textASTfyt.Clear();
-                comboASTper.Items.Clear();
                 comboASTper.Text = "";
-                comboASTsri.Items.Clear();
                 comboASTsri.Text = "";
-                comboASTmod.Items.Clear();
                 comboASTmod.Text = "";
-                comboASTdpk.Items.Clear();
-                comboASTdpk.Text = "";
                 dateTimeASTsth.Text = System.DateTime.Today.ToShortDateString();
             }
             catch (Exception hata)
@@ -322,8 +346,6 @@ namespace BMW
             {
                 comboASTmod.Items.Clear();
                 comboASTmod.Text = "";
-                comboASTdpk.Items.Clear();
-                comboASTdpk.Text = "";
                 SqlCommand komut = new SqlCommand("Select Model_adi From Arac_Model Where Seri_kodu='" + comboASTsri.SelectedItem.ToString() + "'", asatis_baglanti);
                 asatis_baglanti.Open();
                 SqlDataReader ast_DR;
@@ -347,19 +369,9 @@ namespace BMW
 
         private void comboASTmod_SelectedIndexChanged(object sender, EventArgs e)
         {
-            comboASTdpk.Items.Clear();
-            comboASTdpk.Text = "";
-            astdp_goster();
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
             astmodel_kontrol();
-        }
+            astsatisfiyat_kontrol();
 
-        private void comboASTdpk_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            astmodel_kontrol();
         }
 
     }

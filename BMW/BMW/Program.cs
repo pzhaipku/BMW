@@ -16,7 +16,7 @@ namespace BMW
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MusteriHizmetleriPanel());
+            Application.Run(new Giris());
         }
     }
 }

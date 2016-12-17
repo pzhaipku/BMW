@@ -19,6 +19,7 @@ namespace BMW
         Il_Ilce il_ilce;
         AracSerileri seriler;
         DonanimPaket donanim;
+        Arac_Motor motor;
         public string Tc_no;
         public AdminPanel()
         {
@@ -78,6 +79,16 @@ namespace BMW
             donanim = new DonanimPaket();
             donanim.tc_no6 = Tc_no;
             donanim.Show();
+            this.Hide();
+
+            
+        }
+
+        private void btn_AracMotor_Click(object sender, EventArgs e)
+        {
+            motor = new Arac_Motor();
+            motor.tc_no7 = Tc_no;
+            motor.Show();
             this.Hide();
         }
     }

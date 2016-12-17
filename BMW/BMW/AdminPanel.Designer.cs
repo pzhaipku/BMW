@@ -35,6 +35,7 @@
             this.btn_Il_Ilce = new System.Windows.Forms.Button();
             this.btn_AracSerileri = new System.Windows.Forms.Button();
             this.btn_DonanimPaket = new System.Windows.Forms.Button();
+            this.btn_AracMotor = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btn_Kullanicilar
@@ -42,7 +43,7 @@
             this.btn_Kullanicilar.Location = new System.Drawing.Point(108, 44);
             this.btn_Kullanicilar.Name = "btn_Kullanicilar";
             this.btn_Kullanicilar.Size = new System.Drawing.Size(72, 47);
-            this.btn_Kullanicilar.TabIndex = 0;
+            this.btn_Kullanicilar.TabIndex = 1;
             this.btn_Kullanicilar.Text = "Kullanıcılar";
             this.btn_Kullanicilar.UseVisualStyleBackColor = true;
             this.btn_Kullanicilar.Click += new System.EventHandler(this.btn_Kullanicilar_Click);
@@ -62,7 +63,7 @@
             this.btn_ACikis.Location = new System.Drawing.Point(400, 9);
             this.btn_ACikis.Name = "btn_ACikis";
             this.btn_ACikis.Size = new System.Drawing.Size(56, 43);
-            this.btn_ACikis.TabIndex = 2;
+            this.btn_ACikis.TabIndex = 6;
             this.btn_ACikis.Text = "Çıkış";
             this.btn_ACikis.UseVisualStyleBackColor = true;
             this.btn_ACikis.Click += new System.EventHandler(this.button1_Click);
@@ -72,7 +73,7 @@
             this.btn_YetkiTanimlama.Location = new System.Drawing.Point(15, 44);
             this.btn_YetkiTanimlama.Name = "btn_YetkiTanimlama";
             this.btn_YetkiTanimlama.Size = new System.Drawing.Size(72, 47);
-            this.btn_YetkiTanimlama.TabIndex = 3;
+            this.btn_YetkiTanimlama.TabIndex = 0;
             this.btn_YetkiTanimlama.Text = "Yetki Tanımlama";
             this.btn_YetkiTanimlama.UseVisualStyleBackColor = true;
             this.btn_YetkiTanimlama.Click += new System.EventHandler(this.btn_YetkiTanimlama_Click);
@@ -82,7 +83,7 @@
             this.btn_Il_Ilce.Location = new System.Drawing.Point(203, 44);
             this.btn_Il_Ilce.Name = "btn_Il_Ilce";
             this.btn_Il_Ilce.Size = new System.Drawing.Size(72, 47);
-            this.btn_Il_Ilce.TabIndex = 4;
+            this.btn_Il_Ilce.TabIndex = 2;
             this.btn_Il_Ilce.Text = "İl ve İlçeler";
             this.btn_Il_Ilce.UseVisualStyleBackColor = true;
             this.btn_Il_Ilce.Click += new System.EventHandler(this.btn_Il_Ilce_Click);
@@ -92,7 +93,7 @@
             this.btn_AracSerileri.Location = new System.Drawing.Point(15, 116);
             this.btn_AracSerileri.Name = "btn_AracSerileri";
             this.btn_AracSerileri.Size = new System.Drawing.Size(72, 47);
-            this.btn_AracSerileri.TabIndex = 5;
+            this.btn_AracSerileri.TabIndex = 3;
             this.btn_AracSerileri.Text = "Araç Serileri";
             this.btn_AracSerileri.UseVisualStyleBackColor = true;
             this.btn_AracSerileri.Click += new System.EventHandler(this.btn_AracSerileri_Click);
@@ -102,10 +103,20 @@
             this.btn_DonanimPaket.Location = new System.Drawing.Point(108, 116);
             this.btn_DonanimPaket.Name = "btn_DonanimPaket";
             this.btn_DonanimPaket.Size = new System.Drawing.Size(72, 47);
-            this.btn_DonanimPaket.TabIndex = 6;
+            this.btn_DonanimPaket.TabIndex = 4;
             this.btn_DonanimPaket.Text = "Donanım Paketleri";
             this.btn_DonanimPaket.UseVisualStyleBackColor = true;
             this.btn_DonanimPaket.Click += new System.EventHandler(this.btn_DonanimPaket_Click);
+            // 
+            // btn_AracMotor
+            // 
+            this.btn_AracMotor.Location = new System.Drawing.Point(203, 116);
+            this.btn_AracMotor.Name = "btn_AracMotor";
+            this.btn_AracMotor.Size = new System.Drawing.Size(72, 47);
+            this.btn_AracMotor.TabIndex = 5;
+            this.btn_AracMotor.Text = "Araç Motor";
+            this.btn_AracMotor.UseVisualStyleBackColor = true;
+            this.btn_AracMotor.Click += new System.EventHandler(this.btn_AracMotor_Click);
             // 
             // AdminPanel
             // 
@@ -113,6 +124,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(468, 322);
             this.ControlBox = false;
+            this.Controls.Add(this.btn_AracMotor);
             this.Controls.Add(this.btn_DonanimPaket);
             this.Controls.Add(this.btn_AracSerileri);
             this.Controls.Add(this.btn_Il_Ilce);
@@ -138,5 +150,6 @@
         private System.Windows.Forms.Button btn_Il_Ilce;
         private System.Windows.Forms.Button btn_AracSerileri;
         private System.Windows.Forms.Button btn_DonanimPaket;
+        private System.Windows.Forms.Button btn_AracMotor;
     }
 }

@@ -34,6 +34,7 @@
             this.btn_YetkiTanimlama = new System.Windows.Forms.Button();
             this.btn_Il_Ilce = new System.Windows.Forms.Button();
             this.btn_AracSerileri = new System.Windows.Forms.Button();
+            this.btn_DonanimPaket = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btn_Kullanicilar
@@ -96,12 +97,23 @@
             this.btn_AracSerileri.UseVisualStyleBackColor = true;
             this.btn_AracSerileri.Click += new System.EventHandler(this.btn_AracSerileri_Click);
             // 
+            // btn_DonanimPaket
+            // 
+            this.btn_DonanimPaket.Location = new System.Drawing.Point(108, 116);
+            this.btn_DonanimPaket.Name = "btn_DonanimPaket";
+            this.btn_DonanimPaket.Size = new System.Drawing.Size(72, 47);
+            this.btn_DonanimPaket.TabIndex = 6;
+            this.btn_DonanimPaket.Text = "Donanım Paketleri";
+            this.btn_DonanimPaket.UseVisualStyleBackColor = true;
+            this.btn_DonanimPaket.Click += new System.EventHandler(this.btn_DonanimPaket_Click);
+            // 
             // AdminPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(468, 322);
             this.ControlBox = false;
+            this.Controls.Add(this.btn_DonanimPaket);
             this.Controls.Add(this.btn_AracSerileri);
             this.Controls.Add(this.btn_Il_Ilce);
             this.Controls.Add(this.btn_YetkiTanimlama);
@@ -125,5 +137,6 @@
         private System.Windows.Forms.Button btn_YetkiTanimlama;
         private System.Windows.Forms.Button btn_Il_Ilce;
         private System.Windows.Forms.Button btn_AracSerileri;
+        private System.Windows.Forms.Button btn_DonanimPaket;
     }
 }

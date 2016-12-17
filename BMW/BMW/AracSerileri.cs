@@ -142,13 +142,17 @@ namespace BMW
             
                 if (cmb_arac_serisi.SelectedIndex != -1)
                 {
-
-                    cumle.IDU("Update Arac_Serisi set Seri_kodu='" + txt_SeriKod.Text.ToString() + "', Seri_adi='" + txt_SeriAd.Text.ToString() + "', Cikis_yili='" + g_tarih + "' where Seri_kodu='" + secilen_seri_kod + "'");
-                    txt_SeriAd.Text = "";
-                    txt_SeriKod.Text = "";
-                    cmb_arac_serisi.SelectedIndex = -1;
-                    SerileriGetir();
-                    MessageBox.Show("İşlem Başarılı");
+                    if (txt_SeriAd.Text != "" && txt_SeriKod.Text != "" && dt_g_CikisTarihi.Text != "")
+                    {
+                        cumle.IDU("Update Arac_Serisi set Seri_kodu='" + txt_SeriKod.Text.ToString() + "', Seri_adi='" + txt_SeriAd.Text.ToString() + "', Cikis_yili='" + g_tarih + "' where Seri_kodu='" + secilen_seri_kod + "'");
+                        txt_SeriAd.Text = "";
+                        txt_SeriKod.Text = "";
+                        cmb_arac_serisi.SelectedIndex = -1;
+                        SerileriGetir();
+                        MessageBox.Show("İşlem Başarılı");
+                    }
+                    else
+                    { MessageBox.Show("Tüm alanları doldurunuz"); }
                 }
                 else
                 {

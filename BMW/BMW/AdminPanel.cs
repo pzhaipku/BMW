@@ -18,7 +18,7 @@ namespace BMW
         Giris giris;
         Il_Ilce il_ilce;
         AracSerileri seriler;
-
+        DonanimPaket donanim;
         public string Tc_no;
         public AdminPanel()
         {
@@ -70,6 +70,14 @@ namespace BMW
             seriler = new AracSerileri();
             seriler.tc_no5 = Tc_no;
             seriler.Show();
+            this.Hide();
+        }
+
+        private void btn_DonanimPaket_Click(object sender, EventArgs e)
+        {
+            donanim = new DonanimPaket();
+            donanim.tc_no6 = Tc_no;
+            donanim.Show();
             this.Hide();
         }
     }

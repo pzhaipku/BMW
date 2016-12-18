@@ -104,51 +104,44 @@ namespace BMW
 
         private void btn_Kaydet_Click(object sender, EventArgs e)
         {
-            if (DosyaSec.SafeFileName == "il_ilce_iceriaktar.xls")
-            {
-                if (dtg_il_ilce.Rows.Count > 0)
+              if (dtg_il_ilce.Rows.Count > 0)
+              {
+                if (rd_Il.Checked == true)
                 {
-                    if (rd_Il.Checked == true)
+                    int satir_sayisi=dtg_il_ilce.Rows.Count;
+                    while(satir_sayisi>0)
                     {
-                        int satir_sayisi = dtg_il_ilce.Rows.Count;
-                        while (satir_sayisi > 0)
-                        {
-                            string il_kodu = dtg_il_ilce.Rows[satir_sayisi - 1].Cells["Il_kodu"].Value.ToString();
-                            string il_adi = dtg_il_ilce.Rows[satir_sayisi - 1].Cells["Il_adi"].Value.ToString();
-                            satir_sayisi--;
-                            cumle.baglan(1);
-                            komut = new SqlCommand("Insert into Iller values('" + il_kodu + "','" + il_adi + "')", cumle.bag_cumle);
-                            komut.ExecuteNonQuery();
-                            cumle.baglan(0);
-
-                        }
-                        MessageBox.Show("Aktarma İşlemi Başarılı");
+                        string il_kodu = dtg_il_ilce.Rows[satir_sayisi-1].Cells["Il_kodu"].Value.ToString();
+                        string il_adi = dtg_il_ilce.Rows[satir_sayisi - 1].Cells["Il_adi"].Value.ToString();
+                        satir_sayisi--;
+                        cumle.baglan(1);
+                        komut = new SqlCommand("Insert into Iller values('" + il_kodu + "','" + il_adi + "')",cumle.bag_cumle);
+                        komut.ExecuteNonQuery();
+                        cumle.baglan(0);
+                        
                     }
-                    else if (rd_Ilce.Checked == true)
-                    {
-                        int satir_sayisi = dtg_il_ilce.Rows.Count;
-                        while (satir_sayisi > 0)
-                        {
-                            string il_kodu = dtg_il_ilce.Rows[satir_sayisi - 1].Cells["Il_kodu"].Value.ToString();
-                            string ilce_adi = dtg_il_ilce.Rows[satir_sayisi - 1].Cells["Ilce_adi"].Value.ToString();
-                            string ilce_kodu = dtg_il_ilce.Rows[satir_sayisi - 1].Cells["Ilce_kodu"].Value.ToString();
-                            satir_sayisi--;
-                            cumle.baglan(1);
-                            komut = new SqlCommand("Insert into Ilceler values('" + ilce_kodu + "','" + ilce_adi + "','" + il_kodu + "')", cumle.bag_cumle);
-                            komut.ExecuteNonQuery();
-                            cumle.baglan(0);
-
-                        }
-                        MessageBox.Show("Aktarma İşlemi Başarılı");
-
-                    }
+                    MessageBox.Show("Aktarma İşlemi Başarılı");
                 }
-                else { MessageBox.Show("İçe aktarılacak veri yok."); }
-            }
-            else
-            {
-                MessageBox.Show("Veri aktarılacak dosyayı seçiniz.");
-            }
+                else if (rd_Ilce.Checked == true)
+                {
+                    int satir_sayisi = dtg_il_ilce.Rows.Count;
+                    while (satir_sayisi > 0)
+                    {
+                        string il_kodu = dtg_il_ilce.Rows[satir_sayisi - 1].Cells["Il_kodu"].Value.ToString();
+                        string ilce_adi = dtg_il_ilce.Rows[satir_sayisi - 1].Cells["Ilce_adi"].Value.ToString();
+                        string ilce_kodu = dtg_il_ilce.Rows[satir_sayisi - 1].Cells["Ilce_kodu"].Value.ToString();
+                        satir_sayisi--;
+                        cumle.baglan(1);
+                        komut = new SqlCommand("Insert into Ilceler values('" + ilce_kodu + "','" + ilce_adi + "','"+il_kodu+"')", cumle.bag_cumle);
+                        komut.ExecuteNonQuery();
+                        cumle.baglan(0);
+
+                    }
+                    MessageBox.Show("Aktarma İşlemi Başarılı");
+
+                }
+           }
+            else { MessageBox.Show("İçe aktarılacak veri yok."); }
         }
 
         private void btn_d_aktar_Click(object sender, EventArgs e)

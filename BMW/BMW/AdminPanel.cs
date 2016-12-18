@@ -15,7 +15,7 @@ namespace BMW
         SQL AP_cumle = new SQL();
         A_Kullanici kullanici;
         YetkiTanimlama yetki;
-        //Giris giris;
+        Giris giris;
         Il_Ilce il_ilce;
         AracSerileri seriler;
         DonanimPaket donanim;
@@ -33,7 +33,7 @@ namespace BMW
         {
             //Giris sırasında textboxda girilen tc no bilgisi public tanımlanan Tc_no değişkenine
             //gönderiliyor ve giriş bilgisini elde etmek için tc no değişkeni fonksiyona gönderiliyor.
-           // lbl_GirisBilgisi.Text=AP_cumle.Giris_Bilgisi(Tc_no); 
+            lbl_GirisBilgisi.Text=AP_cumle.Giris_Bilgisi(Tc_no); 
         }
 
         private void btn_Kullanicilar_Click(object sender, EventArgs e)
@@ -46,9 +46,9 @@ namespace BMW
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //giris = new Giris();
-            //giris.Show();
-            //this.Hide();
+            giris = new Giris();
+            giris.Show();
+            this.Hide();
         }
 
         private void btn_YetkiTanimlama_Click(object sender, EventArgs e)

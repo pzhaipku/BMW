@@ -22,5 +22,11 @@ namespace BMW
             Servis srvs = new Servis();
             srvs.Show();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Arac_Satis arcsts = new Arac_Satis();
+            arcsts.Show();
+        }
     }
 }

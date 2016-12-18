@@ -24,7 +24,7 @@ namespace BMW
         {
             try
             {
-                cumle.Select("Select * from Servis", "serviskayit");
+                cumle.Select_musterihzmt("Select * from Servis", "serviskayit");
                 Firmabulgrid.DataSource = cumle.ds.Tables["serviskayit"];
                 sutunsecara.Items.Add(cumle.ds.Tables["serviskayit"].Columns["S_kodu"].ToString());
                 sutunsecara.Items.Add(cumle.ds.Tables["serviskayit"].Columns["Plaka"].ToString());
@@ -55,7 +55,7 @@ namespace BMW
 
                 }
 
-                cumle.Select("Select * from Servis", "serviskayit");
+                cumle.Select_musterihzmt("Select * from Servis", "serviskayit");
                 Firmabulgrid.DataSource = cumle.ds.Tables["serviskayit"];
                 bul = 0;
             }
@@ -81,7 +81,7 @@ namespace BMW
 
                     }
                     bul++;
-                    cumle.Select("SELECT * FROM Servis WHERE S_kodu='" + Aranacakdeger.Text.ToString() + "'", "serviskayitbul");
+                    cumle.Select_musterihzmt("SELECT * FROM Servis WHERE S_kodu='" + Aranacakdeger.Text.ToString() + "'", "serviskayitbul");
                     Firmabulgrid.DataSource = cumle.ds.Tables["serviskayitbul"];
 
 
@@ -99,7 +99,7 @@ namespace BMW
 
                     }
                     bul++;
-                    cumle.Select("SELECT * FROM Servis WHERE Plaka='" + Aranacakdeger.Text.ToString() + "'", "serviskayitbul");
+                    cumle.Select_musterihzmt("SELECT * FROM Servis WHERE Plaka='" + Aranacakdeger.Text.ToString() + "'", "serviskayitbul");
                     Firmabulgrid.DataSource = cumle.ds.Tables["serviskayitbul"];
 
 

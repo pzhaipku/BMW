@@ -45,7 +45,7 @@ namespace BMW
         {
             try
             {
-                cumle.Select("SELECT*FROM Firma_Musteri", "firma");
+                cumle.Select_musterihzmt("SELECT*FROM Firma_Musteri", "firma");
                 Firmagrid.DataSource = cumle.ds.Tables["firma"];
 
                 fkodu.Text = cumle.ds.Tables["firma"].Columns["Firma_kodu"].ToString();
@@ -168,10 +168,10 @@ namespace BMW
         {
             try
             {
-                cumle.IDU("INSERT INTO Firma_Musteri VALUES('" + Firma_kodu.Text.ToString() + "', '" + Convert.ToString(Firma_adi.Text) + "', '" + Il_koduu.Text.ToString() + "', '" + Ilce_koduu.Text.ToString() + "', '" + Firma_adres.Text.ToString() + "', '" + M_kodu.Text.ToString() + "')");
+                cumle.IDU_musterihzmt("INSERT INTO Firma_Musteri VALUES('" + Firma_kodu.Text.ToString() + "', '" + Convert.ToString(Firma_adi.Text) + "', '" + Il_koduu.Text.ToString() + "', '" + Ilce_koduu.Text.ToString() + "', '" + Firma_adres.Text.ToString() + "', '" + M_kodu.Text.ToString() + "')");
                 // cumle.IDU("INSERT INTO Musteri VALUES('" + M_kodu.Text.ToString() + "' '" + Convert.ToString(M_tcno.Text) + "' '" + M_adi.Text.ToString() + "' '" + M_soyadi.Text.ToString() + "' '" + M_tel.Text.ToString() + "' '" + M_email.Text.ToString() + "' '" + Convert.ToInt16(Il_kodu.Text) + "' '" + Ilce_kodu.Text.ToString() + "' '" + Adress.Text.ToString() + "' '" + M_turu_kodu.Text.ToString() + "')");
                 cumle.ds.Tables["firma"].Clear();
-                cumle.Select("Select * From Firma_Musteri", "firma");
+                cumle.Select_musterihzmt("Select * From Firma_Musteri", "firma");
                 Firmagrid.DataSource = cumle.ds.Tables["firma"];
             }
             catch (Exception hata)
@@ -204,9 +204,9 @@ namespace BMW
         {
             try
             {
-                cumle.IDU("UPDATE Firma_Musteri SET Firma_kodu='" + Firma_kodu.Text.ToString() + "', Firma_adi='" + Convert.ToString(Firma_adi.Text) + "', Il_kodu='" + Il_koduu.Text.ToString() + "', Ilce_kodu='" + Ilce_koduu.Text.ToString() + "', Firma_adres='" + Firma_adres.Text.ToString() + "', M_kodu='" + M_kodu.Text.ToString() + "' WHERE Firma_id='" + fid.Text.ToString() + "'");
+                cumle.IDU_musterihzmt("UPDATE Firma_Musteri SET Firma_kodu='" + Firma_kodu.Text.ToString() + "', Firma_adi='" + Convert.ToString(Firma_adi.Text) + "', Il_kodu='" + Il_koduu.Text.ToString() + "', Ilce_kodu='" + Ilce_koduu.Text.ToString() + "', Firma_adres='" + Firma_adres.Text.ToString() + "', M_kodu='" + M_kodu.Text.ToString() + "' WHERE Firma_id='" + fid.Text.ToString() + "'");
                 cumle.ds.Tables["firma"].Clear();
-                cumle.Select("Select * From Firma_Musteri", "firma");
+                cumle.Select_musterihzmt("Select * From Firma_Musteri", "firma");
                 Firmagrid.DataSource = cumle.ds.Tables["firma"];
             }
             catch (Exception hata)

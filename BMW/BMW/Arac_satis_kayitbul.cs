@@ -26,7 +26,7 @@ namespace BMW
         {
             try
             {
-            cumle.Select("Select * from Arac_Satis", "Aracsatiskayit");
+            cumle.Select_musterihzmt("Select * from Arac_Satis", "Aracsatiskayit");
             Aracsatisbulgrid.DataSource = cumle.ds.Tables["Aracsatiskayit"];
             sutunsecara.Items.Add(cumle.ds.Tables["Aracsatiskayit"].Columns["Satis_kodu"].ToString());
             sutunsecara.Items.Add(cumle.ds.Tables["Aracsatiskayit"].Columns["Model_kodu"].ToString());
@@ -79,11 +79,11 @@ namespace BMW
 
                     }
                     bul++;
-                    cumle.Select("SELECT * FROM Arac_Satis WHERE Satis_kodu='" + Aranacakdeger.Text.ToString() + "'", "Aracsatiskayitbul");
+                    cumle.Select_musterihzmt("SELECT * FROM Arac_Satis WHERE Satis_kodu='" + Aranacakdeger.Text.ToString() + "'", "Aracsatiskayitbul");
                     Aracsatisbulgrid.DataSource = cumle.ds.Tables["Aracsatiskayitbul"];
-                    cumle.Select("SELECT Model_adi FROM Arac_Model WHERE Model_kodu='" + cumle.ds.Tables["Aracsatiskayitbul"].Rows[0]["Model_kodu"].ToString() + "'", "Aracmodeladi");
-                    cumle.Select("SELECT P_adi,P_soyadi FROM Personel WHERE P_kodu='" + cumle.ds.Tables["Aracsatiskayitbul"].Rows[0]["P_kodu"].ToString() + "'", "Aracsatispersonel");
-                    cumle.Select("SELECT M_adi,M_soyadi FROM Musteri WHERE M_kodu='" + cumle.ds.Tables["Aracsatiskayitbul"].Rows[0]["M_kodu"].ToString() + "'", "Aracsatismusteri");
+                    cumle.Select_musterihzmt("SELECT Model_adi FROM Arac_Model WHERE Model_kodu='" + cumle.ds.Tables["Aracsatiskayitbul"].Rows[0]["Model_kodu"].ToString() + "'", "Aracmodeladi");
+                    cumle.Select_musterihzmt("SELECT P_adi,P_soyadi FROM Personel WHERE P_kodu='" + cumle.ds.Tables["Aracsatiskayitbul"].Rows[0]["P_kodu"].ToString() + "'", "Aracsatispersonel");
+                    cumle.Select_musterihzmt("SELECT M_adi,M_soyadi FROM Musteri WHERE M_kodu='" + cumle.ds.Tables["Aracsatiskayitbul"].Rows[0]["M_kodu"].ToString() + "'", "Aracsatismusteri");
                     sonuclist.Items.Clear();
                     sonuclist.Items.Add(cumle.ds.Tables["Aracsatiskayitbul"].Rows[0]["Satis_kodu"].ToString() + " Satış Kodlu Kayıtta BMW 'nin " + cumle.ds.Tables["Aracmodeladi"].Rows[0]["Model_adi"].ToString() + " Modelinin Satışı Yapılmıştır.");
                     // sonuclist.Items.Add("");
@@ -104,11 +104,11 @@ namespace BMW
 
                     }
                     bul++;
-                    cumle.Select("SELECT * FROM Arac_Satis WHERE Model_kodu='" + Aranacakdeger.Text.ToString() + "'", "Aracsatiskayitbul");
+                    cumle.Select_musterihzmt("SELECT * FROM Arac_Satis WHERE Model_kodu='" + Aranacakdeger.Text.ToString() + "'", "Aracsatiskayitbul");
                     Aracsatisbulgrid.DataSource = cumle.ds.Tables["Aracsatiskayitbul"];
-                    cumle.Select("SELECT Model_adi FROM Arac_Model WHERE Model_kodu='" + cumle.ds.Tables["Aracsatiskayitbul"].Rows[0]["Model_kodu"].ToString() + "'", "Aracmodeladi");
-                    cumle.Select("SELECT P_adi,P_soyadi FROM Personel WHERE P_kodu='" + cumle.ds.Tables["Aracsatiskayitbul"].Rows[0]["P_kodu"].ToString() + "'", "Aracsatispersonel");
-                    cumle.Select("SELECT M_adi,M_soyadi FROM Musteri WHERE M_kodu='" + cumle.ds.Tables["Aracsatiskayitbul"].Rows[0]["M_kodu"].ToString() + "'", "Aracsatismusteri");
+                    cumle.Select_musterihzmt("SELECT Model_adi FROM Arac_Model WHERE Model_kodu='" + cumle.ds.Tables["Aracsatiskayitbul"].Rows[0]["Model_kodu"].ToString() + "'", "Aracmodeladi");
+                    cumle.Select_musterihzmt("SELECT P_adi,P_soyadi FROM Personel WHERE P_kodu='" + cumle.ds.Tables["Aracsatiskayitbul"].Rows[0]["P_kodu"].ToString() + "'", "Aracsatispersonel");
+                    cumle.Select_musterihzmt("SELECT M_adi,M_soyadi FROM Musteri WHERE M_kodu='" + cumle.ds.Tables["Aracsatiskayitbul"].Rows[0]["M_kodu"].ToString() + "'", "Aracsatismusteri");
                     sonuclist.Items.Clear();
                     sonuclist.Items.Add(cumle.ds.Tables["Aracsatiskayitbul"].Rows[0]["Satis_kodu"].ToString() + " Satış Kodlu Kayıtta BMW 'nin " + cumle.ds.Tables["Aracmodeladi"].Rows[0]["Model_adi"].ToString() + " Modelinin Satışı Yapılmıştır.");
                     // sonuclist.Items.Add("");
@@ -130,11 +130,11 @@ namespace BMW
 
                     }
                     bul++;
-                    cumle.Select("SELECT * FROM Arac_Satis WHERE P_kodu='" + Aranacakdeger.Text.ToString() + "'", "Aracsatiskayitbul");
+                    cumle.Select_musterihzmt("SELECT * FROM Arac_Satis WHERE P_kodu='" + Aranacakdeger.Text.ToString() + "'", "Aracsatiskayitbul");
                     Aracsatisbulgrid.DataSource = cumle.ds.Tables["Aracsatiskayitbul"];
-                    cumle.Select("SELECT Model_adi FROM Arac_Model WHERE Model_kodu='" + cumle.ds.Tables["Aracsatiskayitbul"].Rows[0]["Model_kodu"].ToString() + "'", "Aracmodeladi");
-                    cumle.Select("SELECT P_adi,P_soyadi FROM Personel WHERE P_kodu='" + cumle.ds.Tables["Aracsatiskayitbul"].Rows[0]["P_kodu"].ToString() + "'", "Aracsatispersonel");
-                    cumle.Select("SELECT M_adi,M_soyadi FROM Musteri WHERE M_kodu='" + cumle.ds.Tables["Aracsatiskayitbul"].Rows[0]["M_kodu"].ToString() + "'", "Aracsatismusteri");
+                    cumle.Select_musterihzmt("SELECT Model_adi FROM Arac_Model WHERE Model_kodu='" + cumle.ds.Tables["Aracsatiskayitbul"].Rows[0]["Model_kodu"].ToString() + "'", "Aracmodeladi");
+                    cumle.Select_musterihzmt("SELECT P_adi,P_soyadi FROM Personel WHERE P_kodu='" + cumle.ds.Tables["Aracsatiskayitbul"].Rows[0]["P_kodu"].ToString() + "'", "Aracsatispersonel");
+                    cumle.Select_musterihzmt("SELECT M_adi,M_soyadi FROM Musteri WHERE M_kodu='" + cumle.ds.Tables["Aracsatiskayitbul"].Rows[0]["M_kodu"].ToString() + "'", "Aracsatismusteri");
                     sonuclist.Items.Clear();
                     sonuclist.Items.Add(cumle.ds.Tables["Aracsatiskayitbul"].Rows[0]["Satis_kodu"].ToString() + " Satış Kodlu Kayıtta BMW 'nin " + cumle.ds.Tables["Aracmodeladi"].Rows[0]["Model_adi"].ToString() + " Modelinin Satışı Yapılmıştır.");
                     // sonuclist.Items.Add("");
@@ -156,11 +156,11 @@ namespace BMW
 
                     }
                     bul++;
-                    cumle.Select("SELECT * FROM Arac_Satis WHERE M_kodu='" + Aranacakdeger.Text.ToString() + "'", "Aracsatiskayitbul");
+                    cumle.Select_musterihzmt("SELECT * FROM Arac_Satis WHERE M_kodu='" + Aranacakdeger.Text.ToString() + "'", "Aracsatiskayitbul");
                     Aracsatisbulgrid.DataSource = cumle.ds.Tables["Aracsatiskayitbul"];
-                    cumle.Select("SELECT Model_adi FROM Arac_Model WHERE Model_kodu='" + cumle.ds.Tables["Aracsatiskayitbul"].Rows[0]["Model_kodu"].ToString() + "'", "Aracmodeladi");
-                    cumle.Select("SELECT P_adi,P_soyadi FROM Personel WHERE P_kodu='" + cumle.ds.Tables["Aracsatiskayitbul"].Rows[0]["P_kodu"].ToString() + "'", "Aracsatispersonel");
-                    cumle.Select("SELECT M_adi,M_soyadi FROM Musteri WHERE M_kodu='" + cumle.ds.Tables["Aracsatiskayitbul"].Rows[0]["M_kodu"].ToString() + "'", "Aracsatismusteri");
+                    cumle.Select_musterihzmt("SELECT Model_adi FROM Arac_Model WHERE Model_kodu='" + cumle.ds.Tables["Aracsatiskayitbul"].Rows[0]["Model_kodu"].ToString() + "'", "Aracmodeladi");
+                    cumle.Select_musterihzmt("SELECT P_adi,P_soyadi FROM Personel WHERE P_kodu='" + cumle.ds.Tables["Aracsatiskayitbul"].Rows[0]["P_kodu"].ToString() + "'", "Aracsatispersonel");
+                    cumle.Select_musterihzmt("SELECT M_adi,M_soyadi FROM Musteri WHERE M_kodu='" + cumle.ds.Tables["Aracsatiskayitbul"].Rows[0]["M_kodu"].ToString() + "'", "Aracsatismusteri");
                     sonuclist.Items.Clear();
                     sonuclist.Items.Add(cumle.ds.Tables["Aracsatiskayitbul"].Rows[0]["Satis_kodu"].ToString() + " Satış Kodlu Kayıtta BMW 'nin " + cumle.ds.Tables["Aracmodeladi"].Rows[0]["Model_adi"].ToString() + " Modelinin Satışı Yapılmıştır.");
                     // sonuclist.Items.Add("");
@@ -182,11 +182,11 @@ namespace BMW
 
                     }
                     bul++;
-                    cumle.Select("SELECT * FROM Arac_Satis WHERE Plaka='" + Aranacakdeger.Text.ToString() + "'", "Aracsatiskayitbul");
+                    cumle.Select_musterihzmt("SELECT * FROM Arac_Satis WHERE Plaka='" + Aranacakdeger.Text.ToString() + "'", "Aracsatiskayitbul");
                     Aracsatisbulgrid.DataSource = cumle.ds.Tables["Aracsatiskayitbul"];
-                    cumle.Select("SELECT Model_adi FROM Arac_Model WHERE Model_kodu='" + cumle.ds.Tables["Aracsatiskayitbul"].Rows[0]["Model_kodu"].ToString() + "'", "Aracmodeladi");
-                    cumle.Select("SELECT P_adi,P_soyadi FROM Personel WHERE P_kodu='" + cumle.ds.Tables["Aracsatiskayitbul"].Rows[0]["P_kodu"].ToString() + "'", "Aracsatispersonel");
-                    cumle.Select("SELECT M_adi,M_soyadi FROM Musteri WHERE M_kodu='" + cumle.ds.Tables["Aracsatiskayitbul"].Rows[0]["M_kodu"].ToString() + "'", "Aracsatismusteri");
+                    cumle.Select_musterihzmt("SELECT Model_adi FROM Arac_Model WHERE Model_kodu='" + cumle.ds.Tables["Aracsatiskayitbul"].Rows[0]["Model_kodu"].ToString() + "'", "Aracmodeladi");
+                    cumle.Select_musterihzmt("SELECT P_adi,P_soyadi FROM Personel WHERE P_kodu='" + cumle.ds.Tables["Aracsatiskayitbul"].Rows[0]["P_kodu"].ToString() + "'", "Aracsatispersonel");
+                    cumle.Select_musterihzmt("SELECT M_adi,M_soyadi FROM Musteri WHERE M_kodu='" + cumle.ds.Tables["Aracsatiskayitbul"].Rows[0]["M_kodu"].ToString() + "'", "Aracsatismusteri");
                     sonuclist.Items.Clear();
                     sonuclist.Items.Add(cumle.ds.Tables["Aracsatiskayitbul"].Rows[0]["Satis_kodu"].ToString() + " Satış Kodlu Kayıtta BMW 'nin " + cumle.ds.Tables["Aracmodeladi"].Rows[0]["Model_adi"].ToString() + " Modelinin Satışı Yapılmıştır.");
                     // sonuclist.Items.Add("");
@@ -223,7 +223,7 @@ namespace BMW
                     
                 }
 
-                cumle.Select("Select * from Arac_Satis", "Aracsatiskayit");
+                cumle.Select_musterihzmt("Select * from Arac_Satis", "Aracsatiskayit");
                 Aracsatisbulgrid.DataSource = cumle.ds.Tables["Aracsatiskayit"];
                 bul = 0;
             }

@@ -35,13 +35,13 @@ namespace BMW
             try
             {
                 aktifkisi.Text = cumle.Giris_Bilgisi(tcno);
-                cumle.Select("SELECT * FROM Musteri", "Musteri");
+                cumle.Select_musterihzmt("SELECT * FROM Musteri", "Musteri");
                 Musterigrid.DataSource = cumle.ds.Tables["Musteri"];
-                cumle.Select("SELECT * FROM Firma_Musteri", "Firma");
+                cumle.Select_musterihzmt("SELECT * FROM Firma_Musteri", "Firma");
                 Firmagrid.DataSource = cumle.ds.Tables["Firma"];
-                cumle.Select("SELECT * FROM Servis", "Servis");
+                cumle.Select_musterihzmt("SELECT * FROM Servis", "Servis");
                 Servisgrid.DataSource = cumle.ds.Tables["Servis"];
-                cumle.Select("SELECT * FROM Arac_Satis", "Aracsatis");
+                cumle.Select_musterihzmt("SELECT * FROM Arac_Satis", "Aracsatis");
                 Aracsatisgrid.DataSource = cumle.ds.Tables["Aracsatis"];
             }
             catch (Exception hata)

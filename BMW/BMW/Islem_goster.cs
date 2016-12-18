@@ -29,5 +29,10 @@ namespace BMW
                 
             }
         }
+
+        private void Islem_goster_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

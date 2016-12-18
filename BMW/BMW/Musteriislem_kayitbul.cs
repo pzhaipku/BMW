@@ -42,7 +42,7 @@ namespace BMW
         {
             try
             {
-                cumle.Select("Select * from Musteri", "Musterikayitbul");
+                cumle.Select_musterihzmt("Select * from Musteri", "Musterikayitbul");
                 Musteribulgrid.DataSource = cumle.ds.Tables["Musterikayitbul"];
                 // MessageBox.Show(cumle.ds.Tables["Musterikayitsil"].Columns["M_kodı"].ToString());
 
@@ -75,7 +75,7 @@ namespace BMW
 
                     }
                     bul++;
-                    cumle.Select("SELECT * FROM Musteri WHERE M_kodu='" + Aranacakdeger.Text.ToString() + "'", "kayitbul");
+                    cumle.Select_musterihzmt("SELECT * FROM Musteri WHERE M_kodu='" + Aranacakdeger.Text.ToString() + "'", "kayitbul");
                     Musteribulgrid.DataSource = cumle.ds.Tables["kayitbul"];
                     if (cumle.ds.Tables["kayitbul"].Rows[0]["Musteri_turu_kodu"].ToString()=="MT0")
                     {
@@ -105,7 +105,7 @@ namespace BMW
 
                     }
                     bul++;
-                    cumle.Select("SELECT * FROM Musteri WHERE M_TCno='" + Aranacakdeger.Text.ToString() + "'", "kayitbul");
+                    cumle.Select_musterihzmt("SELECT * FROM Musteri WHERE M_TCno='" + Aranacakdeger.Text.ToString() + "'", "kayitbul");
                     Musteribulgrid.DataSource = cumle.ds.Tables["kayitbul"];
                     if (cumle.ds.Tables["kayitbul"].Rows[0]["Musteri_turu_kodu"].ToString() == "MT0")
                     {
@@ -136,7 +136,7 @@ namespace BMW
 
                     }
                     bul++;
-                    cumle.Select("SELECT * FROM Musteri WHERE M_adi='" + Aranacakdeger.Text.ToString() + "'", "kayitbul");
+                    cumle.Select_musterihzmt("SELECT * FROM Musteri WHERE M_adi='" + Aranacakdeger.Text.ToString() + "'", "kayitbul");
                     Musteribulgrid.DataSource = cumle.ds.Tables["kayitbul"];
                     
 
@@ -153,7 +153,7 @@ namespace BMW
 
                     }
                     bul++;
-                    cumle.Select("SELECT * FROM Musteri WHERE M_soyadi='" + Aranacakdeger.Text.ToString() + "'", "kayitbul");
+                    cumle.Select_musterihzmt("SELECT * FROM Musteri WHERE M_soyadi='" + Aranacakdeger.Text.ToString() + "'", "kayitbul");
                     Musteribulgrid.DataSource = cumle.ds.Tables["kayitbul"];
                     
 
@@ -170,7 +170,7 @@ namespace BMW
 
                     }
                     bul++;
-                    cumle.Select("SELECT * FROM Musteri WHERE M_adi='" + mad.Text.ToString() + "' AND M_soyadi='" + msoyad.Text.ToString() + "'", "kayitbul");
+                    cumle.Select_musterihzmt("SELECT * FROM Musteri WHERE M_adi='" + mad.Text.ToString() + "' AND M_soyadi='" + msoyad.Text.ToString() + "'", "kayitbul");
                     Musteribulgrid.DataSource = cumle.ds.Tables["kayitbul"];
                    
 
@@ -201,7 +201,7 @@ namespace BMW
 
                 }
 
-                cumle.Select("Select * from Musteri", "Musterikayitbul");
+                cumle.Select_musterihzmt("Select * from Musteri", "Musterikayitbul");
                 Musteribulgrid.DataSource = cumle.ds.Tables["Musterikayitbul"];
                 bul = 0;
             }
@@ -311,7 +311,7 @@ namespace BMW
             catch (Exception)
             {
 
-                throw;
+               
             }
 
 

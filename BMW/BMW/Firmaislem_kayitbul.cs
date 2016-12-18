@@ -44,7 +44,7 @@ namespace BMW
         {
          try
          {
-             cumle.Select("Select * from Firma_Musteri", "firmabul");
+             cumle.Select_musterihzmt("Select * from Firma_Musteri", "firmabul");
              Firmabulgrid.DataSource = cumle.ds.Tables["firmabul"];
              sutunsecara.Items.Add(cumle.ds.Tables["firmabul"].Columns["Firma_kodu"].ToString());
              sutunsecara.Items.Add(cumle.ds.Tables["firmabul"].Columns["Firma_adi"].ToString());
@@ -72,7 +72,7 @@ namespace BMW
                    
                 }
 
-                cumle.Select("Select * from Firma_Musteri", "firmabul");
+                cumle.Select_musterihzmt("Select * from Firma_Musteri", "firmabul");
                 Firmabulgrid.DataSource = cumle.ds.Tables["firmabul"];
                 bul = 0;
 
@@ -99,7 +99,7 @@ namespace BMW
 
                     }
                     bul++;
-                    cumle.Select("SELECT * FROM Firma_Musteri WHERE Firma_kodu='" + Aranacakdeger.Text.ToString() + "'", "firmakayitbul");
+                    cumle.Select_musterihzmt("SELECT * FROM Firma_Musteri WHERE Firma_kodu='" + Aranacakdeger.Text.ToString() + "'", "firmakayitbul");
                     Firmabulgrid.DataSource = cumle.ds.Tables["firmakayitbul"];
 
 
@@ -115,7 +115,7 @@ namespace BMW
 
                     }
                     bul++;
-                    cumle.Select("SELECT * FROM Firma_Musteri WHERE Firma_adi='" + Aranacakdeger.Text.ToString() + "'", "firmakayitbul");
+                    cumle.Select_musterihzmt("SELECT * FROM Firma_Musteri WHERE Firma_adi='" + Aranacakdeger.Text.ToString() + "'", "firmakayitbul");
                     Firmabulgrid.DataSource = cumle.ds.Tables["firmakayitbul"];
 
 
@@ -131,7 +131,7 @@ namespace BMW
 
                     }
                     bul++;
-                    cumle.Select("SELECT * FROM Firma_Musteri WHERE M_kodu='" + Aranacakdeger.Text.ToString() + "'", "firmakayitbul");
+                    cumle.Select_musterihzmt("SELECT * FROM Firma_Musteri WHERE M_kodu='" + Aranacakdeger.Text.ToString() + "'", "firmakayitbul");
                     Firmabulgrid.DataSource = cumle.ds.Tables["firmakayitbul"];
 
 

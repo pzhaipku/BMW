@@ -25,7 +25,7 @@ namespace BMW
         {
             try
             {
-                cumle.Select("Select * from Servis", "servisdurum");
+                cumle.Select_musterihzmt("Select * from Servis", "servisdurum");
                 Firmabulgrid.DataSource = cumle.ds.Tables["servisdurum"];
                 sutunsecara.Items.Add(cumle.ds.Tables["servisdurum"].Columns["S_kodu"].ToString());
                 sutunsecara.Items.Add(cumle.ds.Tables["servisdurum"].Columns["Plaka"].ToString());
@@ -54,7 +54,7 @@ namespace BMW
 
                     }
                     bul++;
-                    cumle.Select("SELECT * FROM Servis WHERE S_kodu='" + Aranacakdeger.Text.ToString() + "'", "servisdurumbul");
+                    cumle.Select_musterihzmt("SELECT * FROM Servis WHERE S_kodu='" + Aranacakdeger.Text.ToString() + "'", "servisdurumbul");
                     Firmabulgrid.DataSource = cumle.ds.Tables["servisdurumbul"];
                          if (cumle.ds.Tables["servisdurumbul"].Rows[0]["Durum"].ToString() == "0")
                          {
@@ -85,7 +85,7 @@ namespace BMW
 
                     }
                     bul++;
-                    cumle.Select("SELECT * FROM Servis WHERE Plaka='" + Aranacakdeger.Text.ToString() + "'", "servisdurumbul");
+                    cumle.Select_musterihzmt("SELECT * FROM Servis WHERE Plaka='" + Aranacakdeger.Text.ToString() + "'", "servisdurumbul");
                     Firmabulgrid.DataSource = cumle.ds.Tables["servisdurumbul"];
                     if (cumle.ds.Tables["servisdurumbul"].Rows[0]["Durum"].ToString() == "0")
                     {
@@ -134,7 +134,7 @@ namespace BMW
 
                 }
 
-                cumle.Select("Select * from Servis", "servisdurum");
+                cumle.Select_musterihzmt("Select * from Servis", "servisdurum");
                 Firmabulgrid.DataSource = cumle.ds.Tables["servisdurum"];
                 bul = 0;
             }

@@ -26,7 +26,7 @@ namespace BMW
         {
             try
             {
-                cumle.Select("Select * from Servis", "servisdetaylikayit");
+                cumle.Select_musterihzmt("Select * from Servis", "servisdetaylikayit");
                 Firmabulgrid.DataSource = cumle.ds.Tables["servisdetaylikayit"];
                 sutunsecara.Items.Add(cumle.ds.Tables["servisdetaylikayit"].Columns["S_kodu"].ToString());
                 sutunsecara.Items.Add(cumle.ds.Tables["servisdetaylikayit"].Columns["Plaka"].ToString());
@@ -54,7 +54,7 @@ namespace BMW
 
                 }
 
-                cumle.Select("Select * from Servis", "servisdetaylikayit");
+                cumle.Select_musterihzmt("Select * from Servis", "servisdetaylikayit");
                 Firmabulgrid.DataSource = cumle.ds.Tables["servisdetaylikayit"];
                 bul = 0;
             }
@@ -80,11 +80,11 @@ namespace BMW
 
                     }
                     bul++;
-                    cumle.Select("SELECT * FROM Servis WHERE S_kodu='" + Aranacakdeger.Text.ToString() + "'", "servisdetaylikayitbul");
+                    cumle.Select_musterihzmt("SELECT * FROM Servis WHERE S_kodu='" + Aranacakdeger.Text.ToString() + "'", "servisdetaylikayitbul");
                     Firmabulgrid.DataSource = cumle.ds.Tables["servisdetaylikayitbul"];
                     islemleri_goster(Aranacakdeger.Text.ToString());
-                    cumle.Select("SELECT M_adi,M_soyadi FROM Musteri WHERE M_kodu='" + cumle.ds.Tables["servisdetaylikayitbul"].Rows[0]["M_kodu"].ToString() + "'", "servismusteri");
-                    cumle.Select("SELECT M_kodu,Count(*) AS 'adet' FROM Servis Group by M_kodu ", "serviskayitadeti");
+                    cumle.Select_musterihzmt("SELECT M_adi,M_soyadi FROM Musteri WHERE M_kodu='" + cumle.ds.Tables["servisdetaylikayitbul"].Rows[0]["M_kodu"].ToString() + "'", "servismusteri");
+                    cumle.Select_musterihzmt("SELECT M_kodu,Count(*) AS 'adet' FROM Servis Group by M_kodu ", "serviskayitadeti");
 
                    
 
@@ -110,12 +110,12 @@ namespace BMW
 
                     }
                     bul++;
-                    cumle.Select("SELECT * FROM Servis WHERE Plaka='" + Aranacakdeger.Text.ToString() + "'", "servisdetaylikayitbul");
+                    cumle.Select_musterihzmt("SELECT * FROM Servis WHERE Plaka='" + Aranacakdeger.Text.ToString() + "'", "servisdetaylikayitbul");
                     Firmabulgrid.DataSource = cumle.ds.Tables["servisdetaylikayitbul"];
-                    cumle.Select("SELECT S_kodu FROM Servis WHERE Plaka='" + Aranacakdeger.Text.ToString() + "'", "serviskodu");
+                    cumle.Select_musterihzmt("SELECT S_kodu FROM Servis WHERE Plaka='" + Aranacakdeger.Text.ToString() + "'", "serviskodu");
                     islemleri_goster(cumle.ds.Tables["serviskodu"].Rows[0]["S_kodu"].ToString());
-                    cumle.Select("SELECT M_adi,M_soyadi FROM Musteri WHERE M_kodu='" + cumle.ds.Tables["servisdetaylikayitbul"].Rows[0]["M_kodu"].ToString() + "'", "servismusteri");
-                    cumle.Select("SELECT M_kodu,Count(*) AS 'adet' FROM Servis Group by M_kodu ", "serviskayitadeti");
+                    cumle.Select_musterihzmt("SELECT M_adi,M_soyadi FROM Musteri WHERE M_kodu='" + cumle.ds.Tables["servisdetaylikayitbul"].Rows[0]["M_kodu"].ToString() + "'", "servismusteri");
+                    cumle.Select_musterihzmt("SELECT M_kodu,Count(*) AS 'adet' FROM Servis Group by M_kodu ", "serviskayitadeti");
 
                     sonuc1.Text = Aranacakdeger.Text.ToString() + " Plaka Kodlu Kayıt " + cumle.ds.Tables["servisdetaylikayitbul"].Rows[0]["M_kodu"].ToString() + " Müşteri koduna Sahip " + cumle.ds.Tables["servismusteri"].Rows[0]["M_adi"].ToString() + " " + cumle.ds.Tables["servismusteri"].Rows[0]["M_soyadi"].ToString() + " Müşterimize Aittir.";
                     sonuc2.Text = cumle.ds.Tables["servisdetaylikayitbul"].Rows[0]["M_kodu"].ToString() + " Müşteri koduna Sahip " + cumle.ds.Tables["servismusteri"].Rows[0]["M_adi"].ToString() + " " + cumle.ds.Tables["servismusteri"].Rows[0]["M_soyadi"].ToString() + " Müşterimizin Serviste " + cumle.ds.Tables["serviskayitadeti"].Rows[0]["adet"].ToString() + " Adet Kaydı Bulunmaktadır.";
@@ -162,7 +162,7 @@ namespace BMW
                     
                    
                 }
-                cumle.Select("SELECT * FROM Islem Where S_kodu='" + deger.ToString() + "'", "islemgoster");
+                cumle.Select_musterihzmt("SELECT * FROM Islem Where S_kodu='" + deger.ToString() + "'", "islemgoster");
                 islem.lb_arac.Text = deger + " Servis Kodlu Araç İçin Yapılan İşlemler";
                 islem.Islemgrid.DataSource = cumle.ds.Tables["islemgoster"];
             }

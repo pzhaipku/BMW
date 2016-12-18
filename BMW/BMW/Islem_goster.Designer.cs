@@ -29,17 +29,17 @@
         private void InitializeComponent()
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.Islemgrid = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.geridon = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.lb_arac = new System.Windows.Forms.Label();
+            this.geridon = new System.Windows.Forms.Button();
+            this.Islemgrid = new DevExpress.XtraGrid.GridControl();
+            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.tabControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Islemgrid)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Islemgrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -52,36 +52,6 @@
             this.tabControl1.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight;
             this.tabControl1.TabIndex = 8;
             this.tabControl1.Tag = "";
-            // 
-            // Islemgrid
-            // 
-            this.Islemgrid.Location = new System.Drawing.Point(6, 90);
-            this.Islemgrid.MainView = this.gridView2;
-            this.Islemgrid.Name = "Islemgrid";
-            this.Islemgrid.Size = new System.Drawing.Size(1246, 400);
-            this.Islemgrid.TabIndex = 1;
-            this.Islemgrid.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView2});
-            // 
-            // gridView1
-            // 
-            this.gridView1.GridControl = this.Islemgrid;
-            this.gridView1.Name = "gridView1";
-            // 
-            // gridView2
-            // 
-            this.gridView2.GridControl = this.Islemgrid;
-            this.gridView2.Name = "gridView2";
-            // 
-            // geridon
-            // 
-            this.geridon.Location = new System.Drawing.Point(1156, 6);
-            this.geridon.Name = "geridon";
-            this.geridon.Size = new System.Drawing.Size(93, 78);
-            this.geridon.TabIndex = 24;
-            this.geridon.Text = "Geri Dön";
-            this.geridon.UseVisualStyleBackColor = true;
-            this.geridon.Click += new System.EventHandler(this.geridon_Click);
             // 
             // tabPage2
             // 
@@ -106,6 +76,37 @@
             this.lb_arac.TabIndex = 25;
             this.lb_arac.Text = "label1";
             // 
+            // geridon
+            // 
+            this.geridon.Location = new System.Drawing.Point(1156, 6);
+            this.geridon.Name = "geridon";
+            this.geridon.Size = new System.Drawing.Size(93, 78);
+            this.geridon.TabIndex = 24;
+            this.geridon.Text = "Geri Dön";
+            this.geridon.UseVisualStyleBackColor = true;
+            this.geridon.Click += new System.EventHandler(this.geridon_Click);
+            // 
+            // Islemgrid
+            // 
+            this.Islemgrid.Location = new System.Drawing.Point(6, 90);
+            this.Islemgrid.MainView = this.gridView2;
+            this.Islemgrid.Name = "Islemgrid";
+            this.Islemgrid.Size = new System.Drawing.Size(1246, 400);
+            this.Islemgrid.TabIndex = 1;
+            this.Islemgrid.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView2,
+            this.gridView1});
+            // 
+            // gridView2
+            // 
+            this.gridView2.GridControl = this.Islemgrid;
+            this.gridView2.Name = "gridView2";
+            // 
+            // gridView1
+            // 
+            this.gridView1.GridControl = this.Islemgrid;
+            this.gridView1.Name = "gridView1";
+            // 
             // Islem_goster
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -116,12 +117,13 @@
             this.MaximizeBox = false;
             this.Name = "Islem_goster";
             this.Text = "Islem_goster";
+            this.Load += new System.EventHandler(this.Islem_goster_Load);
             this.tabControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.Islemgrid)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Islemgrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);
 
         }

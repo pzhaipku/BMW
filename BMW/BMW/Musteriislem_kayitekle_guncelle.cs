@@ -59,7 +59,7 @@ namespace BMW
         {
             try
             {
-                cumle.Select("Select * from Musteri", "Musteri");
+                cumle.Select_musterihzmt("Select * from Musteri", "Musteri");
                 mkodu.Text = cumle.ds.Tables["Musteri"].Columns["M_kodu"].ToString();
                 mtcno.Text = cumle.ds.Tables["Musteri"].Columns["M_TCno"].ToString();
                 madi.Text = cumle.ds.Tables["Musteri"].Columns["M_adi"].ToString();
@@ -233,10 +233,10 @@ namespace BMW
         {
             try
             {
-                cumle.IDU("EXECUTE Musteri_kayitekle '" + M_kodu.Text.ToString() + "', '" + Convert.ToString(M_tcno.Text) + "', '" + M_adi.Text.ToString() + "', '" + M_soyadi.Text.ToString() + "', '" + M_tel.Text.ToString() + "', '" + M_email.Text.ToString() + "', '" + Convert.ToInt16(Il_kodu.Text) + "', '" + Ilce_kodu.Text.ToString() + "', '" + Adress.Text.ToString() + "', '" + M_turu_kodu.Text.ToString() + "'");
+                cumle.IDU_musterihzmt("EXECUTE Musteri_kayitekle '" + M_kodu.Text.ToString() + "', '" + Convert.ToString(M_tcno.Text) + "', '" + M_adi.Text.ToString() + "', '" + M_soyadi.Text.ToString() + "', '" + M_tel.Text.ToString() + "', '" + M_email.Text.ToString() + "', '" + Convert.ToInt16(Il_kodu.Text) + "', '" + Ilce_kodu.Text.ToString() + "', '" + Adress.Text.ToString() + "', '" + M_turu_kodu.Text.ToString() + "'");
                 // cumle.IDU("INSERT INTO Musteri VALUES('" + M_kodu.Text.ToString() + "' '" + Convert.ToString(M_tcno.Text) + "' '" + M_adi.Text.ToString() + "' '" + M_soyadi.Text.ToString() + "' '" + M_tel.Text.ToString() + "' '" + M_email.Text.ToString() + "' '" + Convert.ToInt16(Il_kodu.Text) + "' '" + Ilce_kodu.Text.ToString() + "' '" + Adress.Text.ToString() + "' '" + M_turu_kodu.Text.ToString() + "')");
                 cumle.ds.Tables["Musteri"].Clear();
-                cumle.Select("Select * From Musteri", "Musteri");
+                cumle.Select_musterihzmt("Select * From Musteri", "Musteri");
                 Musterigrid.DataSource = cumle.ds.Tables["Musteri"];
             }
             catch (Exception hata)
@@ -253,9 +253,9 @@ namespace BMW
         {
             try
             {
-                cumle.IDU("UPDATE Musteri SET M_kodu='" + M_kodu.Text.ToString() + "', M_TCno='" + Convert.ToString(M_tcno.Text) + "', M_adi='" + M_adi.Text.ToString() + "', M_soyadi='" + M_soyadi.Text.ToString() + "', M_tel='" + M_tel.Text.ToString() + "', M_email='" + M_email.Text.ToString() + "', Il_kodu='" + Convert.ToInt16(Il_kodu.Text) + "', Ilce_kodu='" + Ilce_kodu.Text.ToString() + "', Adres='" + Adress.Text.ToString() + "', Musteri_turu_kodu='" + M_turu_kodu.Text.ToString() + "' WHERE M_id='" + mid.Text.ToString() + "'");
+                cumle.IDU_musterihzmt("UPDATE Musteri SET M_kodu='" + M_kodu.Text.ToString() + "', M_TCno='" + Convert.ToString(M_tcno.Text) + "', M_adi='" + M_adi.Text.ToString() + "', M_soyadi='" + M_soyadi.Text.ToString() + "', M_tel='" + M_tel.Text.ToString() + "', M_email='" + M_email.Text.ToString() + "', Il_kodu='" + Convert.ToInt16(Il_kodu.Text) + "', Ilce_kodu='" + Ilce_kodu.Text.ToString() + "', Adres='" + Adress.Text.ToString() + "', Musteri_turu_kodu='" + M_turu_kodu.Text.ToString() + "' WHERE M_id='" + mid.Text.ToString() + "'");
                 cumle.ds.Tables["Musteri"].Clear();
-                cumle.Select("Select * From Musteri", "Musteri");
+                cumle.Select_musterihzmt("Select * From Musteri", "Musteri");
                 Musterigrid.DataSource = cumle.ds.Tables["Musteri"];
             }
             catch (Exception hata)

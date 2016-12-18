@@ -26,7 +26,7 @@ namespace BMW
         {
             try
             {
-                cumle.Select("Select * from Musteri", "Musterikayitsil");
+                cumle.Select_musterihzmt("Select * from Musteri", "Musterikayitsil");
                 Musterigrid.DataSource = cumle.ds.Tables["Musterikayitsil"];
                 // MessageBox.Show(cumle.ds.Tables["Musterikayitsil"].Columns["M_kodı"].ToString());
 
@@ -67,17 +67,17 @@ namespace BMW
             {
                 if (sutunsec.SelectedItem.ToString() == "M_kodu")
                 {
-                    cumle.IDU("DELETE FROM Musteri WHERE M_kodu='" + Silinecekdeger.Text.ToString() + "'");
+                    cumle.IDU_musterihzmt("DELETE FROM Musteri WHERE M_kodu='" + Silinecekdeger.Text.ToString() + "'");
 
                 }
                 else if (sutunsec.SelectedItem.ToString() == "M_TCno")
                 {
-                    cumle.IDU("DELETE FROM Musteri WHERE M_TCno='" + Silinecekdeger.Text.ToString() + "'");
+                    cumle.IDU_musterihzmt("DELETE FROM Musteri WHERE M_TCno='" + Silinecekdeger.Text.ToString() + "'");
 
                 }
                 //   cumle.IDU("DELETE FROM Musteri WHERE M_kodu='" + Silinecekdeger.Text.ToString() + "'");
                 cumle.ds.Tables["Musterikayitsil"].Clear();
-                cumle.Select("SELECT * FROM Musteri", "Musterikayitsil");
+                cumle.Select_musterihzmt("SELECT * FROM Musteri", "Musterikayitsil");
                 Musterigrid.DataSource = cumle.ds.Tables["Musterikayitsil"];
             }
             catch (Exception hata)

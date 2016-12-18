@@ -13,7 +13,7 @@
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x86</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -34,6 +34,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -50,20 +51,71 @@
     <Compile Include="AdminPanel.Designer.cs">
       <DependentUpon>AdminPanel.cs</DependentUpon>
     </Compile>
-    <Compile Include="Giris.cs">
+    <Compile Include="AracSerileri.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Giris.Designer.cs">
-      <DependentUpon>Giris.cs</DependentUpon>
+    <Compile Include="AracSerileri.Designer.cs">
+      <DependentUpon>AracSerileri.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Arac_Model.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Arac_Model.Designer.cs">
+      <DependentUpon>Arac_Model.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Arac_Motor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Arac_Motor.Designer.cs">
+      <DependentUpon>Arac_Motor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="A_Kullanici.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="A_Kullanici.Designer.cs">
+      <DependentUpon>A_Kullanici.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DonanimPaket.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DonanimPaket.Designer.cs">
+      <DependentUpon>DonanimPaket.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Il_Ilce.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Il_Ilce.Designer.cs">
+      <DependentUpon>Il_Ilce.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SQL.cs" />
+    <Compile Include="YetkiTanimlama.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="YetkiTanimlama.Designer.cs">
+      <DependentUpon>YetkiTanimlama.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AdminPanel.resx">
       <DependentUpon>AdminPanel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Giris.resx">
-      <DependentUpon>Giris.cs</DependentUpon>
+    <EmbeddedResource Include="AracSerileri.resx">
+      <DependentUpon>AracSerileri.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Arac_Model.resx">
+      <DependentUpon>Arac_Model.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Arac_Motor.resx">
+      <DependentUpon>Arac_Motor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="A_Kullanici.resx">
+      <DependentUpon>A_Kullanici.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DonanimPaket.resx">
+      <DependentUpon>DonanimPaket.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Il_Ilce.resx">
+      <DependentUpon>Il_Ilce.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -74,6 +126,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="YetkiTanimlama.resx">
+      <DependentUpon>YetkiTanimlama.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

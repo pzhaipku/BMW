@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace BMW
 {
-    class SQL
+    class SQL2
     {
       
         public SqlConnection bag_cumle = new SqlConnection( "Data Source=OZEN; Initial Catalog=BMW;Integrated Security=true");
@@ -30,16 +30,16 @@ namespace BMW
             {
                 if (bag_cumle.State == ConnectionState.Open)
                 {
-                    bag_cumle.Close();
-                }
-                
+                bag_cumle.Close();
             }
+                
+        }
         }
         public void Select(string sorgu, string tablo_adi)
         {
             try
             {
-                baglan(1);
+            baglan(1);
                 adapter = new SqlDataAdapter(sorgu, bag_cumle);
                 adapter.Fill(ds,tablo_adi);
                 baglan(0);
@@ -60,8 +60,8 @@ namespace BMW
                 baglan(1);
                 komut = new SqlCommand(sorgu, bag_cumle);
                 komut.ExecuteNonQuery();
-                baglan(0);
-            }
+            baglan(0);
+        }
             catch (Exception hata)
             {
                 MessageBox.Show("İşlem sırasında bir hata oluştu."+hata.Message);

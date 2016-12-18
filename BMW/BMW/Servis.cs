@@ -15,7 +15,7 @@ namespace BMW
     {
         SqlConnection sv_baglanti = new SqlConnection("Data Source=.; Initial Catalog=BMW;Integrated Security=true;");
         public string perkod,peradi,muskod,peradi1,persoyadi1,peradsoy;
-        private string personeladsoy, girtarih,ciktarih, mustc;
+        private string personeladsoy, girtarih, ciktarih, mustc;
         string[] personel;
 
         public Servis()

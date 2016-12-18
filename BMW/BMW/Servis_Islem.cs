@@ -15,7 +15,7 @@ namespace BMW
     {
         double parcafiyat;
         int parca_adet;
-        string parcakod,parca_adi;
+        string parcakod, parca_adi, servisid;
         public Servis_Islem()
         {
             InitializeComponent();
@@ -93,7 +93,8 @@ namespace BMW
             try
             {
                 SqlCommand komut = new SqlCommand();
-                komut.CommandText = "Update Servis Set Servis_ucret=Servis_ucret-" + parca_adet * parcafiyat + " Where S_kodu='" + textSIsvk.Text + "'";
+                komut.CommandText = "Update Servis Set Servis_ucret=Servis_ucret-" + parca_adet * parcafiyat + " Where S_kodu='" + parcakod + "'";
+                MessageBox.Show(komut.CommandText);
                 si_baglanti.Open();
                 komut.Connection = si_baglanti;
                 komut.ExecuteNonQuery();
@@ -252,26 +253,9 @@ namespace BMW
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            try
-            {
-                textSIid.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
-                textSIkod.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
-                textSIisl.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
-                parcakod = dataGridView1.CurrentRow.Cells[3].Value.ToString();
-                parcayi_goster();
-                textSIadt.Text = Convert.ToInt32(dataGridView1.CurrentRow.Cells[4].Value).ToString();
-                textSIsvk.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
-            }
+            servisid = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+            
 
-            catch (Exception hata)
-            {
-                MessageBox.Show("Yanlış bir şeyler var hataları kontrol ediniz");
-                MessageBox.Show(hata.ToString());
-            }
-            finally
-            {
-                si_baglanti.Close();
-            }
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -279,10 +263,11 @@ namespace BMW
             try
             {
                 SqlCommand komut = new SqlCommand();
-                parcafiyat = Convert.ToDouble(textSIfyt.Text);
-                parca_adet = Convert.ToInt32(textSIadt.Text);
-                MessageBox.Show(parcafiyat.ToString());
-                komut.CommandText = "Delete From Islem Where Islem_id='" + textSIid.Text + "'";
+                parcakod = dataGridView1.CurrentRow.Cells[5].Value.ToString();
+                parcafiyat = Convert.ToDouble(dataGridView1.CurrentRow.Cells[6].Value);
+                parca_adet = Convert.ToInt32(dataGridView1.CurrentRow.Cells[4].Value);
+                MessageBox.Show(parcakod.ToString());
+                komut.CommandText = "Delete From Islem Where Islem_id='" + servisid + "'";
                 si_baglanti.Open();
                 komut.Connection = si_baglanti;
                 komut.ExecuteNonQuery();

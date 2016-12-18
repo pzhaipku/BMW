@@ -45,7 +45,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
@@ -77,6 +76,7 @@
             // 
             // textSIid
             // 
+            this.textSIid.Enabled = false;
             this.textSIid.Location = new System.Drawing.Point(74, 216);
             this.textSIid.Name = "textSIid";
             this.textSIid.Size = new System.Drawing.Size(100, 20);
@@ -191,7 +191,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(56, 287);
+            this.button2.Location = new System.Drawing.Point(74, 287);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(118, 23);
             this.button2.TabIndex = 16;
@@ -199,19 +199,9 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(216, 286);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 17;
-            this.button3.Text = "Güncelle";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(333, 286);
+            this.button4.Location = new System.Drawing.Point(249, 286);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 23);
             this.button4.TabIndex = 18;
@@ -221,7 +211,7 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(443, 286);
+            this.button5.Location = new System.Drawing.Point(371, 287);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(75, 23);
             this.button5.TabIndex = 19;
@@ -247,7 +237,6 @@
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -293,7 +282,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;

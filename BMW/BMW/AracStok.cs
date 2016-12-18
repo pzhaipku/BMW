@@ -194,7 +194,6 @@ namespace BMW
             {
                 SqlCommand komut = new SqlCommand();
                 komut.CommandText = "INSERT INTO Arac_Stok Values('" + textASmod.Text + "'," + textASadt.Text + ",'" + Convert.ToDouble(model_fiyat) + "','" + Convert.ToDouble(asotv) + "','" + Convert.ToDouble(askdv) + "','" + Convert.ToDouble(askar) + "','" + Convert.ToDouble(toplam_fiyat)+"')";
-                MessageBox.Show(komut.CommandText);
                 astok_baglanti.Open();
                 komut.Connection = astok_baglanti;
                 komut.ExecuteNonQuery();

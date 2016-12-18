@@ -70,7 +70,9 @@ namespace BMW
         {
             try{
             SqlCommand komut = new SqlCommand();
-            komut.CommandText = "Update Servis Set Servis_ucret=Servis_ucret+" + parca_adet * parcafiyat + " Where S_kodu='" + textSIsvk.Text + "'";
+            MessageBox.Show(parca_adet.ToString());
+            MessageBox.Show((parca_adet * parcafiyat).ToString());
+            komut.CommandText = "Update Servis Set Servis_ucret=Servis_ucret+" + (parca_adet * parcafiyat) + " Where S_kodu='" + textSIsvk.Text + "'";
             si_baglanti.Open();
             komut.Connection = si_baglanti;
             komut.ExecuteNonQuery();
@@ -199,11 +201,12 @@ namespace BMW
         {
             Parca prc_form = new Parca();
             prc_form.Show();
+            this.Hide();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            
+
             SqlCommand pkomut = new SqlCommand("Select * From Parca_Stok Where Parca_kodu='" + parcakod + "'", si_baglanti);
             si_baglanti.Open();
             SqlDataReader si_DR;
@@ -221,7 +224,7 @@ namespace BMW
             {
                 try
                 {
-                    parcafiyat = parcafiyat + Convert.ToDouble(textSIfyt.Text);
+                    //parcafiyat = parcafiyat + Convert.ToDouble(textSIfyt.Text);
                     parca_adet = Convert.ToInt32(textSIadt.Text);
                     SqlCommand komut = new SqlCommand();
                     komut.CommandText = "INSERT INTO Islem Values(" + "'" + textSIkod.Text + "'," + "'" + textSIisl.Text + "','" + parcakod + "'," + textSIadt.Text + ",'" + textSIsvk.Text + "'," + Convert.ToDouble(textSIfyt.Text) + ")";
@@ -230,9 +233,10 @@ namespace BMW
                     komut.ExecuteNonQuery();
                     si_baglanti.Close();
                     islem_goster();
+                    servis_ucret_guncelle();
                     adet_dusur();
                     adet_stok_kontrol();
-                    servis_ucret_guncelle();
+                    
                 }
                 catch (Exception eklehata)
                 {
@@ -343,6 +347,13 @@ namespace BMW
                 MessageBox.Show("Yanlış bir şeyler var hataları kontrol ediniz");
                 MessageBox.Show(hata.ToString());
             }
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Servis servisform = new Servis();
+            servisform.Show();
+            this.Hide();
         }
 
     }

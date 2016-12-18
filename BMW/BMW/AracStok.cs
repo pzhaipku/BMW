@@ -13,7 +13,7 @@ namespace BMW
 {
     public partial class AracStok : Form
     {
-        public string modelkodu;
+        string modelkodu;
         double model_fiyat,toplam_fiyat,asotv,askdv,askar;
         string asmodelkod;
         int ascc;
@@ -216,7 +216,9 @@ namespace BMW
         {
             try
             {
+                
                 modelkodu = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+                MessageBox.Show(modelkodu);
             }
 
             catch (Exception hata)
@@ -233,6 +235,8 @@ namespace BMW
         private void button2_Click(object sender, EventArgs e)
         {
             ASmodel aracstokmodelform = new ASmodel();
+            aracstokmodelform.asmkodu = this.modelkodu;
+
             aracstokmodelform.Show();
         }
 
@@ -286,26 +290,40 @@ namespace BMW
 
         private void button4_Click(object sender, EventArgs e)
         {
-            try
+            if (Convert.ToInt32(textASadt.Text) < 0)
             {
-                SqlCommand komut = new SqlCommand();
-                komut.CommandText = ("Update Arac_Stok Set Adet='"+textASadt.Text + "' Where Model_kodu='"+textASmod.Text+"'");
-                komut.Connection = astok_baglanti;
-                astok_baglanti.Open();
-                komut.Connection = astok_baglanti;
-                komut.ExecuteNonQuery();
-                astok_baglanti.Close();
-                aracstok_goster();
+                MessageBox.Show("Adet değeri negatif olamaz");
             }
-            catch (Exception eklehata)
+            else
             {
-                MessageBox.Show("Yanlış bir şeyler var hataları kontrol ediniz");
-                MessageBox.Show(eklehata.ToString());
+                try
+                {
+                    SqlCommand komut = new SqlCommand();
+                    komut.CommandText = ("Update Arac_Stok Set Adet='" + textASadt.Text + "' Where Model_kodu='" + modelkodu + "'");
+                    komut.Connection = astok_baglanti;
+                    astok_baglanti.Open();
+                    komut.Connection = astok_baglanti;
+                    komut.ExecuteNonQuery();
+                    astok_baglanti.Close();
+                    aracstok_goster();
+                }
+                catch (Exception eklehata)
+                {
+                    MessageBox.Show("Yanlış bir şeyler var hataları kontrol ediniz");
+                    MessageBox.Show(eklehata.ToString());
+                }
+                finally
+                {
+                    astok_baglanti.Close();
+                }
             }
-            finally
-            {
-                astok_baglanti.Close();
-            }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Arac_Satis satis = new Arac_Satis();
+            satis.Show();
+            this.Hide();
         }
 
     }

@@ -17,13 +17,13 @@ namespace BMW
         {
             InitializeComponent();
         }
+        public string asmkodu;
         SqlConnection asmodel_baglanti = new SqlConnection("Data Source=PC-BILGISAYAR; Initial Catalog=BMW;Integrated Security=true;");
         private void ASmodel_Load(object sender, EventArgs e)
         {
             try
             {
-                string modelkodu = ((AracStok)Application.OpenForms.OfType<AracStok>().SingleOrDefault()).modelkodu;
-                SqlDataAdapter as_DA = new SqlDataAdapter("Execute Arac_model_sorgu_modelkodu  " + modelkodu, asmodel_baglanti);
+                SqlDataAdapter as_DA = new SqlDataAdapter("Execute Arac_model_sorgu_modelkodu  " + asmkodu, asmodel_baglanti);
                 DataSet as_DS = new DataSet();
                 asmodel_baglanti.Open();
                 as_DA.Fill(as_DS, "Arac Model");

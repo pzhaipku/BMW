@@ -189,11 +189,12 @@
             // 
             // dateTimeSVgir
             // 
-            this.dateTimeSVgir.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimeSVgir.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimeSVgir.Location = new System.Drawing.Point(344, 324);
             this.dateTimeSVgir.Name = "dateTimeSVgir";
             this.dateTimeSVgir.Size = new System.Drawing.Size(200, 20);
             this.dateTimeSVgir.TabIndex = 13;
+            this.dateTimeSVgir.Value = new System.DateTime(2016, 12, 18, 12, 39, 0, 0);
             // 
             // label7
             // 

@@ -13,9 +13,9 @@ namespace BMW
 {
     public partial class Servis : Form
     {
-        SqlConnection sv_baglanti = new SqlConnection("Data Source=PC-BILGISAYAR; Initial Catalog=BMW;Integrated Security=true;");
-        public string perkod,peradi,muskod,mustc,peradi1,persoyadi1,peradsoy;
-        private string personeladsoy,tarih;
+        SqlConnection sv_baglanti = new SqlConnection("Data Source=.; Initial Catalog=BMW;Integrated Security=true;");
+        public string perkod,peradi,muskod,peradi1,persoyadi1,peradsoy;
+        private string personeladsoy, girtarih,ciktarih, mustc;
         string[] personel;
 
         public Servis()
@@ -124,10 +124,9 @@ namespace BMW
             try
             {
                 musteri_tckontrol();
-               // tarih=Convert.ToDateTime(dateTimeSVgir.Value.Date.Year.ToString())+"-"+Convert.ToDateTime(dateTimeSVgir.Value.Date.Month.ToString())+"-"+Convert.ToDateTime(dateTimeSVgir.Value.Date.Day.ToString());
-                tarih = dateTimeSVgir.Value.ToShortDateString();
+                girtarih=dateTimeSVgir.Value.Date.Year+"-"+dateTimeSVgir.Value.Date.Month+"-"+dateTimeSVgir.Value.Date.Day;
                 SqlCommand komut = new SqlCommand();
-                komut.CommandText = "INSERT INTO Servis Values(" + "'" + textSVkod.Text + "'," + "'" + muskod + "','" + textSVmod.Text + "','" + perkod.ToString() + "'," + textSVgkm.Text + "," + textSVckm.Text + ",'" +tarih+ "',Null,'" + textSVplk.Text + "'," + Convert.ToInt32(textSVfyt.Text) + ",'" + Convert.ToInt32(checkSVtm.Checked) + "')";
+                komut.CommandText = "INSERT INTO Servis Values(" + "'" + textSVkod.Text + "'," + "'" + muskod + "','" + textSVmod.Text + "','" + perkod.ToString() + "'," + textSVgkm.Text + "," + textSVckm.Text + ",'" +girtarih+ "',Null,'" + textSVplk.Text + "'," + Convert.ToInt32(textSVfyt.Text) + ",'" + Convert.ToInt32(checkSVtm.Checked) + "')";
                 sv_baglanti.Open();
                 komut.Connection = sv_baglanti;
                 komut.ExecuteNonQuery();
@@ -146,6 +145,7 @@ namespace BMW
         private void button3_Click(object sender, EventArgs e)
         {
             SV_musform sermus = new SV_musform();
+            sermus.mustc=this.mustc;
             sermus.Show();
         }
 
@@ -266,6 +266,8 @@ namespace BMW
             try
             {
                 musteri_tckontrol();
+                girtarih = dateTimeSVgir.Value.Date.Year + "-" + dateTimeSVgir.Value.Date.Month + "-" + dateTimeSVgir.Value.Date.Day;
+                ciktarih = dateTimeSVcik.Value.Date.Year + "-" + dateTimeSVcik.Value.Date.Month + "-" + dateTimeSVcik.Value.Date.Day;
                 SqlCommand komut = new SqlCommand();
                 komut.CommandText = "Update Servis Set S_kodu=" + "'" + textSVkod.Text + "',M_kodu=" + "'" + muskod + "',Model_kodu='" + textSVmod.Text + "',P_kodu='" + perkod.ToString() + "',Arac_giriskm=" + textSVgkm.Text + ",Arac_cikiskm=" + textSVckm.Text + ",S_giris_tarih='" + dateTimeSVgir.Value.ToString("yyyy-MM-dd") + "',S_cikis_tarih='" + dateTimeSVcik.Value.ToString("yyyy-MM-dd") + "',Plaka='" + textSVplk.Text + "',Servis_ucret=" + Convert.ToInt32(textSVfyt.Text) + ",Durum='" + Convert.ToInt32(checkSVtm.Checked) + "' Where S_id='" + textSVid.Text + "'";
                 sv_baglanti.Open();
@@ -289,6 +291,7 @@ namespace BMW
         {
             Servis_Islem svisform = new Servis_Islem();
             svisform.Show();
+            this.Hide();
         }
 
 

@@ -14,6 +14,9 @@ namespace BMW
     public partial class SV_musform : Form
     {
         SqlConnection sv_musbaglanti = new SqlConnection("Data Source=PC-BILGISAYAR; Initial Catalog=BMW;Integrated Security=true;");
+        Servis srvs;
+        public string mustc;
+
         public SV_musform()
         {
             InitializeComponent();
@@ -21,9 +24,10 @@ namespace BMW
 
         private void SV_musform_Load(object sender, EventArgs e)
         {
+            srvs = new Servis();
             try
             {
-                string mustc = ((Servis)Application.OpenForms.OfType<Servis>().SingleOrDefault()).mustc;
+                //string mustc = ((Servis)Application.OpenForms.OfType<Servis>().SingleOrDefault()).mustc;
                 SqlDataAdapter svmus_DA = new SqlDataAdapter("Execute Musteri_sorgu_mtcno " + mustc, sv_musbaglanti);
                 DataSet svmus_DS = new DataSet();
                 sv_musbaglanti.Open();

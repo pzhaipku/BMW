@@ -46,6 +46,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -59,7 +60,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(631, 184);
+            this.dataGridView1.Size = new System.Drawing.Size(631, 194);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
@@ -101,7 +102,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(39, 316);
+            this.button2.Location = new System.Drawing.Point(35, 348);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(139, 23);
             this.button2.TabIndex = 9;
@@ -111,7 +112,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(232, 316);
+            this.button3.Location = new System.Drawing.Point(228, 348);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(142, 23);
             this.button3.TabIndex = 10;
@@ -131,7 +132,7 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(427, 316);
+            this.button5.Location = new System.Drawing.Point(423, 348);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(96, 23);
             this.button5.TabIndex = 11;
@@ -204,6 +205,7 @@
             // groupBox1
             // 
             this.groupBox1.AutoSize = true;
+            this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.dataGridView1);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.label6);
@@ -225,16 +227,26 @@
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(673, 383);
+            this.groupBox1.Size = new System.Drawing.Size(673, 375);
             this.groupBox1.TabIndex = 15;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "PARÇA STOĞU";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(577, 308);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 63);
+            this.button1.TabIndex = 14;
+            this.button1.Text = "Servis İşlemlerine Geri Dön";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Parca
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(673, 383);
+            this.ClientSize = new System.Drawing.Size(673, 375);
             this.Controls.Add(this.groupBox1);
             this.Name = "Parca";
             this.Text = "Parca_Stok";
@@ -267,6 +279,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button button1;
 
     }
 }

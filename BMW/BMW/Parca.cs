@@ -148,5 +148,12 @@ namespace BMW
         {
             parca_stok_goster();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Servis_Islem servis_islemform = new Servis_Islem();
+            servis_islemform.Show();
+            this.Hide();
+        }
     }
 }

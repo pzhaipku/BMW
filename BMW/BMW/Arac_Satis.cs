@@ -211,7 +211,7 @@ namespace BMW
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
+                string tarih = dateTimeASTsth.Value.Date.Year + "-" + dateTimeASTsth.Value.Date.Month + "-" + dateTimeASTsth.Value.Date.Day;
                 stok_kontrol();
                 if (arac_adet <= 0)
                 {
@@ -228,7 +228,7 @@ namespace BMW
                 komut.Parameters.AddWithValue("@modelkodu", astmodelkod.ToString());
                 komut.Parameters.AddWithValue("@personelkodu", astperkod.ToString());
                 komut.Parameters.AddWithValue("@musterikodu", astmuskod.ToString());
-                komut.Parameters.AddWithValue("@satistarihi", Convert.ToDateTime(dateTimeASTsth.Text));
+                komut.Parameters.AddWithValue("@satistarihi", tarih);
                 komut.Parameters.AddWithValue("@satisfiyati", Convert.ToDouble(textASTfyt.Text));
                 komut.Parameters.AddWithValue("@plaka", textASTplk.Text);
                 asatis_baglanti.Open();
@@ -258,7 +258,7 @@ namespace BMW
                 asatis_baglanti.Open();
                 SqlDataReader sv_DR;
                 sv_DR = komut.ExecuteReader();
-                sv_DR.Read();
+                sv_DR.Read(); 
                 astperadi = (sv_DR["P_adi"]).ToString();
                 astpersoyadi = (sv_DR["P_soyadi"]).ToString();
                 asatis_baglanti.Close();
@@ -290,6 +290,7 @@ namespace BMW
         {
             AracStok aracstok = new AracStok();
             aracstok.Show();
+            this.Hide();
         }
 
         private void button3_Click(object sender, EventArgs e)

@@ -44,12 +44,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AdminPanel.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AdminPanel.Designer.cs">
-      <DependentUpon>AdminPanel.cs</DependentUpon>
-    </Compile>
     <Compile Include="AracStok.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -68,11 +62,11 @@
     <Compile Include="ASmodel.Designer.cs">
       <DependentUpon>ASmodel.cs</DependentUpon>
     </Compile>
-    <Compile Include="Giris.cs">
+    <Compile Include="Giris2.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Giris.Designer.cs">
-      <DependentUpon>Giris.cs</DependentUpon>
+    <Compile Include="Giris2.Designer.cs">
+      <DependentUpon>Giris2.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -101,9 +95,6 @@
     <Compile Include="SV_musform.Designer.cs">
       <DependentUpon>SV_musform.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="AdminPanel.resx">
-      <DependentUpon>AdminPanel.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="AracStok.resx">
       <DependentUpon>AracStok.cs</DependentUpon>
     </EmbeddedResource>
@@ -113,8 +104,8 @@
     <EmbeddedResource Include="ASmodel.resx">
       <DependentUpon>ASmodel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Giris.resx">
-      <DependentUpon>Giris.cs</DependentUpon>
+    <EmbeddedResource Include="Giris2.resx">
+      <DependentUpon>Giris2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

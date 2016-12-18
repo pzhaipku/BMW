@@ -70,8 +70,6 @@ namespace BMW
         {
             try{
             SqlCommand komut = new SqlCommand();
-            MessageBox.Show(parca_adet.ToString());
-            MessageBox.Show((parca_adet * parcafiyat).ToString());
             komut.CommandText = "Update Servis Set Servis_ucret=Servis_ucret+" + (parca_adet * parcafiyat) + " Where S_kodu='" + textSIsvk.Text + "'";
             si_baglanti.Open();
             komut.Connection = si_baglanti;
@@ -94,7 +92,6 @@ namespace BMW
             {
                 SqlCommand komut = new SqlCommand();
                 komut.CommandText = "Update Servis Set Servis_ucret=Servis_ucret-" + parca_adet * parcafiyat + " Where S_kodu='" + parcakod + "'";
-                MessageBox.Show(komut.CommandText);
                 si_baglanti.Open();
                 komut.Connection = si_baglanti;
                 komut.ExecuteNonQuery();
@@ -266,7 +263,6 @@ namespace BMW
                 parcakod = dataGridView1.CurrentRow.Cells[5].Value.ToString();
                 parcafiyat = Convert.ToDouble(dataGridView1.CurrentRow.Cells[6].Value);
                 parca_adet = Convert.ToInt32(dataGridView1.CurrentRow.Cells[4].Value);
-                MessageBox.Show(parcakod.ToString());
                 komut.CommandText = "Delete From Islem Where Islem_id='" + servisid + "'";
                 si_baglanti.Open();
                 komut.Connection = si_baglanti;

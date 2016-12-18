@@ -10,11 +10,10 @@ using System.Windows.Forms;
 
 namespace BMW
 {
-    public partial class Giris : Form
+    public partial class Giris2 : Form
     {
         SQL cumle = new SQL();
-        AdminPanel admin = new AdminPanel();
-        public Giris()
+        public Giris2()
         {
             InitializeComponent();
         }
@@ -29,7 +28,6 @@ namespace BMW
             cumle.Select("Select*from Kullanici where Kullanici_adi='"+txt_Kulad.Text.ToString()+"' AND Kullanici_sifre='"+txt_Sifre.Text.ToString()+"'");
             if (cumle.tablo.Rows.Count > 0)
             {
-                admin.Show();
                 this.Hide();
             }
             else { MessageBox.Show("Hatalı Giriş"); }

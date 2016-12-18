@@ -217,7 +217,6 @@ namespace BMW
             {
                 
                 modelkodu = dataGridView1.CurrentRow.Cells[1].Value.ToString();
-                MessageBox.Show(modelkodu);
             }
 
             catch (Exception hata)

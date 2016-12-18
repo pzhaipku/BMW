@@ -1,6 +1,6 @@
 ﻿namespace BMW
 {
-    partial class Giris
+    partial class Giris2
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Giris));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Giris2));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txt_Kulad = new System.Windows.Forms.TextBox();
             this.txt_Sifre = new System.Windows.Forms.TextBox();

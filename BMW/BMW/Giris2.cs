@@ -12,7 +12,7 @@ namespace BMW
 {
     public partial class Giris2 : Form
     {
-        SQL cumle = new SQL();
+        SQL2 cumle = new SQL2();
         public Giris2()
         {
             InitializeComponent();

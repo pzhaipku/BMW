@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace BMW
 {
-    class SQL
+    class SQL2
     {
 
         SqlConnection bag_cumle = new SqlConnection("Data Source=PC-BILGISAYAR; Initial Catalog=BMW;Integrated Security=true;User Id=sa;Password=123456;");

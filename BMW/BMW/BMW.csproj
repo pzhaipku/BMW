@@ -88,7 +88,7 @@
     <Compile Include="Servis_Islem.Designer.cs">
       <DependentUpon>Servis_Islem.cs</DependentUpon>
     </Compile>
-    <Compile Include="SQL.cs" />
+    <Compile Include="SQL2.cs" />
     <Compile Include="SV_musform.cs">
       <SubType>Form</SubType>
     </Compile>

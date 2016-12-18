@@ -13,7 +13,7 @@
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x86</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -34,6 +34,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -68,8 +69,6 @@
     <Compile Include="Giris2.Designer.cs">
       <DependentUpon>Giris2.cs</DependentUpon>
     </Compile>
-    <Compile Include="Program.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Parca.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,34 +87,26 @@
     <Compile Include="Servis_Islem.Designer.cs">
       <DependentUpon>Servis_Islem.cs</DependentUpon>
     </Compile>
-    <Compile Include="SQL2.cs" />
     <Compile Include="SV_musform.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="SV_musform.Designer.cs">
       <DependentUpon>SV_musform.cs</DependentUpon>
     </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AracStok.resx">
       <DependentUpon>AracStok.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Arac_Satis.resx">
-      <DependentUpon>Arac_Satis.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ASmodel.resx">
       <DependentUpon>ASmodel.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Arac_Satis.resx">
+      <DependentUpon>Arac_Satis.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Giris2.resx">
       <DependentUpon>Giris2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="Parca.resx">
       <DependentUpon>Parca.cs</DependentUpon>
     </EmbeddedResource>
@@ -128,6 +119,15 @@
     <EmbeddedResource Include="SV_musform.resx">
       <DependentUpon>SV_musform.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
